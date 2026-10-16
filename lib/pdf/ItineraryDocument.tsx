@@ -4,7 +4,7 @@ import { site } from '@/config/site';
 import { pricing } from '@/config/pricing';
 import { getEvent, getSpecialist, getStay } from '@/lib/content';
 import { getPlace } from '@/lib/travel';
-import { plain, tr } from '@/lib/l10n';
+import { dayLabel, plain, tr } from '@/lib/l10n';
 
 const c = { forest: '#1f3a2e', lake: '#1f6f6c', granite: '#5e6468', birch: '#f4efe4', maple: '#b8322a', ink: '#18201c' };
 
@@ -85,12 +85,12 @@ export function ItineraryDocument({ journey, locale, preparedFor }: { journey: J
           </View>
         )}
         <Text style={s.h2}>{t.route}</Text>
-        <Text style={s.muted}>{route.join('  →  ')}</Text>
+        <Text style={s.muted}>{route.join('  ›  ')}</Text>
 
         <Text style={s.h2}>{t.itinerary}</Text>
         {journey.itinerary.map((d, i) => (
           <View key={i} style={s.dayRow} wrap={false}>
-            <Text style={s.dayLabel}>{d.days}</Text>
+            <Text style={s.dayLabel}>{dayLabel(d.days, locale)}</Text>
             <View style={{ flex: 1 }}>
               <Text style={s.h3}>{plain(tr(d.title, locale))}</Text>
               <Text style={{ marginTop: 2 }}>{tr(d.body, locale)}</Text>
@@ -126,7 +126,7 @@ export function ItineraryDocument({ journey, locale, preparedFor }: { journey: J
         )}
 
         <View wrap={false} style={[s.note, { marginTop: 24 }]}>
-          <Text style={s.h3}>{t.price}: CA${price} {t.perPerson}</Text>
+          <Text style={s.h3}>{t.price}: {locale === 'fr' ? `${price} $ CA` : `CA$${price}`} {t.perPerson}</Text>
           <Text style={[s.muted, { marginTop: 4 }]}>{t.priceNote}</Text>
         </View>
 
