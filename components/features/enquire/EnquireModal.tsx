@@ -1,7 +1,6 @@
 'use client';
 
 import { useLocale, useTranslations } from 'next-intl';
-import { useEffect, useState } from 'react';
 import type { Locale } from '@/data/types';
 import { heroFilms } from '@/data/media';
 import { Modal } from '@/components/ui/Modal';
@@ -13,13 +12,7 @@ import { ItineraryModal } from '@/components/features/itinerary/ItineraryModal';
 export function EnquireModal() {
   const t = useTranslations('enquire');
   const locale = useLocale() as Locale;
-  const { open, prefill, closeEnquire } = useEnquire();
-  const [session, setSession] = useState(0);
-
-  // A fresh form each time the modal opens.
-  useEffect(() => {
-    if (open) setSession((s) => s + 1);
-  }, [open]);
+  const { open, session, prefill, closeEnquire } = useEnquire();
 
   return (
     <>

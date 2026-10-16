@@ -44,7 +44,7 @@ export type ProvinceId =
 /** Broad areas used by the Specialist match and calendar filters. */
 export type Area = 'west' | 'north' | 'east';
 
-export type Place = {
+export type Place = Reviewed & {
   id: string;
   name: L;
   provinceId: ProvinceId;
@@ -66,7 +66,7 @@ export type TravelTime = {
 };
 
 /** A world pair used for the playful comparison. Distance is calculated. */
-export type WorldPair = {
+export type WorldPair = Reviewed & {
   id: string;
   a: L;
   b: L;

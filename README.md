@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Canada Travel Co.
 
-## Getting Started
+*Canada, made for you.* Marketing site for a small team of Canada specialists.
 
-First, run the development server:
+Next.js 16 (App Router) · TypeScript · Tailwind CSS 4 · Framer Motion · next-intl (English / Français) · MDX stories · @react-pdf/renderer.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev          # http://localhost:3000 → redirects to /en
+npm run build        # every page is statically generated per locale
+npm run lint
+npm run typecheck
+npm run i18n:report  # French strings still waiting for a native speaker
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| What | Where |
+|---|---|
+| Brand settings: name, contact, address, provincial travel seller registration, site URL | `config/site.ts` |
+| Budget fit ("journeys generally start around CA$X per person per day") | `config/pricing.ts` |
+| Currency rates (indicative, CAD base) | `config/currency.ts` |
+| Season boundaries (summer = May–Oct, winter = Nov–Apr) | `config/seasons.ts` |
+| Content types (read this first) | `data/types.ts` |
+| Provinces, regions, journeys, experiences, stays, Wild Calendar, team, testimonials, FAQ, press | `data/*.ts` |
+| Distance tool: place coordinates / editable travel time estimates / world comparison pairs | `data/places.ts`, `data/travel-times.ts`, `data/world-pairs.ts` |
+| Long-form pages (Indigenous Canada, About, How we work) | `data/pages.ts` |
+| Hero films and homepage imagery | `data/media.ts` |
+| UI strings | `messages/en.json`, `messages/fr.json` |
+| Stories | `content/stories/{en,fr}/*.mdx` (+ slug list in `lib/stories.ts`) |
+| Voice, French and placeholder rules for writers | `docs/CONTENT_BRIEF.md` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Italic emphasis in titles is written inline: `'Rockies to the *Pacific*'`.
 
-## Learn More
+## Images and films
 
-To learn more about Next.js, take a look at the following resources:
+There are no photos yet. Every image slot (`Img` in `data/types.ts`) has a `subject`, `tone` and bilingual `alt`,
+and renders a styled placeholder. Add `src` (a file in `/public` or an allowed remote host in `next.config.ts`)
+and the slot switches to `next/image`. Hero films: add `video` in `data/media.ts`; only the active season's film loads.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Season switch
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`<html data-season>` is set before first paint by an inline script (`lib/boot-script.ts`): the visitor's saved choice
+(localStorage, then cookie), otherwise the current Northern Hemisphere season. Seasonal content is swapped with CSS
+(`.summer-only` / `.winter-only` / `.season-order`), so pages stay static and never flash.
 
-## Deploy on Vercel
+## French review
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+English is the source. French is a machine-assisted draft:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- every `/data` record carries `frReview: 'needs-human-review'`;
+- every UI message key is listed in `data/translation-review.json` (run `npm run i18n:sync` after adding keys);
+- French stories carry `frReview` in their `meta` and open with a "Brouillon de traduction" note.
+
+A native speaker approves by switching the status to `'approved'`. `npm run i18n:report -- --list` shows what's left.
+
+## Leads
+
+`POST /api/enquire`, `POST /api/itinerary` (returns the branded PDF) and `POST /api/newsletter` validate with zod
+and log through `lib/leads.ts`. **TODO: CRM integration** is marked there and in each route. Forms use a honeypot;
+add Cloudflare Turnstile before launch.
+
+## Before launch (placeholders)
+
+- `config/site.ts`: company name/address, phone, email, registration numbers (TICO / Consumer Protection BC / OPC as applicable), `NEXT_PUBLIC_SITE_URL`.
+- `config/pricing.ts`: the real per-day figure. `config/currency.ts`: rates.
+- Team, testimonials, press and stays are invented placeholders (`placeholder: true`); replace with real, consented content.
+- Facts marked `verify` (entry requirements: canada.ca) and every Wild Calendar event (`verifyYearly`).
+- Privacy policy, terms (deposits and cancellations) and the accessibility statement need a lawyer's pass.
+- French review (above).

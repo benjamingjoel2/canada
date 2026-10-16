@@ -23,7 +23,7 @@ export async function Intro({ locale }: { locale: Locale }) {
           </div>
           <ul className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3" aria-label={t('pressTitle').replace(/\*/g, '')}>
             {press.slice(0, 3).map((p) => (
-              <li key={p.id} className="font-serif text-sm text-forest/50 italic">
+              <li key={p.id} className="font-serif text-sm text-granite italic">
                 {p.name}
               </li>
             ))}

@@ -28,3 +28,6 @@ export const site = {
     { name: 'Facebook', href: 'https://facebook.com/' },
   ],
 } as const;
+
+/** French strings in this file (tagline, hours, registration lines) are drafts. */
+export const siteFrReview = { id: 'config-site', frReview: 'needs-human-review' as const };

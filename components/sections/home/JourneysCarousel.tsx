@@ -1,19 +1,21 @@
 import { getTranslations } from 'next-intl/server';
 import type { Locale } from '@/data/types';
-import { journeysBySeason } from '@/lib/content';
+import { journeys, journeysBySeason } from '@/lib/content';
 import { Carousel } from '@/components/ui/Carousel';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { JourneyCard } from '@/components/sections/JourneyCard';
 import { Link } from '@/i18n/navigation';
 
 /**
- * Reference: dark journeys carousel. Ours orders journeys by the active season:
- * both orders are rendered and the season switch shows one (no hydration flash).
+ * Reference: dark journeys carousel. Ours orders journeys by the active season,
+ * using CSS `order` keyed to <html data-season> (one render, no hydration flash).
  */
 export async function JourneysCarousel({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale, namespace: 'home' });
   const tp = await getTranslations({ locale, namespace: 'prefs' });
   const tc = await getTranslations({ locale, namespace: 'common' });
+  const summerOrder = journeysBySeason('summer').map((j) => j.id);
+  const winterOrder = journeysBySeason('winter').map((j) => j.id);
   return (
     <section className="bg-forest py-20 text-birch md:py-28">
       <div className="container-x">
@@ -23,16 +25,19 @@ export async function JourneysCarousel({ locale }: { locale: Locale }) {
             {tc('viewAll')}
           </Link>
         </div>
-        {(['summer', 'winter'] as const).map((s) => (
-          <div key={s} className={`${s}-only mt-10`}>
-            <p className="mb-2 text-sm text-birch/60">{t('journeysSeasonNote', { season: tp(s).toLowerCase() })}</p>
-            <Carousel label={t('journeysTitle').replace(/\*/g, '')} light>
-              {journeysBySeason(s).map((j) => (
-                <JourneyCard key={j.id} journey={j} locale={locale} light />
-              ))}
-            </Carousel>
-          </div>
-        ))}
+        <p className="mt-10 mb-2 text-sm text-birch/60">
+          <span className="summer-only">{t('journeysSeasonNote', { season: tp('summer').toLowerCase() })}</span>
+          <span className="winter-only">{t('journeysSeasonNote', { season: tp('winter').toLowerCase() })}</span>
+        </p>
+        <Carousel
+          label={t('journeysTitle').replace(/\*/g, '')}
+          light
+          seasonOrder={journeys.map((j) => ({ summer: summerOrder.indexOf(j.id), winter: winterOrder.indexOf(j.id) }))}
+        >
+          {journeys.map((j) => (
+            <JourneyCard key={j.id} journey={j} locale={locale} light />
+          ))}
+        </Carousel>
       </div>
     </section>
   );

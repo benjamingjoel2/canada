@@ -15,7 +15,10 @@ export function Carousel({
   light = false,
   className,
   controlsPosition = 'top',
+  seasonOrder,
 }: {
+  /** Optional per-item order for each season, applied with CSS `order` so one render serves both. */
+  seasonOrder?: { summer: number; winter: number }[];
   children: ReactNode;
   label: string;
   itemClassName?: string;
@@ -71,6 +74,7 @@ export function Carousel({
       {controlsPosition === 'top' && <div className="mb-6">{controls}</div>}
       <ul
         ref={track}
+        tabIndex={0}
         className="no-scrollbar -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-px-4 px-4 md:-mx-8 md:gap-6 md:scroll-px-8 md:px-8 xl:-mx-12 xl:scroll-px-12 xl:px-12"
       >
         {items.map((child, i) => (
@@ -78,7 +82,8 @@ export function Carousel({
             key={i}
             aria-roledescription="slide"
             aria-label={`${i + 1} / ${items.length}`}
-            className={clsx('shrink-0 snap-start', itemClassName)}
+            className={clsx('shrink-0 snap-start', seasonOrder && 'season-order', itemClassName)}
+            style={seasonOrder?.[i] ? ({ '--o-summer': seasonOrder[i].summer, '--o-winter': seasonOrder[i].winter } as React.CSSProperties) : undefined}
           >
             {child}
           </li>

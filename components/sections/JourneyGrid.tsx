@@ -9,8 +9,10 @@ export function JourneyGrid({ items }: { items: { id: string; seasons: string[];
   const t = useTranslations('journey');
   const [season, setSeason] = useState<'all' | 'summer' | 'winter'>('all');
 
+  // Static page: the filter can only be read from the URL after hydration.
   useEffect(() => {
     const s = new URLSearchParams(window.location.search).get('season');
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-off read of the URL after hydration
     if (s === 'summer' || s === 'winter') setSeason(s);
   }, []);
 

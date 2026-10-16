@@ -9,7 +9,7 @@ export function Logo({ className, light = false }: { className?: string; light?:
         <path d="M12 3.5 L14.6 12 L12 10.6 L9.4 12 Z" fill="#b8322a" />
         <path d="M12 20.5 L9.4 12 L12 13.4 L14.6 12 Z" fill="currentColor" opacity="0.45" />
       </svg>
-      <span className="font-serif text-xl leading-none tracking-tight whitespace-nowrap md:text-[1.3rem]">
+      <span className="font-serif text-lg leading-none sm:text-xl tracking-tight whitespace-nowrap md:text-[1.3rem]">
         Canada Travel <em className="font-light">Co.</em>
       </span>
     </span>
