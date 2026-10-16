@@ -13,6 +13,7 @@ export function calendarEvents(locale: Locale): CalendarEvent[] {
     peak: e.peak ?? [],
     areas: [...new Set(e.provinceIds.map((p) => getProvince(p)?.area).filter((a): a is Area => !!a))],
     provinceIds: e.provinceIds,
+    regionIds: e.regionIds,
     places: e.regionIds
       .map((r) => getRegion(r))
       .filter((r) => r !== undefined)
