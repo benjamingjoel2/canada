@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
   // Pages are statically generated per locale (generateStaticParams + setRequestLocale).
   // Season and currency are applied on the client, so every page can stay static.
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
+  images: {
+    loader: 'custom',
+    loaderFile: './lib/image-loader.ts',
+  },
   turbopack: {
     rules: {
       '*.css': {

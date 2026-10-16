@@ -2,6 +2,7 @@ import Image from 'next/image';
 import clsx from 'clsx';
 import type { Img, Locale, SeasonalImg } from '@/data/types';
 import { tr } from '@/lib/l10n';
+import { resolvePhoto } from '@/lib/photo';
 
 const tones: Record<NonNullable<Img['tone']>, string> = {
   forest: 'from-[#2b4c3d] via-[#1f3a2e] to-[#11231b]',
@@ -15,8 +16,8 @@ const tones: Record<NonNullable<Img['tone']>, string> = {
 const lightTones = new Set(['birch', 'snow']);
 
 /**
- * Image slot. Renders next/image when `src` exists, otherwise a styled
- * placeholder built from the slot's subject and tone (no stock photography yet).
+ * Image slot. Renders the slot's own `src`, or a matched stock photo (lib/photo.ts),
+ * and falls back to a styled placeholder built from the subject and tone.
  */
 export function Picture({
   img,
@@ -33,11 +34,12 @@ export function Picture({
   priority?: boolean;
   showCaption?: boolean;
 }) {
-  const alt = tr(img.alt, locale);
-  if (img.src) {
+  const photo = resolvePhoto(img);
+  const alt = tr(photo?.alt ?? img.alt, locale);
+  if (photo) {
     return (
-      <div className={clsx('relative overflow-hidden', className)}>
-        <Image src={img.src} alt={alt} fill sizes={sizes} priority={priority} className="object-cover" />
+      <div className={clsx('relative overflow-hidden bg-granite-100', className)}>
+        <Image src={photo.src} alt={alt} fill sizes={sizes} priority={priority} className="object-cover" />
       </div>
     );
   }

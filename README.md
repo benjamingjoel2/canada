@@ -34,9 +34,14 @@ Italic emphasis in titles is written inline: `'Rockies to the *Pacific*'`.
 
 ## Images and films
 
-There are no photos yet. Every image slot (`Img` in `data/types.ts`) has a `subject`, `tone` and bilingual `alt`,
-and renders a styled placeholder. Add `src` (a file in `/public` or an allowed remote host in `next.config.ts`)
-and the slot switches to `next/image`. Hero films: add `video` in `data/media.ts`; only the active season's film loads.
+Every image slot (`Img` in `data/types.ts`) describes the photo it wants (`subject`, `tone`, bilingual `alt`).
+Until our own photography exists, slots show **temporary Unsplash stock photos** (Unsplash License),
+hand-matched per subject in `data/photos.ts` (`photoBySubject`, with keyword and tone fallbacks for new content).
+Each stock photo carries its own alt text describing what is actually shown.
+
+To use a real photo, give the slot a `src` (a file in `/public` or an Unsplash URL); it always wins.
+`lib/image-loader.ts` resizes Unsplash images through Unsplash's CDN. Hero films: add `video` in `data/media.ts`;
+only the active season's film loads.
 
 ## Season switch
 

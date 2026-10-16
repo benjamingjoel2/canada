@@ -154,12 +154,12 @@ export function Header({ nav }: { nav: NavModel }) {
 
           {/* Right */}
           <div className="flex items-center justify-end gap-5">
-            <div className="hidden items-center gap-6 xl:flex">
+            <div className="hidden items-center gap-6 2xl:flex">
               {plainLink('/stays', t('stays'))}
               {trigger('about', t('about'))}
               {plainLink('/stories', t('stories'))}
             </div>
-            <div className="hidden lg:block xl:hidden">{trigger('about', t('about'))}</div>
+            <div className="hidden lg:block 2xl:hidden">{trigger('about', t('about'))}</div>
             <div className="hidden md:block">
               <SeasonSwitch compact />
             </div>
@@ -335,6 +335,8 @@ function ExperiencesPanel({ nav }: { nav: NavModel }) {
 function AboutPanel() {
   const t = useTranslations('nav');
   const links: [string, string][] = [
+    ['/stays', t('stays')],
+    ['/stories', t('stories')],
     ['/about', t('howWeWork')],
     ['/about/team', t('team')],
     ['/about/testimonials', t('testimonials')],

@@ -21,10 +21,6 @@ export async function HeroFilm({ locale }: { locale: Locale }) {
           <span className="summer-only">{t('heroSummer')}</span>
           <span className="winter-only">{t('heroWinter')}</span>
         </p>
-        <p className="mt-4 text-xs tracking-[0.18em] text-birch/60 uppercase">
-          <span className="summer-only">{heroFilms.summer.poster.subject}</span>
-          <span className="winter-only">{heroFilms.winter.poster.subject}</span>
-        </p>
       </div>
     </section>
   );
