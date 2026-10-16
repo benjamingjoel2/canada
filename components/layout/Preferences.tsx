@@ -49,7 +49,7 @@ export function SeasonSwitch({ light = false, compact = false, className }: { li
             )}
           >
             <span aria-hidden>{o.icon}</span>
-            <span className={clsx(compact && 'sr-only xl:not-sr-only')}>{o.label}</span>
+            <span className={clsx(compact && 'sr-only min-[1400px]:not-sr-only')}>{o.label}</span>
           </button>
         );
       })}
