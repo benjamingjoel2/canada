@@ -12,7 +12,7 @@ export function EnquireButton({
 }: {
   children: ReactNode;
   prefill?: EnquirePrefill;
-  variant?: 'solid' | 'outline' | 'light' | 'ghost';
+  variant?: 'solid' | 'outline' | 'outlineLight' | 'light' | 'ghost';
   className?: string;
 }) {
   const { openEnquire } = useEnquire();
@@ -23,7 +23,7 @@ export function EnquireButton({
   );
 }
 
-export function ItineraryButton({ journeyId, title, children, variant = 'outline', className }: { journeyId: string; title: string; children: ReactNode; variant?: 'solid' | 'outline' | 'light' | 'ghost'; className?: string }) {
+export function ItineraryButton({ journeyId, title, children, variant = 'outline', className }: { journeyId: string; title: string; children: ReactNode; variant?: 'solid' | 'outline' | 'outlineLight' | 'light' | 'ghost'; className?: string }) {
   const { openItinerary } = useEnquire();
   return (
     <button type="button" className={buttonClass(variant, className)} onClick={() => openItinerary(journeyId, title)} aria-haspopup="dialog">

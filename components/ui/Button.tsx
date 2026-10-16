@@ -2,11 +2,12 @@ import clsx from 'clsx';
 import type { ComponentProps } from 'react';
 import { Link } from '@/i18n/navigation';
 
-type Variant = 'solid' | 'outline' | 'light' | 'ghost';
+type Variant = 'solid' | 'outline' | 'outlineLight' | 'light' | 'ghost';
 
 const styles: Record<Variant, string> = {
   solid: 'bg-forest text-birch hover:bg-forest-700',
   outline: 'border border-current text-forest hover:bg-forest hover:text-birch',
+  outlineLight: 'border border-birch/70 text-birch hover:bg-birch hover:text-forest',
   light: 'bg-birch text-forest hover:bg-white',
   ghost: 'text-current underline underline-offset-4 decoration-1 hover:decoration-2 px-0',
 };

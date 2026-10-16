@@ -356,7 +356,8 @@
     "how-we-work": "How we work",
     "planning": "Planning",
     "practical": "Practical",
-    "verify": "To verify before launch: {note}"
+    "verify": "To verify before launch: {note}",
+    "all": "All"
   },
   "contact": {
     "title": "Contact *us*",
@@ -373,7 +374,11 @@
   "legal": {
     "privacyTitle": "Privacy *policy*",
     "termsTitle": "Terms and *conditions*",
-    "placeholder": "Placeholder. This page needs to be written by a lawyer before launch."
+    "placeholder": "Placeholder. This page needs to be written by a lawyer before launch.",
+    "accessibilityTitle": "*Accessibility*",
+    "accessibilityBody": "We want this site to work for everyone. It's built to WCAG 2.2 AA: it works with a keyboard and screen readers, respects reduced-motion settings, and keeps text readable. If something gets in your way, tell us at {email} and we'll fix it, or help you plan by phone instead.",
+    "privacyBody": "We collect only what you send us: your name, contact details and what you tell us about your trip. We use it to plan your journey and, if you ask, to send our newsletter. We don't sell it. Full policy to follow.",
+    "termsBody": "Deposits, payments, changes and cancellations will be set out here, along with our provincial travel seller registration and what it protects. Full terms to follow."
   },
   "notFound": {
     "title": "Wrong *turn*",

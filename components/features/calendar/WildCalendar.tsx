@@ -17,6 +17,7 @@ export type CalendarEvent = {
   peak: number[];
   areas: Area[];
   provinceIds: string[];
+  regionIds: string[];
   places: string;
   journeys: { slug: string; title: string }[];
 };
