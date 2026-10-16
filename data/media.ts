@@ -32,3 +32,6 @@ export const homeImages = {
     winter: { subject: 'A guide with snowshoes at the edge of a frozen lake', tone: 'snow', alt: { en: 'A guide with snowshoes beside a frozen lake', fr: 'Un guide en raquettes au bord d’un lac gelé' } },
   } satisfies Record<Season, Img>,
 };
+
+/** The French alt text in this file is a draft too. */
+export const mediaFrReview = { id: 'media-alt-text', frReview: 'needs-human-review' as const };

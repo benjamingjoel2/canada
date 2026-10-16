@@ -21,6 +21,31 @@ type Level =
   | { kind: 'group'; index: number }
   | { kind: 'about' };
 
+const row = 'flex w-full items-center justify-between border-b border-forest/10 py-4 text-left font-serif text-2xl text-forest';
+
+function Drill({ label, to, push }: { label: string; to: Level; push: (l: Level) => void }) {
+  return (
+    <li>
+      <button type="button" className={row} onClick={() => push(to)}>
+        <span>{label}</span>
+        <span aria-hidden className="text-base text-lake-700">→</span>
+      </button>
+    </li>
+  );
+}
+
+function Item({ href, label, onClose }: { href: string; label: string; onClose: () => void }) {
+  return (
+    <li>
+      <Link href={href} className={row} onClick={onClose}>
+        <span>
+          <Italic text={label} />
+        </span>
+      </Link>
+    </li>
+  );
+}
+
 /** Mobile menu: drills down level by level with a Back button, like the reference. */
 export function MobileDrawer({ open, onClose, nav }: { open: boolean; onClose: () => void; nav: NavModel }) {
   const t = useTranslations('nav');
@@ -41,37 +66,18 @@ export function MobileDrawer({ open, onClose, nav }: { open: boolean; onClose: (
   const push = (l: Level) => setStack((s) => [...s, l]);
   const pop = () => setStack((s) => (s.length > 1 ? s.slice(0, -1) : s));
 
-  const row = 'flex w-full items-center justify-between border-b border-forest/10 py-4 text-left font-serif text-2xl text-forest';
-  const Drill = ({ label, to }: { label: string; to: Level }) => (
-    <li>
-      <button type="button" className={row} onClick={() => push(to)}>
-        <span>{label}</span>
-        <span aria-hidden className="text-base text-lake-700">→</span>
-      </button>
-    </li>
-  );
-  const Item = ({ href, label }: { href: string; label: string }) => (
-    <li>
-      <Link href={href} className={row} onClick={onClose}>
-        <span>
-          <Italic text={label} />
-        </span>
-      </Link>
-    </li>
-  );
-
   let title = '';
   let list: React.ReactNode = null;
   switch (level.kind) {
     case 'root':
       list = (
         <>
-          <Drill label={t('journeys')} to={{ kind: 'journeys' }} />
-          <Drill label={t('destinations')} to={{ kind: 'destinations' }} />
-          <Drill label={t('experiences')} to={{ kind: 'experiences' }} />
-          <Item href="/stays" label={t('stays')} />
-          <Drill label={t('about')} to={{ kind: 'about' }} />
-          <Item href="/stories" label={t('stories')} />
+          <Drill push={push} label={t('journeys')} to={{ kind: 'journeys' }} />
+          <Drill push={push} label={t('destinations')} to={{ kind: 'destinations' }} />
+          <Drill push={push} label={t('experiences')} to={{ kind: 'experiences' }} />
+          <Item onClose={onClose} href="/stays" label={t('stays')} />
+          <Drill push={push} label={t('about')} to={{ kind: 'about' }} />
+          <Item onClose={onClose} href="/stories" label={t('stories')} />
         </>
       );
       break;
@@ -79,11 +85,11 @@ export function MobileDrawer({ open, onClose, nav }: { open: boolean; onClose: (
       title = t('journeys');
       list = (
         <>
-          <Item href="/journeys" label={t('browseAllJourneys')} />
-          <Item href="/journeys?season=summer" label={`☀ ${t('summerJourneys')}`} />
-          <Item href="/journeys?season=winter" label={`❄ ${t('winterJourneys')}`} />
-          <Item href="/find-your-specialist" label={t('findSpecialist')} />
-          <Item href="/wild-calendar" label={t('wildCalendar')} />
+          <Item onClose={onClose} href="/journeys" label={t('browseAllJourneys')} />
+          <Item onClose={onClose} href="/journeys?season=summer" label={`☀ ${t('summerJourneys')}`} />
+          <Item onClose={onClose} href="/journeys?season=winter" label={`❄ ${t('winterJourneys')}`} />
+          <Item onClose={onClose} href="/find-your-specialist" label={t('findSpecialist')} />
+          <Item onClose={onClose} href="/wild-calendar" label={t('wildCalendar')} />
         </>
       );
       break;
@@ -92,11 +98,11 @@ export function MobileDrawer({ open, onClose, nav }: { open: boolean; onClose: (
       list = (
         <>
           {nav.provinces.map((p, i) => (
-            <Drill key={p.slug} label={p.name} to={{ kind: 'province', index: i }} />
+            <Drill push={push} key={p.slug} label={p.name} to={{ kind: 'province', index: i }} />
           ))}
-          <Item href="/wild-calendar" label={t('wildCalendar')} />
-          <Item href="/indigenous-canada" label={t('indigenousCanada')} />
-          <Item href="/destinations" label={t('allDestinations')} />
+          <Item onClose={onClose} href="/wild-calendar" label={t('wildCalendar')} />
+          <Item onClose={onClose} href="/indigenous-canada" label={t('indigenousCanada')} />
+          <Item onClose={onClose} href="/destinations" label={t('allDestinations')} />
         </>
       );
       break;
@@ -105,9 +111,9 @@ export function MobileDrawer({ open, onClose, nav }: { open: boolean; onClose: (
       title = p.name;
       list = (
         <>
-          <Item href={`/destinations/${p.slug}`} label={t('explore', { name: p.name })} />
+          <Item onClose={onClose} href={`/destinations/${p.slug}`} label={t('explore', { name: p.name })} />
           {p.regions.map((r) => (
-            <Item key={r.slug} href={`/destinations/${p.slug}/${r.slug}`} label={r.name} />
+            <Item onClose={onClose} key={r.slug} href={`/destinations/${p.slug}/${r.slug}`} label={r.name} />
           ))}
         </>
       );
@@ -118,9 +124,9 @@ export function MobileDrawer({ open, onClose, nav }: { open: boolean; onClose: (
       list = (
         <>
           {nav.experienceGroups.map((g, i) => (
-            <Drill key={g.slug} label={g.title.replace(/\*/g, '')} to={{ kind: 'group', index: i }} />
+            <Drill push={push} key={g.slug} label={g.title.replace(/\*/g, '')} to={{ kind: 'group', index: i }} />
           ))}
-          <Item href="/experiences" label={t('allExperiences')} />
+          <Item onClose={onClose} href="/experiences" label={t('allExperiences')} />
         </>
       );
       break;
@@ -129,9 +135,9 @@ export function MobileDrawer({ open, onClose, nav }: { open: boolean; onClose: (
       title = g.title.replace(/\*/g, '');
       list = (
         <>
-          <Item href={`/experiences/${g.slug}`} label={g.title} />
+          <Item onClose={onClose} href={`/experiences/${g.slug}`} label={g.title} />
           {g.items.map((e) => (
-            <Item key={e.slug} href={`/experiences/${g.slug}/${e.slug}`} label={e.title} />
+            <Item onClose={onClose} key={e.slug} href={`/experiences/${g.slug}/${e.slug}`} label={e.title} />
           ))}
         </>
       );
@@ -141,12 +147,12 @@ export function MobileDrawer({ open, onClose, nav }: { open: boolean; onClose: (
       title = t('about');
       list = (
         <>
-          <Item href="/about" label={t('howWeWork')} />
-          <Item href="/about/team" label={t('team')} />
-          <Item href="/about/testimonials" label={t('testimonials')} />
-          <Item href="/indigenous-canada" label={t('indigenousCanada')} />
-          <Item href="/faq" label={t('faq')} />
-          <Item href="/contact" label={t('contact')} />
+          <Item onClose={onClose} href="/about" label={t('howWeWork')} />
+          <Item onClose={onClose} href="/about/team" label={t('team')} />
+          <Item onClose={onClose} href="/about/testimonials" label={t('testimonials')} />
+          <Item onClose={onClose} href="/indigenous-canada" label={t('indigenousCanada')} />
+          <Item onClose={onClose} href="/faq" label={t('faq')} />
+          <Item onClose={onClose} href="/contact" label={t('contact')} />
         </>
       );
       break;

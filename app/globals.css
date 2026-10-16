@@ -108,3 +108,7 @@ html[data-season='winter'] .season-pill-winter {
   background: var(--color-forest);
   color: var(--color-birch);
 }
+
+/* Season-dependent ordering (e.g. journeys carousel): one render, reordered by CSS */
+.season-order { order: var(--o-summer); }
+html[data-season='winter'] .season-order { order: var(--o-winter); }

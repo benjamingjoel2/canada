@@ -53,7 +53,7 @@ export async function Footer({ locale }: { locale: Locale }) {
           <ul className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-sm" aria-label={t('follow')}>
             {site.social.map((s) => (
               <li key={s.name}>
-                <a href={s.href} className="hover:text-birch" rel="noopener noreferrer" target="_blank">
+                <a href={s.href} className="inline-block py-1 hover:text-birch" rel="noopener noreferrer" target="_blank">
                   {s.name}
                 </a>
               </li>
@@ -63,10 +63,10 @@ export async function Footer({ locale }: { locale: Locale }) {
         {cols.map((c) => (
           <nav key={c.title} aria-label={c.title} className="lg:col-span-2">
             <h2 className="eyebrow font-sans text-lake-200">{c.title}</h2>
-            <ul className="mt-5 space-y-2.5 text-sm">
+            <ul className="mt-4 space-y-1 text-sm">
               {c.links.map(([href, label]) => (
                 <li key={href}>
-                  <Link href={href} className="hover:text-birch">
+                  <Link href={href} className="inline-block py-1 hover:text-birch">
                     {label}
                   </Link>
                 </li>
@@ -76,12 +76,12 @@ export async function Footer({ locale }: { locale: Locale }) {
         ))}
         <div className="lg:col-span-3">
           <h2 className="eyebrow font-sans text-lake-200">{t('contact')}</h2>
-          <ul className="mt-5 space-y-2.5 text-sm">
+          <ul className="mt-4 space-y-1 text-sm">
             <li>
-              <a href={site.contact.phoneHref} className="hover:text-birch">{site.contact.phone}</a>
+              <a href={site.contact.phoneHref} className="inline-block py-1 hover:text-birch">{site.contact.phone}</a>
             </li>
             <li>
-              <a href={`mailto:${site.contact.email}`} className="hover:text-birch">{site.contact.email}</a>
+              <a href={`mailto:${site.contact.email}`} className="inline-block py-1 hover:text-birch">{site.contact.email}</a>
             </li>
             <li>{site.contact.hours[locale]}</li>
           </ul>
@@ -101,9 +101,9 @@ export async function Footer({ locale }: { locale: Locale }) {
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <p>{t('rights', { year })}</p>
             <ul className="flex flex-wrap gap-5">
-              <li><Link href="/privacy" className="hover:text-birch">{t('privacy')}</Link></li>
-              <li><Link href="/terms" className="hover:text-birch">{t('terms')}</Link></li>
-              <li><Link href="/accessibility" className="hover:text-birch">{t('accessibility')}</Link></li>
+              <li><Link href="/privacy" className="inline-block py-1 hover:text-birch">{t('privacy')}</Link></li>
+              <li><Link href="/terms" className="inline-block py-1 hover:text-birch">{t('terms')}</Link></li>
+              <li><Link href="/accessibility" className="inline-block py-1 hover:text-birch">{t('accessibility')}</Link></li>
             </ul>
           </div>
         </div>

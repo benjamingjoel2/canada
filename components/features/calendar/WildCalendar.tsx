@@ -80,6 +80,7 @@ export function WildCalendar({
     const p = new URLSearchParams(window.location.search);
     const a = p.get('area');
     const ty = p.get('type');
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- one-off read of the URL after hydration
     if (a === 'west' || a === 'north' || a === 'east') setArea(a);
     if (ty === 'wildlife' || ty === 'light' || ty === 'landscape') setType(ty);
     const hash = window.location.hash.slice(1);

@@ -6,7 +6,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
 import type { Area, Img, Interest, Locale, Season, Specialist } from '@/data/types';
 import { bestMatch } from '@/lib/match';
-import { getSeason, setSeason } from '@/lib/preferences';
+import { setSeason, useSeason } from '@/lib/preferences';
 import { Italic } from '@/components/ui/Italic';
 import { Picture } from '@/components/ui/Picture';
 import { Button } from '@/components/ui/Button';
@@ -31,12 +31,13 @@ export function SpecialistMatch({ specialists }: { specialists: MatchSpecialist[
   const { openEnquire } = useEnquire();
   const [step, setStep] = useState(0);
   const [area, setArea] = useState<Area | 'all' | null>(null);
-  const [season, setSeasonAnswer] = useState<Season | null>(null);
+  const [seasonAnswer, setSeasonAnswer] = useState<Season | null>(null);
+  // "When?" starts on the visitor's current season switch.
+  const currentSeason = useSeason();
+  const season = seasonAnswer ?? currentSeason;
   const [interests, setInterests] = useState<Interest[]>([]);
   const headingRef = useRef<HTMLHeadingElement>(null);
 
-  // "When?" starts on the visitor's current season switch.
-  useEffect(() => setSeasonAnswer(getSeason()), []);
   useEffect(() => {
     if (step > 0) headingRef.current?.focus();
   }, [step]);

@@ -9,7 +9,8 @@ export async function POST(req: Request) {
   if (!parsed.success) {
     return NextResponse.json({ ok: false, errors: parsed.error.issues.map((i) => i.path.join('.')) }, { status: 400 });
   }
-  const { company: _honeypot, ...enquiry } = parsed.data;
+  const enquiry = { ...parsed.data };
+  delete enquiry.company; // honeypot field, always empty for real people
   const journey = enquiry.journeyId ? getJourney(enquiry.journeyId) : undefined;
   // TODO: CRM integration — create a contact + deal, route to enquiry.specialistId, send confirmation email.
   await logLead('enquiry', { ...enquiry, journeyName: journey?.title.en.replace(/\*/g, '') });

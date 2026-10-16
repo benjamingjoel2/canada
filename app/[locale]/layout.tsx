@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Fraunces, Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { site } from '@/config/site';
 import { bootScript } from '@/lib/boot-script';
@@ -17,11 +17,12 @@ import '../globals.css';
 const fraunces = Fraunces({
   subsets: ['latin'],
   style: ['normal', 'italic'],
-  axes: ['opsz'],
   variable: '--font-fraunces',
   display: 'swap',
 });
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
+
+const clientNamespaces = ['nav', 'prefs', 'common', 'distance', 'calendar', 'match', 'enquire', 'itinerary', 'newsletter', 'journey', 'notFound'];
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -50,6 +51,9 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   setRequestLocale(raw);
   const locale = asLocale(raw);
   const t = await getTranslations({ locale, namespace: 'meta' });
+  // Only the namespaces client components use are sent to the browser.
+  const all = await getMessages();
+  const clientMessages = Object.fromEntries(clientNamespaces.map((n) => [n, all[n]]));
 
   return (
     <html lang={locale === 'fr' ? 'fr' : 'en'} className={`${fraunces.variable} ${inter.variable}`} suppressHydrationWarning>
@@ -57,7 +61,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
         <script dangerouslySetInnerHTML={{ __html: bootScript }} />
       </head>
       <body className="min-h-screen">
-        <NextIntlClientProvider>
+        <NextIntlClientProvider messages={clientMessages}>
           <Providers>
             <a
               href="#main"

@@ -31,10 +31,12 @@ export function Header({ nav }: { nav: NavModel }) {
   const panelId = useId();
 
   // Close menus on navigation.
-  useEffect(() => {
+  const [lastPath, setLastPath] = useState(pathname);
+  if (pathname !== lastPath) {
+    setLastPath(pathname);
     setPanel(null);
     setDrawer(false);
-  }, [pathname]);
+  }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -124,7 +126,7 @@ export function Header({ nav }: { nav: NavModel }) {
           scrolled || panel ? 'border-forest/10 shadow-[0_8px_30px_-20px_rgba(17,35,27,0.35)]' : 'border-transparent',
         )}
       >
-        <nav aria-label={t('mainNav')} className="container-x grid h-16 grid-cols-[1fr_auto_1fr] items-center lg:h-20">
+        <nav aria-label={t('mainNav')} className="container-x grid h-16 grid-cols-[auto_1fr_auto] items-center gap-2 lg:h-20 lg:grid-cols-[1fr_auto_1fr] lg:gap-0">
           {/* Left */}
           <div className="flex items-center gap-7">
             <button
@@ -146,7 +148,7 @@ export function Header({ nav }: { nav: NavModel }) {
           </div>
 
           {/* Logo */}
-          <Link href="/" aria-label={t('home')} className="justify-self-center">
+          <Link href="/" aria-label={t('home')} className="justify-self-start lg:justify-self-center">
             <Logo />
           </Link>
 
@@ -158,20 +160,19 @@ export function Header({ nav }: { nav: NavModel }) {
               {plainLink('/stories', t('stories'))}
             </div>
             <div className="hidden lg:block xl:hidden">{trigger('about', t('about'))}</div>
-            <SeasonSwitch compact className="hidden md:inline-flex" />
+            <div className="hidden md:block">
+              <SeasonSwitch compact />
+            </div>
+            <div className="hidden sm:block">
+              <button type="button" onClick={() => openEnquire()} aria-haspopup="dialog" className={buttonClass('solid', 'px-5 py-2.5 whitespace-nowrap')}>
+                {t('enquire')}
+              </button>
+            </div>
             <button
               type="button"
               onClick={() => openEnquire()}
               aria-haspopup="dialog"
-              className={buttonClass('solid', 'hidden px-5 py-2.5 sm:inline-flex')}
-            >
-              {t('enquire')}
-            </button>
-            <button
-              type="button"
-              onClick={() => openEnquire()}
-              aria-haspopup="dialog"
-              className="text-xs font-medium tracking-[0.14em] text-forest uppercase underline underline-offset-4 sm:hidden"
+              className="py-2 text-xs font-medium tracking-[0.08em] whitespace-nowrap text-forest uppercase underline underline-offset-4 sm:hidden"
             >
               {t('enquire')}
             </button>
