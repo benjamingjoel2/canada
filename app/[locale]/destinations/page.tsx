@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { provinces } from '@/lib/content';
+import { provinces, regionsOf } from '@/lib/content';
 import { tr } from '@/lib/l10n';
 import { pageLocale, type LocaleParams } from '@/lib/params';
 import { pageMetadata } from '@/lib/seo';
 import { PageHero } from '@/components/sections/PageHero';
 import { SeasonalPicture } from '@/components/ui/Picture';
-import { Link } from '@/i18n/navigation';
+import { ProvinceIndex } from '@/components/sections/ProvinceIndex';
 import { DistanceSection } from '@/components/features/distance/DistanceSection';
 import { EnquireBand } from '@/components/sections/EnquireBand';
 
@@ -23,22 +23,17 @@ export default async function Destinations({ params }: LocaleParams) {
   return (
     <>
       <PageHero title={t('allTitle')} intro={t('allIntro')} locale={locale} />
-      <section className="container-x grid gap-x-8 gap-y-14 py-16 sm:grid-cols-2 lg:grid-cols-3">
-        {provinces.map((p) => (
-          <article key={p.id} className="group relative">
-            <div className="overflow-hidden">
-              <SeasonalPicture img={p.hero} locale={locale} className="aspect-[4/3] w-full transition-transform duration-700 group-hover:scale-[1.03]" sizes="(min-width:1024px) 30vw, 90vw" />
-            </div>
-            <h2 className="mt-5 text-3xl text-forest">
-              <Link href={`/destinations/${p.slug}`} className="after:absolute after:inset-0">
-                {tr(p.name, locale)}
-              </Link>
-            </h2>
-            <p className="mt-2 text-granite">{tr(p.tagline, locale)}</p>
-            <p className="mt-3 text-sm text-lake-700">{n('explore', { name: tr(p.name, locale) })} →</p>
-          </article>
-        ))}
-      </section>
+      <ProvinceIndex
+        exploreLabel={n.raw('explore')}
+        regionsLabel={n('destinations')}
+        panels={provinces.map((p) => ({
+          slug: p.slug,
+          name: tr(p.name, locale),
+          tagline: tr(p.tagline, locale),
+          picture: <SeasonalPicture img={p.hero} locale={locale} className="aspect-[16/10] w-full" sizes="(min-width:1024px) 60vw, 100vw" />,
+          regions: regionsOf(p.id).map((r) => ({ slug: r.slug, name: tr(r.name, locale) })),
+        }))}
+      />
       <DistanceSection locale={locale} />
       <EnquireBand locale={locale} />
     </>

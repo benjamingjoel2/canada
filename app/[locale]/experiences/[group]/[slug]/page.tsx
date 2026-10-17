@@ -54,7 +54,7 @@ export default async function ExperiencePage({ params }: Params) {
           { href: `/experiences/${g.slug}`, label: plain(tr(g.title, locale)) },
         ]}
       />
-      <section className="container-x grid gap-12 py-16 md:py-24 lg:grid-cols-12">
+      <section className="container-x grid gap-12 py-16 md:py-28 lg:grid-cols-12">
         <p className="font-serif text-2xl leading-snug text-forest md:text-3xl lg:col-span-8">{tr(e.body, locale)}</p>
         <aside className="space-y-6 lg:col-span-4">
           <div>
@@ -89,7 +89,7 @@ export default async function ExperiencePage({ params }: Params) {
           </div>
         </section>
       )}
-      <section className="container-x py-16 md:py-24">
+      <section className="container-x py-16 md:py-28">
         <SectionHeading title={t('inGroup')} />
         <div className="mt-10 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
           {others.slice(0, 3).map((x) => (

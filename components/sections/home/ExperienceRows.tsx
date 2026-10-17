@@ -15,7 +15,7 @@ export async function ExperienceRows({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale, namespace: 'home' });
   const tc = await getTranslations({ locale, namespace: 'common' });
   return (
-    <section className="container-x py-20 md:py-28">
+    <section className="container-x section-y">
       <SectionHeading title={t('experiencesTitle')} intro={t('experiencesIntro')} align="center" />
       <div className="mt-16 space-y-20 md:space-y-28">
         {experienceGroups.map((g, i) => {
@@ -43,7 +43,7 @@ export async function ExperienceRows({ locale }: { locale: Locale }) {
                     </li>
                   ))}
                 </ul>
-                <ButtonLink href={`/experiences/${g.slug}`} variant="outline" className="mt-8">
+                <ButtonLink arrow href={`/experiences/${g.slug}`} variant="outline" className="mt-8">
                   {tc('exploreMore')}
                 </ButtonLink>
               </div>

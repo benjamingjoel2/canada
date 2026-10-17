@@ -17,6 +17,8 @@ import { TeamCarousel } from '@/components/sections/TeamCarousel';
 import { PressStrip } from '@/components/sections/PressStrip';
 import { FaqSection } from '@/components/sections/FaqSection';
 import { DistanceSection } from '@/components/features/distance/DistanceSection';
+import { ScrollStatement } from '@/components/ui/ScrollStatement';
+import { Ticker } from '@/components/ui/Ticker';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -29,10 +31,16 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const { locale: raw } = await params;
   setRequestLocale(raw);
   const locale = asLocale(raw);
+  const t = await getTranslations({ locale, namespace: 'home' });
   return (
     <>
       <Intro locale={locale} />
       <HeroFilm locale={locale} />
+      {/* Ours: credentials ticker and one statement that lights up as it scrolls */}
+      <Ticker items={t.raw('ticker')} label={t('tickerLabel')} className="border-b border-forest/10 bg-birch-50 py-5 text-forest" />
+      <section className="container-x section-y">
+        <ScrollStatement text={t('statement')} className="mx-auto max-w-5xl text-center font-serif text-[clamp(2rem,5vw,4.5rem)] leading-[1.08] tracking-[-0.02em] text-forest" />
+      </section>
       <SpecialistBand locale={locale} />
       <JourneysCarousel locale={locale} />
       <ExperienceRows locale={locale} />

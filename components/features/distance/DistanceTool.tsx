@@ -9,6 +9,7 @@ import type { Locale } from '@/data/types';
 import { compareDistance, formatDuration, travelBetween } from '@/lib/travel';
 import { tr } from '@/lib/l10n';
 import { Italic } from '@/components/ui/Italic';
+import { CountUp } from '@/components/ui/CountUp';
 import { useEnquire } from '@/components/features/enquire/EnquireContext';
 
 /**
@@ -90,7 +91,7 @@ export function DistanceTool({
   );
 
   return (
-    <section id="distance" aria-labelledby={`${uid}-title`} className={clsx('py-20 md:py-28', tone.bg)}>
+    <section id="distance" aria-labelledby={`${uid}-title`} className={clsx('section-y', tone.bg)}>
       <div className="container-x">
         <div className="max-w-3xl">
           <h2 id={`${uid}-title`} className={clsx('text-4xl md:text-6xl', dark ? 'text-birch' : 'text-forest')}>
@@ -134,7 +135,7 @@ export function DistanceTool({
                     <div className={clsx('p-6 md:p-8', dark ? 'bg-forest' : 'bg-birch')}>
                       <dt className={clsx('eyebrow', tone.sub)}>{t('distance')}</dt>
                       <dd className="mt-3">
-                        <span className="font-serif text-5xl md:text-6xl">{nf.format(result.km)}</span>
+                        <CountUp value={result.km} locale={locale} className="font-serif text-6xl tracking-[-0.03em] md:text-7xl" />
                         <span className="ml-2 text-lg">km</span>
                         <span className={clsx('mt-2 block text-sm', tone.sub)}>
                           {t('miles', { value: nf.format(Math.round(result.km * 0.621371)) })} · {t('asTheCrowFlies')}

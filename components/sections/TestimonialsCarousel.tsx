@@ -12,7 +12,7 @@ export async function TestimonialsCarousel({ locale, title }: { locale: Locale; 
   const tc = await getTranslations({ locale, namespace: 'common' });
   const regionNames = new Intl.DisplayNames([locale], { type: 'region' });
   return (
-    <section className="bg-birch py-20 md:py-28">
+    <section className="bg-birch section-y">
       <div className="container-x">
         <SectionHeading title={title ?? t('testimonialsTitle')} />
         <Carousel label={(title ?? t('testimonialsTitle')).replace(/\*/g, '')} className="mt-4" itemClassName="w-[88%] sm:w-[60%] lg:w-[38%]">

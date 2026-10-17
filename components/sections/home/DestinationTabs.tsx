@@ -14,7 +14,7 @@ export async function DestinationTabs({ locale }: { locale: Locale }) {
   const tc = await getTranslations({ locale, namespace: 'common' });
   const tp = await getTranslations({ locale, namespace: 'province' });
   return (
-    <section className="bg-birch py-20 md:py-28">
+    <section className="bg-birch section-y">
       <div className="container-x">
         <SectionHeading title={t('destinationsTitle')} intro={t('destinationsIntro')} />
         <Tabs
@@ -38,7 +38,7 @@ export async function DestinationTabs({ locale }: { locale: Locale }) {
                       <dd className="mt-1 text-ink">{tr(p.pitch.notFor, locale)}</dd>
                     </div>
                   </dl>
-                  <ButtonLink href={`/destinations/${p.slug}`} variant="outline" className="mt-8">
+                  <ButtonLink arrow href={`/destinations/${p.slug}`} variant="outline" className="mt-8">
                     {tc('exploreMore')}
                   </ButtonLink>
                 </div>

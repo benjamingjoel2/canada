@@ -14,7 +14,7 @@ export async function Intro({ locale }: { locale: Locale }) {
       <div className="container-x grid gap-12 pt-14 pb-16 md:pt-20 lg:grid-cols-12 lg:gap-16 lg:pt-24 lg:pb-24">
         <div className="lg:col-span-6">
           <p className="eyebrow text-lake-700">{t('eyebrow')}</p>
-          <h1 className="mt-5 text-5xl text-forest md:text-7xl">
+          <h1 className="mt-6 text-[clamp(3rem,6.2vw,6.75rem)] leading-[0.95] tracking-[-0.025em] text-forest">
             <Italic text={t('title')} />
           </h1>
           <div className="mt-8 max-w-xl space-y-4 text-lg leading-relaxed text-granite">

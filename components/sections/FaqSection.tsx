@@ -9,7 +9,7 @@ export async function FaqSection({ locale, faqs, title, showAllLink = true }: { 
   const t = await getTranslations({ locale, namespace: 'home' });
   const tf = await getTranslations({ locale, namespace: 'faq' });
   return (
-    <section className="container-x grid gap-10 py-20 md:py-28 lg:grid-cols-12">
+    <section className="container-x grid gap-10 section-y lg:grid-cols-12">
       <div className="lg:col-span-4">
         <SectionHeading title={title ?? t('faqTitle')} />
         {showAllLink && (

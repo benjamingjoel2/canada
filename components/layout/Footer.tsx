@@ -108,6 +108,12 @@ export async function Footer({ locale }: { locale: Locale }) {
           </div>
         </div>
       </div>
+      {/* Giant full-width wordmark to close the page (decorative) */}
+      <svg aria-hidden viewBox="0 0 1000 120" className="block h-auto w-full select-none" preserveAspectRatio="xMidYMax meet">
+        <text x="500" y="108" textAnchor="middle" fontSize="128" letterSpacing="-5" fill="#f4efe4" fillOpacity="0.07" style={{ fontFamily: 'var(--font-fraunces), serif' }}>
+          Canada Travel <tspan fontStyle="italic" fontWeight="300">Co.</tspan>
+        </text>
+      </svg>
     </footer>
   );
 }

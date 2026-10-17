@@ -23,7 +23,7 @@ export default async function About({ params }: LocaleParams) {
   return (
     <>
       <PageHero image={page.image} title={tr(page.title, locale)} intro={tr(page.intro, locale)} locale={locale} />
-      <section className="bg-birch py-16 md:py-24">
+      <section className="bg-birch py-16 md:py-28">
         <div className="container-x">
           <SectionHeading title={t('howTitle')} />
           <ol className="mt-12 grid gap-10 md:grid-cols-2 lg:grid-cols-5">

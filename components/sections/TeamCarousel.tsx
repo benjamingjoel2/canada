@@ -11,7 +11,7 @@ export async function TeamCarousel({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale, namespace: 'home' });
   const tc = await getTranslations({ locale, namespace: 'common' });
   return (
-    <section className="container-x py-20 md:py-28">
+    <section className="container-x section-y">
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <SectionHeading title={t('teamTitle')} />
         <Link href="/about/team" className="link-underline shrink-0 self-start text-sm font-medium text-forest md:self-auto">

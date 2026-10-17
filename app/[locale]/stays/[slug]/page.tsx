@@ -53,7 +53,7 @@ export default async function StayPage({ params }: Params) {
       >
         {s.placeholder && <p className="mt-6 text-xs tracking-wider text-birch/70 uppercase">{tc('placeholder')}</p>}
       </PageHero>
-      <section className="container-x grid gap-12 py-16 md:py-24 lg:grid-cols-12">
+      <section className="container-x grid gap-12 py-16 md:py-28 lg:grid-cols-12">
         <p className="font-serif text-2xl leading-snug text-forest lg:col-span-7">{tr(s.body, locale)}</p>
         <dl className="space-y-5 text-sm lg:col-span-5">
           {region && province && (
@@ -92,7 +92,7 @@ export default async function StayPage({ params }: Params) {
         </section>
       )}
       {nearby.length > 0 && (
-        <section className="bg-birch py-16 md:py-24">
+        <section className="bg-birch py-16 md:py-28">
           <div className="container-x">
             <SectionHeading title={tp('stays')} />
             <div className="mt-10 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">

@@ -10,7 +10,7 @@ import { Reveal } from '@/components/ui/Reveal';
 export async function SpecialistBand({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale, namespace: 'home' });
   return (
-    <section className="container-x grid gap-12 py-20 md:py-28 lg:grid-cols-12 lg:items-center lg:gap-20">
+    <section className="container-x grid gap-12 section-y lg:grid-cols-12 lg:items-center lg:gap-20">
       <Reveal className="lg:col-span-5">
         <SeasonalPicture img={homeImages.specialist} locale={locale} className="aspect-[4/5] w-full" sizes="(min-width:1024px) 40vw, 100vw" />
       </Reveal>
@@ -29,7 +29,7 @@ export async function SpecialistBand({ locale }: { locale: Locale }) {
             </div>
           ))}
         </div>
-        <ButtonLink href="/find-your-specialist" className="mt-12">
+        <ButtonLink arrow href="/find-your-specialist" className="mt-12">
           {t('matchCta')}
         </ButtonLink>
       </div>
