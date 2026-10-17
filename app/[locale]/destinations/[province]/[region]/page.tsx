@@ -69,7 +69,7 @@ export default async function RegionPage({ params }: Params) {
           { href: `/destinations/${p.slug}`, label: pName },
         ]}
       />
-      <section className="container-x grid gap-12 py-16 md:py-24 lg:grid-cols-12">
+      <section className="container-x grid gap-12 py-16 md:py-28 lg:grid-cols-12">
         <div className="prose-ctc lg:col-span-7">
           <p className="font-serif text-2xl leading-snug text-forest">{tr(r.body, locale)}</p>
         </div>
@@ -117,7 +117,7 @@ export default async function RegionPage({ params }: Params) {
       )}
 
       {stays.length > 0 && (
-        <section className="container-x py-16 md:py-24">
+        <section className="container-x py-16 md:py-28">
           <SectionHeading title={tp('stays')} />
           <div className="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {stays.map((s) => (
@@ -128,7 +128,7 @@ export default async function RegionPage({ params }: Params) {
       )}
 
       {siblings.length > 0 && (
-        <section className="bg-birch py-16 md:py-24">
+        <section className="bg-birch py-16 md:py-28">
           <div className="container-x">
             <SectionHeading title={t('otherRegions', { name: pName })} />
             <Carousel label={t('otherRegions', { name: pName }).replace(/\*/g, '')} itemClassName="w-[72%] sm:w-[40%] lg:w-[28%]">

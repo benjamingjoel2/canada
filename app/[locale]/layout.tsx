@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Fraunces, Inter } from 'next/font/google';
+import { Fraunces, IBM_Plex_Mono, Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
@@ -21,6 +21,8 @@ const fraunces = Fraunces({
   display: 'swap',
 });
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
+/** The "data voice": days, prices, coordinates, dates. */
+const mono = IBM_Plex_Mono({ subsets: ['latin'], weight: ['400', '500'], variable: '--font-plex-mono', display: 'swap', preload: false });
 
 const clientNamespaces = ['nav', 'prefs', 'common', 'distance', 'calendar', 'match', 'enquire', 'itinerary', 'newsletter', 'journey', 'notFound'];
 
@@ -56,7 +58,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   const clientMessages = Object.fromEntries(clientNamespaces.map((n) => [n, all[n]]));
 
   return (
-    <html lang={locale === 'fr' ? 'fr' : 'en'} className={`${fraunces.variable} ${inter.variable}`} suppressHydrationWarning>
+    <html lang={locale === 'fr' ? 'fr' : 'en'} className={`${fraunces.variable} ${inter.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: bootScript }} />
       </head>

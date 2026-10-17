@@ -63,7 +63,7 @@ export default async function ProvincePage({ params }: Params) {
       />
 
       {/* The honest pitch */}
-      <section className="container-x grid gap-12 py-16 md:py-24 lg:grid-cols-12">
+      <section className="container-x grid gap-12 py-16 md:py-28 lg:grid-cols-12">
         <p className="font-serif text-2xl leading-snug text-forest md:text-3xl lg:col-span-6">{tr(p.intro, locale)}</p>
         <dl className="grid gap-8 sm:grid-cols-2 lg:col-span-6">
           <div className="border-t-2 border-lake pt-5">
@@ -78,7 +78,7 @@ export default async function ProvincePage({ params }: Params) {
       </section>
 
       {/* Summer and winter highlights */}
-      <section className="bg-birch py-16 md:py-24">
+      <section className="bg-birch py-16 md:py-28">
         <div className="container-x">
           <h2 className="text-3xl text-forest md:text-5xl">
             <Italic text={`${t('highlights')}: *${tp('summer').toLowerCase()}* & *${tp('winter').toLowerCase()}*`} />
@@ -105,7 +105,7 @@ export default async function ProvincePage({ params }: Params) {
       </section>
 
       {/* Regions carousel */}
-      <section className="container-x py-16 md:py-24">
+      <section className="container-x py-16 md:py-28">
         <SectionHeading title={t('regions', { name })} />
         <Carousel label={t('regions', { name }).replace(/\*/g, '')} itemClassName="w-[72%] sm:w-[40%] lg:w-[28%]">
           {regions.map((r) => (
@@ -119,7 +119,7 @@ export default async function ProvincePage({ params }: Params) {
 
       {/* Wild Calendar slice */}
       {events.length > 0 && (
-        <section className="container-x py-16 md:py-24">
+        <section className="container-x py-16 md:py-28">
           <SectionHeading title={tcal('sliceTitle', { name })} intro={tcal('verifyNote')} />
           <div className="mt-8">
             <WildCalendar events={events} showFilters={false} />
@@ -141,7 +141,7 @@ export default async function ProvincePage({ params }: Params) {
       )}
 
       {stays.length > 0 && (
-        <section className="container-x py-16 md:py-24">
+        <section className="container-x py-16 md:py-28">
           <SectionHeading title={t('stays')} />
           <div className="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {stays.map((s) => (

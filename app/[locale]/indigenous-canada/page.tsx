@@ -23,7 +23,7 @@ export default async function IndigenousCanada({ params }: LocaleParams) {
       <div className="container-x py-8 md:py-12">
         <PageSections sections={page.sections} locale={locale} />
       </div>
-      <section className="bg-birch py-16 md:py-24">
+      <section className="bg-birch py-16 md:py-28">
         <div className="container-x">
           <ol className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
             {page.principles.map((p, i) => (
@@ -38,7 +38,7 @@ export default async function IndigenousCanada({ params }: LocaleParams) {
           </ol>
         </div>
       </section>
-      <section className="container-x grid gap-12 py-16 md:py-24 lg:grid-cols-2">
+      <section className="container-x grid gap-12 py-16 md:py-28 lg:grid-cols-2">
         <div>
           <ul className="space-y-6">
             {page.partners.map((p) => (

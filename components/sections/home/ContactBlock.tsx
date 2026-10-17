@@ -9,7 +9,7 @@ export async function ContactBlock({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale, namespace: 'home' });
   const tc = await getTranslations({ locale, namespace: 'contact' });
   return (
-    <section id="contact" className="bg-birch py-20 md:py-28">
+    <section id="contact" className="bg-birch section-y">
       <div className="container-x grid gap-12 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <SectionHeading title={t('contactTitle')} intro={t('contactIntro')} />

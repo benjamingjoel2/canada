@@ -53,7 +53,7 @@ export function PageHero({
           </nav>
         )}
         {eyebrow && <p className={clsx('eyebrow mb-4', hasImage ? 'text-lake-200' : 'text-lake-700')}>{eyebrow}</p>}
-        <h1 className={clsx('max-w-4xl text-5xl md:text-7xl', hasImage ? 'text-birch' : 'text-forest')}>
+        <h1 className={clsx('display-1 max-w-5xl', hasImage ? 'text-birch' : 'text-forest')}>
           <Italic text={title} />
         </h1>
         {intro && <p className={clsx('mt-6 max-w-2xl text-lg leading-relaxed', hasImage ? 'text-birch/85' : 'text-granite')}>{intro}</p>}

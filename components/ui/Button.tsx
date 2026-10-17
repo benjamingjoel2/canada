@@ -23,12 +23,34 @@ export function Button({ variant = 'solid', className, ...props }: ComponentProp
   return <button {...props} className={buttonClass(variant, className)} />;
 }
 
+const circle: Record<Variant, string> = {
+  solid: 'bg-forest text-birch group-hover:bg-forest-700',
+  outline: 'border border-forest/40 text-forest group-hover:border-forest group-hover:bg-forest group-hover:text-birch',
+  outlineLight: 'border border-birch/60 text-birch group-hover:bg-birch group-hover:text-forest',
+  light: 'bg-birch text-forest group-hover:bg-white',
+  ghost: 'text-current',
+};
+
+/**
+ * Link button. With `arrow`, renders the two-part CTA: a label next to a separate
+ * circle holding an arrow that nudges on hover (min. 44px target).
+ */
 export function ButtonLink({
   variant = 'solid',
   className,
+  arrow = false,
+  children,
   ...props
-}: ComponentProps<typeof Link> & { variant?: Variant }) {
-  return <Link {...props} className={buttonClass(variant, className)} />;
+}: ComponentProps<typeof Link> & { variant?: Variant; arrow?: boolean }) {
+  if (!arrow) return <Link {...props} className={buttonClass(variant, className)}>{children}</Link>;
+  return (
+    <Link {...props} className={clsx('group inline-flex items-center gap-1.5', className)}>
+      <span className={buttonClass(variant)}>{children}</span>
+      <span aria-hidden className={clsx('grid h-11 w-11 shrink-0 place-items-center rounded-full transition-colors duration-300', circle[variant])}>
+        <Arrow className="transition-transform duration-300 group-hover:translate-x-0.5" />
+      </span>
+    </Link>
+  );
 }
 
 export function Arrow({ className }: { className?: string }) {

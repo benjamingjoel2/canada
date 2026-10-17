@@ -22,7 +22,7 @@ export async function CalendarTeaser({ locale }: { locale: Locale }) {
       <div className="container-x">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <SectionHeading title={t('calendarTitle')} intro={t('calendarIntro')} light />
-          <ButtonLink href="/wild-calendar" variant="light" className="shrink-0 self-start md:self-auto">
+          <ButtonLink arrow href="/wild-calendar" variant="light" className="shrink-0 self-start md:self-auto">
             {t('calendarCta')}
           </ButtonLink>
         </div>

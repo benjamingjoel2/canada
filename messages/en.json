@@ -133,7 +133,20 @@
     "pressTitle": "Don't take *our* word for it",
     "pressIntro": "A few kind words from the press. Placeholders for now, while we earn the real ones.",
     "faqTitle": "Questions *travellers* ask",
-    "faqCta": "All questions"
+    "faqCta": "All questions",
+    "statement": "Vancouver to Halifax is further than London to *Cairo*. Plan accordingly.",
+    "ticker": [
+      "Private journeys only",
+      "Nine provinces and territories",
+      "Specialists who've actually been",
+      "English and français",
+      "Honest about distances",
+      "Someone on the ground in Canada"
+    ],
+    "featured": "Featured journeys",
+    "pause": "Pause film",
+    "play": "Play film",
+    "tickerLabel": "Why travel with us"
   },
   "distance": {
     "title": "*Bigger* than you think",
@@ -302,7 +315,20 @@
     "filterAll": "All",
     "filterSummer": "Summer",
     "filterWinter": "Winter",
-    "seasons": "Seasons"
+    "seasons": "Seasons",
+    "specDuration": "Duration",
+    "specSeasons": "Seasons",
+    "specProvinces": "Provinces",
+    "specStops": "Stops",
+    "specFrom": "From, per person",
+    "routeTotal": "Route, point to point",
+    "routeStops": "{count} stops",
+    "onThisPage": "On this page",
+    "navOverview": "Overview",
+    "navRoute": "Route",
+    "navDays": "Days",
+    "navStays": "Stays",
+    "navSpecialist": "Specialist"
   },
   "province": {
     "bestAt": "What it's best at",

@@ -133,7 +133,20 @@
     "pressTitle": "Ne nous croyez pas *sur parole*",
     "pressIntro": "Quelques mots aimables de la presse. Provisoires pour l’instant, le temps de mériter les vrais.",
     "faqTitle": "Les questions des *voyageurs*",
-    "faqCta": "Toutes les questions"
+    "faqCta": "Toutes les questions",
+    "statement": "De Vancouver à Halifax, c’est plus loin que de Londres au *Caire*. Prévoyez en conséquence.",
+    "ticker": [
+      "Uniquement des voyages privés",
+      "Neuf provinces et territoires",
+      "Des spécialistes qui y sont vraiment allés",
+      "English et français",
+      "Honnêtes sur les distances",
+      "Quelqu’un sur place, au Canada"
+    ],
+    "featured": "Voyages à la une",
+    "pause": "Mettre le film en pause",
+    "play": "Lire le film",
+    "tickerLabel": "Pourquoi voyager avec nous"
   },
   "distance": {
     "title": "*Plus grand* que vous ne le pensez",
@@ -302,7 +315,20 @@
     "filterAll": "Tous",
     "filterSummer": "Été",
     "filterWinter": "Hiver",
-    "seasons": "Saisons"
+    "seasons": "Saisons",
+    "specDuration": "Durée",
+    "specSeasons": "Saisons",
+    "specProvinces": "Provinces",
+    "specStops": "Étapes",
+    "specFrom": "À partir de, par personne",
+    "routeTotal": "Parcours, d’étape en étape",
+    "routeStops": "{count} étapes",
+    "onThisPage": "Sur cette page",
+    "navOverview": "Aperçu",
+    "navRoute": "Itinéraire",
+    "navDays": "Jours",
+    "navStays": "Hébergements",
+    "navSpecialist": "Spécialiste"
   },
   "province": {
     "bestAt": "Ce qu’elle fait le mieux",

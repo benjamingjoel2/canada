@@ -25,7 +25,7 @@ export default async function Contact({ params }: LocaleParams) {
   return (
     <>
       <PageHero title={t('title')} intro={t('intro')} locale={locale} />
-      <section className="container-x grid gap-12 py-16 md:py-24 lg:grid-cols-12">
+      <section className="container-x grid gap-12 py-16 md:py-28 lg:grid-cols-12">
         <dl className="space-y-6 lg:col-span-4">
           {rows.map(([k, v]) => (
             <div key={k}>

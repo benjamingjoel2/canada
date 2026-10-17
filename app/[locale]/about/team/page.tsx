@@ -23,7 +23,7 @@ export default async function Team({ params }: LocaleParams) {
   return (
     <>
       <PageHero title={t('teamTitle')} intro={t('teamIntro')} locale={locale} />
-      <section className="container-x space-y-20 py-16 md:py-24">
+      <section className="container-x space-y-20 py-16 md:py-28">
         {specialists.map((s, i) => (
           <article key={s.id} id={s.id} className="grid scroll-mt-32 gap-10 md:grid-cols-12 md:items-center">
             <Picture img={s.photo} locale={locale} className={`aspect-[4/5] w-full md:col-span-4 ${i % 2 ? 'md:order-2 md:col-start-9' : ''}`} sizes="(min-width:768px) 33vw, 100vw" />

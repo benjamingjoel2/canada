@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
-import { getEvent, getExperience, getSpecialist, getStay, journeys, getJourney } from '@/lib/content';
+import { getEvent, getExperience, getProvince, getSpecialist, getStay, journeys, getJourney } from '@/lib/content';
 import { getPlace } from '@/lib/travel';
 import { asLocale, dayLabel, plain, tr } from '@/lib/l10n';
 import { pageMetadata } from '@/lib/seo';
@@ -20,6 +20,7 @@ import { SpecialistCard } from '@/components/sections/SpecialistCard';
 import { EnquireBand } from '@/components/sections/EnquireBand';
 import { EnquireButton, ItineraryButton } from '@/components/features/enquire/EnquireButton';
 import { Link } from '@/i18n/navigation';
+import { JourneyBar } from '@/components/sections/JourneyBar';
 
 type Params = { params: Promise<{ locale: string; slug: string }> };
 
@@ -44,6 +45,7 @@ export default async function JourneyPage({ params }: Params) {
   const t = await getTranslations({ locale, namespace: 'journey' });
   const tc = await getTranslations({ locale, namespace: 'common' });
   const tn = await getTranslations({ locale, namespace: 'nav' });
+  const tp = await getTranslations({ locale, namespace: 'prefs' });
   const title = tr(j.title, locale);
   const places = j.route.map(getPlace).filter((p) => p !== undefined);
   const stays = j.stayIds.map(getStay).filter((s) => s !== undefined);
@@ -90,7 +92,30 @@ export default async function JourneyPage({ params }: Params) {
         </div>
       </PageHero>
 
-      <section className="container-x grid gap-12 py-16 md:py-24 lg:grid-cols-12">
+      {/* Spec strip: the facts in the mono data voice */}
+      <div className="border-b border-forest/10 bg-birch">
+        <dl className="container-x grid grid-cols-2 gap-x-6 gap-y-5 py-7 md:grid-cols-5">
+          {[
+            [t('specDuration'), tc('days', { count: j.days })],
+            [t('specSeasons'), j.seasons.map((x) => tp(x)).join(' · ')],
+            [t('specProvinces'), j.provinceIds.map((id) => (getProvince(id) ? tr(getProvince(id)!.name, locale) : id)).join(' · ')],
+            [t('specStops'), String(places.length)],
+          ].map(([k, v]) => (
+            <div key={k}>
+              <dt className="eyebrow text-granite">{k}</dt>
+              <dd className="mt-1.5 text-forest">{v}</dd>
+            </div>
+          ))}
+          <div>
+            <dt className="eyebrow text-granite">{t('specFrom')}</dt>
+            <dd className="mt-1.5 text-forest">
+              <Price cad={j.fromPerPersonCAD} />
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <section id="overview" className="container-x grid scroll-mt-28 gap-12 py-16 md:py-28 lg:grid-cols-12">
         <div className="lg:col-span-7">
           <p className="eyebrow text-lake-700">{t('overview')}</p>
           <p className="mt-4 font-serif text-2xl leading-snug text-forest md:text-3xl">{tr(j.intro, locale)}</p>
@@ -116,14 +141,14 @@ export default async function JourneyPage({ params }: Params) {
         )}
       </section>
 
-      <section className="container-x pb-16 md:pb-24">
+      <section id="route" className="container-x scroll-mt-28 pb-16 md:pb-24">
         <SectionHeading title={t('route')} />
         <div className="mt-8">
           <RouteMap places={places} locale={locale} label={places.map((p) => tr(p.name, locale)).join(' → ')} />
         </div>
       </section>
 
-      <section className="container-x grid gap-12 pb-16 md:pb-24 lg:grid-cols-12">
+      <section id="days" className="container-x grid scroll-mt-28 gap-12 pb-16 md:pb-24 lg:grid-cols-12">
         <div className="lg:col-span-8">
           <SectionHeading title={t('itinerary')} />
           <Accordion
@@ -174,7 +199,7 @@ export default async function JourneyPage({ params }: Params) {
       )}
 
       {stays.length > 0 && (
-        <section className="container-x py-16 md:py-24">
+        <section id="stays" className="container-x scroll-mt-28 py-16 md:py-28">
           <SectionHeading title={t('stays')} />
           <div className="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
             {stays.map((s) => (
@@ -185,7 +210,7 @@ export default async function JourneyPage({ params }: Params) {
       )}
 
       {specialist && (
-        <section className="container-x pb-16 md:pb-24">
+        <section id="specialist" className="container-x scroll-mt-28 pb-16 md:pb-24">
           <SectionHeading title={t('specialist')} />
           <div className="mt-8">
             <SpecialistCard specialist={specialist} locale={locale} topic={plain(title)} />
@@ -206,6 +231,17 @@ export default async function JourneyPage({ params }: Params) {
         </section>
       )}
       <EnquireBand locale={locale} prefill={{ journeyId: j.id, topic: plain(title) }} />
+      <JourneyBar
+        journeyId={j.id}
+        title={plain(title)}
+        sections={[
+          { id: 'overview', label: t('navOverview') },
+          { id: 'route', label: t('navRoute') },
+          { id: 'days', label: t('navDays') },
+          ...(stays.length ? [{ id: 'stays', label: t('navStays') }] : []),
+          ...(specialist ? [{ id: 'specialist', label: t('navSpecialist') }] : []),
+        ]}
+      />
     </>
   );
 }

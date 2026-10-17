@@ -19,12 +19,12 @@ export function SectionHeading({
   className?: string;
 }) {
   return (
-    <div className={clsx(align === 'center' && 'mx-auto text-center', 'max-w-3xl', className)}>
+    <div className={clsx(align === 'center' && 'mx-auto text-center', 'max-w-4xl', className)}>
       {eyebrow && <p className={clsx('eyebrow mb-4', light ? 'text-lake-200' : 'text-lake-700')}>{eyebrow}</p>}
-      <Tag className={clsx(Tag === 'h1' ? 'text-4xl md:text-6xl' : 'text-3xl md:text-5xl', light ? 'text-birch' : 'text-forest')}>
+      <Tag className={clsx(Tag === 'h1' ? 'display-1' : 'display-2', light ? 'text-birch' : 'text-forest')}>
         <Italic text={title} />
       </Tag>
-      {intro && <p className={clsx('mt-5 text-base leading-relaxed md:text-lg', light ? 'text-birch/80' : 'text-granite')}>{intro}</p>}
+      {intro && <p className={clsx('mt-6 max-w-2xl text-base leading-relaxed md:text-lg', light ? 'text-birch/80' : 'text-granite')}>{intro}</p>}
     </div>
   );
 }

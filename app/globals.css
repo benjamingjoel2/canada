@@ -19,6 +19,7 @@
 
   --font-serif: var(--font-fraunces), Georgia, 'Times New Roman', serif;
   --font-sans: var(--font-inter), system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, 'SFMono-Regular', Menlo, monospace;
 
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -72,12 +73,25 @@ html[data-season='winter'] .summer-only { display: none !important; }
   @media (min-width: 768px) { .container-x { padding-inline: 2rem; } }
   @media (min-width: 1280px) { .container-x { padding-inline: 3rem; } }
 
+  /* Eyebrows and metadata use the mono "data voice", small and widely tracked. */
   .eyebrow {
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     font-weight: 500;
   }
+  .meta {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  /* Display type: large, tight, one dominant gesture per viewport. */
+  .display-1 { font-size: clamp(3rem, 8.4vw, 9rem); line-height: 0.94; letter-spacing: -0.025em; }
+  .display-2 { font-size: clamp(2.4rem, 5.2vw, 5.5rem); line-height: 1; letter-spacing: -0.02em; }
+  .statement { font-size: clamp(1.6rem, 3.2vw, 3rem); line-height: 1.18; letter-spacing: -0.01em; }
+  .section-y { padding-block: clamp(5rem, 10vw, 10rem); }
   .link-underline {
     background-image: linear-gradient(currentColor, currentColor);
     background-size: 100% 1px;
@@ -112,3 +126,13 @@ html[data-season='winter'] .season-pill-winter {
 /* Season-dependent ordering (e.g. journeys carousel): one render, reordered by CSS */
 .season-order { order: var(--o-summer); }
 html[data-season='winter'] .season-order { order: var(--o-winter); }
+
+/* Credentials ticker */
+@keyframes ticker { to { transform: translateX(-50%); } }
+.ticker-track { animation: ticker 45s linear infinite; }
+.ticker:hover .ticker-track, .ticker:focus-within .ticker-track, .ticker:focus .ticker-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; width: auto; flex-wrap: wrap; }
+  .ticker-track > ul[aria-hidden] { display: none; }
+  .ticker-row { flex-wrap: wrap; row-gap: 0.75rem; }
+}
