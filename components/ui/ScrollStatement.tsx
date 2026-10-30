@@ -1,7 +1,8 @@
 'use client';
 
-import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from 'framer-motion';
+import { motion, useScroll, useTransform, type MotionValue } from 'framer-motion';
 import { useRef } from 'react';
+import { useReducedMotionSafe } from '@/lib/useReducedMotionSafe';
 
 function Word({ word, italic, space, progress, range }: { word: string; italic: boolean; space: boolean; progress: MotionValue<number>; range: [number, number] }) {
   const opacity = useTransform(progress, range, [0.55, 1]);
@@ -23,7 +24,7 @@ const spaceAfter = (words: { w: string }[], i: number) => i < words.length - 1 &
  */
 export function ScrollStatement({ text, className }: { text: string; className?: string }) {
   const ref = useRef<HTMLParagraphElement>(null);
-  const reduce = useReducedMotion();
+  const reduce = useReducedMotionSafe();
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start 0.85', 'end 0.45'] });
   const words: { w: string; italic: boolean }[] = [];
   text.split(/(\*[^*]+\*)/g).filter(Boolean).forEach((part) => {

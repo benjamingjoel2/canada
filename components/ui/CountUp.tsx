@@ -1,7 +1,8 @@
 'use client';
 
-import { animate, useInView, useReducedMotion } from 'framer-motion';
+import { animate, useInView } from 'framer-motion';
 import { useEffect, useRef } from 'react';
+import { useReducedMotionSafe } from '@/lib/useReducedMotionSafe';
 
 /**
  * Counts up to `value` when it comes into view (and again when the value changes).
@@ -11,7 +12,7 @@ import { useEffect, useRef } from 'react';
 export function CountUp({ value, locale, className }: { value: number; locale: string; className?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { margin: '-10% 0px' });
-  const reduce = useReducedMotion();
+  const reduce = useReducedMotionSafe();
   const fmt = (n: number) => new Intl.NumberFormat(locale === 'fr' ? 'fr-CA' : 'en-CA').format(n);
 
   useEffect(() => {

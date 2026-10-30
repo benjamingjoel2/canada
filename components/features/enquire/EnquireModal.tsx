@@ -1,18 +1,25 @@
 'use client';
 
+import dynamic from 'next/dynamic';
+import { useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import type { Locale } from '@/data/types';
 import { heroFilms } from '@/data/media';
 import { Modal } from '@/components/ui/Modal';
 import { Picture } from '@/components/ui/Picture';
-import { EnquireForm } from './EnquireForm';
 import { useEnquire } from './EnquireContext';
-import { ItineraryModal } from '@/components/features/itinerary/ItineraryModal';
+
+// The forms (and zod) load the first time a modal opens, not on every page.
+const EnquireForm = dynamic(() => import('./EnquireForm').then((m) => m.EnquireForm), { ssr: false });
+const ItineraryModal = dynamic(() => import('@/components/features/itinerary/ItineraryModal').then((m) => m.ItineraryModal), { ssr: false });
 
 export function EnquireModal() {
   const t = useTranslations('enquire');
   const locale = useLocale() as Locale;
-  const { open, session, prefill, closeEnquire } = useEnquire();
+  const { open, session, prefill, closeEnquire, itineraryJourneyId } = useEnquire();
+  // Load the itinerary modal the first time it is asked for, then keep it mounted.
+  const [itineraryUsed, setItineraryUsed] = useState(false);
+  if (itineraryJourneyId && !itineraryUsed) setItineraryUsed(true);
 
   return (
     <>
@@ -29,7 +36,7 @@ export function EnquireModal() {
           </div>
         </div>
       </Modal>
-      <ItineraryModal />
+      {itineraryUsed && <ItineraryModal />}
     </>
   );
 }

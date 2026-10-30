@@ -1,11 +1,12 @@
 'use client';
 
-import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { useRef } from 'react';
 import type { Locale, Place } from '@/data/types';
 import { tr } from '@/lib/l10n';
 import { haversineKm } from '@/lib/geo';
+import { useReducedMotionSafe } from '@/lib/useReducedMotionSafe';
 
 /**
  * A schematic of the route: places plotted by longitude/latitude and joined in order.
@@ -15,7 +16,7 @@ import { haversineKm } from '@/lib/geo';
 export function RouteMap({ places, locale, label }: { places: Place[]; locale: Locale; label: string }) {
   const t = useTranslations('journey');
   const ref = useRef<HTMLDivElement>(null);
-  const reduce = useReducedMotion();
+  const reduce = useReducedMotionSafe();
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start 0.9', 'center 0.45'] });
   const pathLength = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
