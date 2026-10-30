@@ -1,7 +1,6 @@
 /**
  * FAQ.
  * Anything with `verify` must be checked against the named source before launch.
- * Deposit and cancellation terms are PLACEHOLDER until the real booking terms exist.
  */
 import type { Faq } from './types';
 
@@ -44,8 +43,8 @@ export const faqs: Faq[] = [
       fr: 'Pourquoi limitez-vous le nombre de voyages ?',
     },
     a: {
-      en: "Because the good lodges, guides and boats in Canada are small, and the best weeks are short. We'd rather plan fewer journeys properly than more of them badly. It also means the person who plans your trip is the one who answers the phone.",
-      fr: "Parce qu'au Canada, les bons lodges, guides et bateaux sont petits, et les meilleures semaines sont courtes. Nous préférons organiser moins de voyages, mais bien. Et cela veut dire que la personne qui prépare votre voyage est aussi celle qui répond au téléphone.",
+      en: "Because the good lodges, guides and boats in Canada are small, and the best weeks are short. We'd rather plan fewer journeys properly than more of them badly. It also means the person who plans your trip is the one who answers your emails.",
+      fr: "Parce qu'au Canada, les bons lodges, guides et bateaux sont petits, et les meilleures semaines sont courtes. Nous préférons organiser moins de voyages, mais bien. Et cela veut dire que la personne qui prépare votre voyage est aussi celle qui répond à vos e-mails.",
     },
     onHome: true,
     frReview: 'needs-human-review',
@@ -58,10 +57,9 @@ export const faqs: Faq[] = [
       fr: 'Comment fonctionnent les acomptes et les annulations ?',
     },
     a: {
-      en: "PLACEHOLDER — our booking terms are not final yet. In short: a deposit secures the journey, the balance is due before you travel, and some lodges and polar bear trips have stricter rules because they sell out a year ahead. You'll see the exact terms in writing before you pay anything.",
-      fr: "PROVISOIRE — nos conditions de réservation ne sont pas encore définitives. En bref : un acompte confirme le voyage, le solde est dû avant le départ, et certains lodges et séjours ours polaires ont des règles plus strictes car ils sont complets un an à l'avance. Vous recevrez les conditions exactes par écrit avant de payer quoi que ce soit.",
+      en: "In short: a deposit secures the journey, the balance is due before you travel, and some lodges and polar bear trips have stricter rules because they sell out a year ahead. You'll see the exact terms in writing before you pay anything, and our booking terms are on the Booking terms page.",
+      fr: "En bref : un acompte confirme le voyage, le solde est dû avant le départ, et certains lodges et séjours ours polaires ont des règles plus strictes car ils sont complets un an à l'avance. Vous recevrez les conditions exactes par écrit avant de payer quoi que ce soit ; nos conditions générales figurent sur la page Conditions de réservation.",
     },
-    verify: 'PLACEHOLDER — replace with real booking terms before launch',
     frReview: 'needs-human-review',
   },
   {

@@ -8,8 +8,6 @@ import { PageHero } from '@/components/sections/PageHero';
 import { PageSections } from '@/components/sections/PageSections';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Italic } from '@/components/ui/Italic';
-import { TeamCarousel } from '@/components/sections/TeamCarousel';
-import { TestimonialsCarousel } from '@/components/sections/TestimonialsCarousel';
 import { EnquireBand } from '@/components/sections/EnquireBand';
 
 export async function generateMetadata({ params }: LocaleParams): Promise<Metadata> {
@@ -54,8 +52,6 @@ export default async function About({ params }: LocaleParams) {
           </ul>
         </div>
       </section>
-      <TeamCarousel locale={locale} />
-      <TestimonialsCarousel locale={locale} />
       <EnquireBand locale={locale} />
     </>
   );

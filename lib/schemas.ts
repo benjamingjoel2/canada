@@ -11,7 +11,7 @@ export const enquirySchema = z.object({
   dates: z.string().trim().max(200).optional().default(''),
   travellers: z.string().trim().max(10).optional().default(''),
   interests: z.array(z.enum(interests)).optional().default([]),
-  contactPref: z.enum(['email', 'whatsapp', 'phone']),
+  contactPref: z.enum(['email', 'phone']),
   notes: z.string().trim().max(4000).optional().default(''),
   topic: z.string().max(200).optional(),
   journeyId: z.string().max(80).optional(),

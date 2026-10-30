@@ -118,7 +118,6 @@ export const journeys: Journey[] = [
       'tofino-vancouver-island',
     ],
     provinceIds: ['alberta', 'british-columbia'],
-    specialistId: 'spec-west',
     images: {
       summer: {
         subject: 'Turquoise glacier lake below a ring of peaks, July morning',
@@ -226,7 +225,6 @@ export const journeys: Journey[] = [
     eventIds: ['grizzlies-salmon', 'orcas-vancouver-island'],
     regionIds: ['vancouver', 'tofino-vancouver-island', 'great-bear-rainforest'],
     provinceIds: ['british-columbia'],
-    specialistId: 'spec-west',
     images: {
       summer: {
         subject: 'Grizzly on a salmon river, late September',
@@ -335,7 +333,6 @@ export const journeys: Journey[] = [
     eventIds: ['polar-bears-churchill'],
     regionIds: ['winnipeg', 'churchill'],
     provinceIds: ['manitoba'],
-    specialistId: 'spec-north',
     images: {
       summer: {
         subject: 'Polar bear resting on rocks by Hudson Bay, July',
@@ -437,7 +434,6 @@ export const journeys: Journey[] = [
     eventIds: ['aurora-yukon'],
     regionIds: ['whitehorse', 'kluane'],
     provinceIds: ['yukon'],
-    specialistId: 'spec-north',
     images: {
       summer: {
         subject: 'Kluane peaks above a green valley, late August evening',
@@ -540,7 +536,6 @@ export const journeys: Journey[] = [
     eventIds: ['whales-tadoussac', 'fall-colours'],
     regionIds: ['montreal', 'quebec-city', 'charlevoix', 'tadoussac'],
     provinceIds: ['quebec'],
-    specialistId: 'spec-east',
     images: {
       summer: {
         subject: 'Charlevoix hills dropping into the St. Lawrence, July',
@@ -651,7 +646,6 @@ export const journeys: Journey[] = [
     eventIds: ['icebergs-newfoundland', 'humpbacks-newfoundland', 'puffins-newfoundland', 'fall-colours'],
     regionIds: ['cabot-trail', 'prince-edward-island', 'newfoundland'],
     provinceIds: ['atlantic-canada'],
-    specialistId: 'spec-east',
     images: {
       summer: {
         subject: 'Iceberg off a Newfoundland headland, June',
@@ -807,7 +801,6 @@ export const journeys: Journey[] = [
       'quebec-city',
     ],
     provinceIds: ['british-columbia', 'alberta', 'ontario', 'quebec', 'atlantic-canada'],
-    specialistId: 'spec-rail-luxury',
     images: {
       summer: {
         subject: 'Train curving along a river below the Rockies, summer',
@@ -920,7 +913,6 @@ export const journeys: Journey[] = [
     eventIds: ['wildflowers-rockies', 'orcas-vancouver-island'],
     regionIds: ['vancouver', 'whistler', 'okanagan', 'banff-lake-louise', 'calgary'],
     provinceIds: ['british-columbia', 'alberta'],
-    specialistId: 'spec-west',
     images: {
       summer: {
         subject: 'Family in a red canoe on a mountain lake, July',

@@ -104,9 +104,6 @@ export function Header({ nav }: { nav: NavModel }) {
       <div className="hidden bg-forest text-birch/85 lg:block">
         <div className="container-x flex h-9 items-center justify-between text-xs">
           <div className="flex items-center gap-6">
-            <a href={site.contact.phoneHref} className="hover:text-birch">
-              <span className="text-lake-200">{t('freeCall')}</span> · {site.contact.phone}
-            </a>
             <a href={`mailto:${site.contact.email}`} className="hover:text-birch">
               {site.contact.email}
             </a>
@@ -291,10 +288,6 @@ function JourneysPanel({ nav, locale }: { nav: NavModel; locale: Locale }) {
         <PanelLink href="/journeys?season=summer" className="font-serif text-xl">☀ {t('summerJourneys')}</PanelLink>
         <PanelLink href="/journeys?season=winter" className="font-serif text-xl">❄ {t('winterJourneys')}</PanelLink>
         <div className="mt-6 border-t border-forest/10 pt-6">
-          <PanelLink href="/find-your-specialist" className="font-serif text-xl">{t('findSpecialist')}</PanelLink>
-          <p className="text-sm text-granite">{t('findSpecialistBlurb')}</p>
-        </div>
-        <div className="pt-4">
           <PanelLink href="/wild-calendar" className="font-serif text-xl">{t('wildCalendar')}</PanelLink>
           <p className="text-sm text-granite">{t('wildCalendarBlurb')}</p>
         </div>
@@ -338,8 +331,6 @@ function AboutPanel() {
     ['/stays', t('stays')],
     ['/stories', t('stories')],
     ['/about', t('howWeWork')],
-    ['/about/team', t('team')],
-    ['/about/testimonials', t('testimonials')],
     ['/indigenous-canada', t('indigenousCanada')],
     ['/faq', t('faq')],
     ['/contact', t('contact')],
@@ -357,8 +348,8 @@ function AboutPanel() {
         <p className="max-w-xl font-serif text-3xl leading-snug text-forest">
           <Italic text={t('aboutQuote')} />
         </p>
-        <Link href="/find-your-specialist" className="link-underline mt-6 self-start text-sm font-medium text-lake-700">
-          {t('findSpecialist')}
+        <Link href="/contact" className="link-underline mt-6 self-start text-sm font-medium text-lake-700">
+          {t('contact')}
         </Link>
       </div>
     </div>

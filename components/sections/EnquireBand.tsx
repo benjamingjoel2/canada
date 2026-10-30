@@ -21,8 +21,8 @@ export async function EnquireBand({ locale, prefill }: { locale: Locale; prefill
           <EnquireButton variant="light" prefill={prefill}>
             {n('enquire')}
           </EnquireButton>
-          <a href={site.contact.phoneHref} className="inline-block py-1 text-sm text-birch/70 hover:text-birch">
-            {site.contact.phone}
+          <a href={`mailto:${site.contact.email}`} className="inline-block py-1 text-sm text-birch/70 hover:text-birch">
+            {site.contact.email}
           </a>
         </div>
       </div>

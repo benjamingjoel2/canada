@@ -19,8 +19,6 @@
     "browseAllJourneys": "Voir tous les voyages",
     "summerJourneys": "Voyages d’été",
     "winterJourneys": "Voyages d’hiver",
-    "findSpecialist": "Trouver votre spécialiste",
-    "findSpecialistBlurb": "Trois questions. Une personne qui connaît la réponse.",
     "allDestinations": "Toutes les destinations",
     "wildCalendar": "Le Calendrier sauvage",
     "wildCalendarBlurb": "Ce qui se passe dans la nature, mois par mois.",
@@ -28,11 +26,8 @@
     "explore": "Découvrir {name}",
     "allExperiences": "Toutes les expériences",
     "howWeWork": "Notre façon de travailler",
-    "team": "Notre équipe",
-    "testimonials": "Témoignages",
     "faq": "Les questions des voyageurs",
     "contact": "Contact",
-    "freeCall": "Appel de préparation gratuit",
     "regionsIn": "Régions : {name}",
     "featured": "À la une",
     "mainNav": "Navigation principale",
@@ -112,7 +107,7 @@
     "value1Body": "Si un lodge est surfait, ou si un trajet est plus long qu’il n’y paraît sur la carte, nous le disons. La plupart de nos meilleurs conseils portent sur ce qu’il vaut mieux laisser de côté.",
     "value2Title": "Une connaissance *du terrain*",
     "value2Body": "Nous savons quelle semaine les mélèzes jaunissent, quel pilote d’hydravion demander et quelle route ferme en octobre. Et nous organisons tout en conséquence.",
-    "matchCta": "Trouver votre spécialiste",
+    "matchCta": "Parler à un spécialiste",
     "journeysTitle": "Nos *voyages*",
     "journeysIntro": "Des points de départ, pas des forfaits. Chacun est privé et repensé autour de vous.",
     "journeysSeasonNote": "Voyages d’{season} en premier.",
@@ -123,15 +118,10 @@
     "calendarTitle": "Ce qui se passe *en ce moment*",
     "calendarIntro": "Le Canada suit le calendrier de la nature. Voici ce mois-ci et le suivant.",
     "calendarCta": "Voir tout le Calendrier sauvage",
-    "testimonialsTitle": "Ce qu’en disent nos *voyageurs*",
-    "teamTitle": "*Rencontrez* l’équipe",
-    "teamCta": "En savoir plus sur notre équipe",
     "contactTitle": "Parlez à *un spécialiste*",
     "contactIntro": "Dites-nous à peu près ce que vous avez en tête. Nous répondons sous un jour ouvré, avec des conseils honnêtes et sans engagement.",
     "storiesTitle": "Derniers *récits*",
     "storiesCta": "Tous les récits",
-    "pressTitle": "Ne nous croyez pas *sur parole*",
-    "pressIntro": "Quelques mots aimables de la presse. Provisoires pour l’instant, le temps de mériter les vrais.",
     "faqTitle": "Les questions des *voyageurs*",
     "faqCta": "Toutes les questions",
     "statement": "De Vancouver à Halifax, c’est plus loin que de Londres au *Caire*. Prévoyez en conséquence.",
@@ -196,45 +186,10 @@
     "legend": "Légende",
     "eventCount": "{count, plural, one {# événement} other {# événements}}"
   },
-  "match": {
-    "eyebrow": "Votre spécialiste",
-    "title": "Trouver votre *spécialiste*",
-    "intro": "Trois questions rapides plutôt qu’un long formulaire. Nous vous mettons en relation avec la personne qui connaît le mieux votre Canada.",
-    "step": "Question {current} sur {total}",
-    "q1": "Qu’est-ce qui vous attire ?",
-    "q2": "Quand ?",
-    "q3": "Qu’est-ce qui compte le plus ?",
-    "q3Hint": "Deux choix maximum.",
-    "west": "L’Ouest",
-    "westHint": "Rocheuses, côte, forêt pluviale",
-    "north": "Le Nord",
-    "northHint": "Yukon, aurores boréales, ours polaires",
-    "east": "L’Est",
-    "eastHint": "Québec, Ontario, Atlantique",
-    "all": "Tout",
-    "allHint": "D’un océan à l’autre (on en parlera)",
-    "summer": "Été",
-    "summerHint": "De mai à octobre",
-    "winter": "Hiver",
-    "winterHint": "De novembre à avril",
-    "wildlife": "Faune",
-    "landscapes": "Paysages",
-    "food-cities": "Gastronomie et villes",
-    "comfort": "Confort",
-    "adventure": "Aventure",
-    "back": "Retour",
-    "next": "Suivant",
-    "seeMatch": "Voir mon spécialiste",
-    "resultTitle": "Voici *{name}*",
-    "resultIntro": "D’après vos réponses, {name} est la personne la mieux placée pour organiser ce voyage.",
-    "startOver": "Recommencer",
-    "talkTo": "Parler à {name}",
-    "suggested": "Les voyages par lesquels {name} commencerait"
-  },
   "enquire": {
     "title": "Le Canada, *fait pour vous*",
     "subtitle": "Un voyage privé, organisé par un spécialiste",
-    "point1": "Les voyages commencent généralement autour de {price} par personne et par jour, sans compter {excludes}.",
+    "point1": "À partir de {price} par personne et par jour, sans compter {excludes}.",
     "point2": "Un seul spécialiste organise tout, du début à la fin.",
     "point3": "Quelqu’un sur place au Canada pendant votre voyage.",
     "fitLabel": "Cela correspond à ce que j’ai en tête.",
@@ -251,7 +206,6 @@
     "interests": "Qu’est-ce qui vous intéresse ?",
     "contactPref": "Comment préférez-vous être contacté ?",
     "contactEmail": "E-mail",
-    "contactWhatsapp": "WhatsApp",
     "contactPhone": "Téléphone",
     "notes": "Autre chose ?",
     "notesPlaceholder": "Des lieux dont vous avez entendu parler, ce que vous préférez éviter, qui vient…",
@@ -291,13 +245,12 @@
     "learn": "Comprendre",
     "resources": "Ressources",
     "contact": "Contact",
-    "registration": "Immatriculation",
     "privacy": "Politique de confidentialité",
-    "terms": "Conditions générales",
+    "terms": "Conditions de réservation",
     "accessibility": "Accessibilité",
     "rights": "© {year} Canada Travel Co. Tous droits réservés.",
     "landAck": "Nous travaillons sur les territoires traditionnels de nombreux peuples des Premières Nations, inuits et métis.",
-    "follow": "Nous suivre"
+    "cookies": "Politique relative aux cookies"
   },
   "journey": {
     "overview": "Aperçu",
@@ -307,7 +260,6 @@
     "route": "Le parcours",
     "events": "Événements naturels sur ce parcours",
     "stays": "Où vous pourriez séjourner",
-    "specialist": "Votre spécialiste",
     "related": "À voir aussi",
     "guidePrice": "Prix indicatif, par personne, hors vols internationaux. Chaque voyage est privé et chiffré selon vos dates.",
     "allTitle": "Tous les *voyages*",
@@ -327,8 +279,7 @@
     "navOverview": "Aperçu",
     "navRoute": "Itinéraire",
     "navDays": "Jours",
-    "navStays": "Hébergements",
-    "navSpecialist": "Spécialiste"
+    "navStays": "Hébergements"
   },
   "province": {
     "bestAt": "Ce qu’elle fait le mieux",
@@ -364,10 +315,6 @@
   },
   "about": {
     "title": "À *propos*",
-    "teamTitle": "Notre *équipe*",
-    "teamIntro": "Quatre spécialistes, chacun avec une partie du Canada qu’il connaît presque trop bien. Profils provisoires pour l’instant.",
-    "testimonialsTitle": "Ce qu’en disent les *voyageurs*",
-    "testimonialsNote": "Témoignages provisoires, à remplacer par de vrais avis publiés avec l’accord de leurs auteurs.",
     "howTitle": "Notre façon de *travailler*",
     "languages": "Langues"
   },
@@ -387,28 +334,32 @@
   },
   "contact": {
     "title": "Nous *contacter*",
-    "intro": "Appelez-nous, écrivez-nous ou envoyez une demande. Un spécialiste vous répondra sous un jour ouvré.",
-    "phone": "Téléphone",
+    "intro": "Écrivez-nous ou envoyez une demande. Un spécialiste vous répondra sous un jour ouvré.",
     "email": "E-mail",
     "hours": "Horaires",
-    "address": "Adresse",
-    "whatsapp": "WhatsApp"
+    "address": "Adresse"
   },
   "indigenous": {
     "title": "Le *Canada* autochtone"
   },
   "legal": {
     "privacyTitle": "Politique de *confidentialité*",
-    "termsTitle": "Conditions *générales*",
-    "placeholder": "Contenu provisoire. Cette page doit être rédigée par un juriste avant la mise en ligne.",
+    "termsTitle": "Conditions de *réservation*",
     "accessibilityTitle": "*Accessibilité*",
-    "accessibilityBody": "Nous voulons que ce site fonctionne pour tout le monde. Il est conçu selon la norme WCAG 2.2 AA : il fonctionne au clavier et avec les lecteurs d’écran, respecte les réglages de réduction des animations et garde des textes lisibles. Si quelque chose vous gêne, écrivez-nous à {email} : nous corrigerons le problème, ou nous vous aiderons à organiser votre voyage par téléphone.",
-    "privacyBody": "Nous ne collectons que ce que vous nous envoyez : votre nom, vos coordonnées et ce que vous nous dites de votre voyage. Nous l’utilisons pour organiser votre voyage et, si vous le demandez, pour vous envoyer notre lettre d’information. Nous ne le vendons pas. Politique complète à venir.",
-    "termsBody": "Acomptes, paiements, modifications et annulations seront détaillés ici, avec notre immatriculation provinciale de vendeur de voyages et ce qu’elle protège. Conditions complètes à venir."
+    "accessibilityBody": "Nous voulons que ce site fonctionne pour tout le monde. Il est conçu selon la norme WCAG 2.2 AA : il fonctionne au clavier et avec les lecteurs d’écran, respecte les réglages de réduction des animations et garde des textes lisibles. Si quelque chose vous gêne, écrivez-nous à {email} : nous corrigerons le problème, ou nous vous aiderons à organiser votre voyage par e-mail.",
+    "cookiesTitle": "Politique relative aux *cookies*",
+    "updated": "Dernière mise à jour"
   },
   "notFound": {
     "title": "Mauvais *virage*",
     "body": "Cette page n’existe pas. Ça arrive vite dans un pays de cette taille.",
     "home": "Retour à l’accueil"
+  },
+  "match": {
+    "wildlife": "Faune",
+    "landscapes": "Paysages",
+    "food-cities": "Gastronomie et villes",
+    "comfort": "Confort",
+    "adventure": "Aventure"
   }
 }

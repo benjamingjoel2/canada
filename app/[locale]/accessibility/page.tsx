@@ -3,7 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { site } from '@/config/site';
 import { pageLocale, type LocaleParams } from '@/lib/params';
 import { pageMetadata } from '@/lib/seo';
-import { LegalPage } from '@/components/sections/LegalPage';
+import { SimpleLegalPage } from '@/components/sections/LegalPage';
 
 export async function generateMetadata({ params }: LocaleParams): Promise<Metadata> {
   const { locale } = await params;
@@ -14,5 +14,5 @@ export async function generateMetadata({ params }: LocaleParams): Promise<Metada
 export default async function Page({ params }: LocaleParams) {
   const locale = await pageLocale(params);
   const t = await getTranslations({ locale, namespace: 'legal' });
-  return <LegalPage locale={locale} title={t('accessibilityTitle')} body={t('accessibilityBody', { email: site.contact.email })} />;
+  return <SimpleLegalPage locale={locale} title={t('accessibilityTitle')} body={t('accessibilityBody', { email: site.contact.email })} />;
 }

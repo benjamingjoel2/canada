@@ -22,7 +22,7 @@ const fraunces = Fraunces({
 });
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
 /** The "data voice": days, prices, coordinates, dates. */
-const mono = IBM_Plex_Mono({ subsets: ['latin'], weight: ['400', '500'], variable: '--font-plex-mono', display: 'swap', preload: false });
+const mono = IBM_Plex_Mono({ subsets: ['latin'], weight: ['400', '500'], variable: '--font-plex-mono', display: 'swap' });
 
 const clientNamespaces = ['nav', 'prefs', 'common', 'distance', 'calendar', 'match', 'enquire', 'itinerary', 'newsletter', 'journey', 'notFound'];
 
@@ -77,6 +77,20 @@ export default async function LocaleLayout({ children, params }: { children: Rea
             <EnquireModal />
           </Providers>
         </NextIntlClientProvider>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'TravelAgency',
+              name: site.name,
+              url: `${site.url}/${locale}`,
+              email: site.contact.email,
+              address: { '@type': 'PostalAddress', streetAddress: site.address.street, addressLocality: site.address.locality, addressRegion: site.address.region, addressCountry: site.address.country },
+              areaServed: { '@type': 'Country', name: 'Canada' },
+            }),
+          }}
+        />
       </body>
     </html>
   );
