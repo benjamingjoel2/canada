@@ -2,7 +2,7 @@
 
 *Canada, made for you.* Marketing site for a small team of Canada specialists.
 
-Next.js 16 (App Router) · TypeScript · Tailwind CSS 4 · Framer Motion · next-intl (English / Français) · MDX stories · @react-pdf/renderer.
+Next.js 16 (App Router) · TypeScript · Tailwind CSS 4 · Framer Motion · next-intl (English / Français / Deutsch / Español) · MDX stories · @react-pdf/renderer.
 
 ```bash
 npm install
@@ -27,8 +27,8 @@ npm run i18n:report  # French strings still waiting for a native speaker
 | Distance tool: place coordinates / editable travel time estimates / world comparison pairs | `data/places.ts`, `data/travel-times.ts`, `data/world-pairs.ts` |
 | Long-form pages (Indigenous Canada, About, How we work) | `data/pages.ts` |
 | Hero films and homepage imagery | `data/media.ts` |
-| UI strings | `messages/en.json`, `messages/fr.json` |
-| Stories | `content/stories/{en,fr}/*.mdx` (+ slug list in `lib/stories.ts`) |
+| UI strings | `messages/{en,fr,de,es}.json` |
+| Stories | `content/stories/{en,fr,de,es}/*.mdx` (+ slug list in `lib/stories.ts`) |
 | Voice, French and placeholder rules for writers | `docs/CONTENT_BRIEF.md` |
 
 Italic emphasis in titles is written inline: `'Rockies to the *Pacific*'`.
@@ -49,6 +49,10 @@ only the active season's film loads.
 `<html data-season>` is set before first paint by an inline script (`lib/boot-script.ts`): the visitor's saved choice
 (localStorage, then cookie), otherwise the current Northern Hemisphere season. Seasonal content is swapped with CSS
 (`.summer-only` / `.winter-only` / `.season-order`), so pages stay static and never flash.
+
+## Languages
+
+English, French, German and Spanish, all pre-rendered under `/en`, `/fr`, `/de` and `/es` (next-intl, `i18n/routing.ts`). There is no browser-language redirect (`localeDetection: false`); `/` goes to `/en`. Every `L` in `/data` carries `en`, `fr`, `de` and `es` (the types require all four), photo alt text lives in `data/photos.ts`, and each story needs an MDX file in all four folders. German and Spanish were translated in October 2026 and should get a native-speaker read before launch.
 
 ## French review
 

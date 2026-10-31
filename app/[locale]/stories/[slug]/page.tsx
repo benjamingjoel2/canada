@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { getStory, storySlugs } from '@/lib/stories';
-import { asLocale, plain } from '@/lib/l10n';
+import { asLocale, plain, intlLocale } from '@/lib/l10n';
 import { pageMetadata } from '@/lib/seo';
 import { site } from '@/config/site';
 import { PageHero } from '@/components/sections/PageHero';
@@ -34,7 +34,7 @@ export default async function StoryPage({ params }: Params) {
   const { Content, meta } = story;
   const t = await getTranslations({ locale, namespace: 'stories' });
   const tc = await getTranslations({ locale, namespace: 'common' });
-  const date = new Intl.DateTimeFormat(locale === 'fr' ? 'fr-CA' : 'en-CA', { dateStyle: 'long' }).format(new Date(meta.date));
+  const date = new Intl.DateTimeFormat(intlLocale(locale), { dateStyle: 'long' }).format(new Date(meta.date));
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',

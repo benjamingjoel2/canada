@@ -17,7 +17,7 @@ export function pageMetadata({
 }): Metadata {
   const clean = path === '/' ? '' : path;
   const languages: Record<string, string> = {};
-  for (const l of routing.locales) languages[l === 'fr' ? 'fr' : 'en'] = `${site.url}/${l}${clean}`;
+  for (const l of routing.locales) languages[l] = `${site.url}/${l}${clean}`;
   languages['x-default'] = `${site.url}/${routing.defaultLocale}${clean}`;
   const t = plain(title);
   return {
@@ -29,7 +29,7 @@ export function pageMetadata({
       description: plain(description),
       url: `${site.url}/${locale}${clean}`,
       siteName: site.name,
-      locale: locale === 'fr' ? 'fr_CA' : 'en_CA',
+      locale: ({ fr: 'fr_CA', de: 'de_DE', es: 'es_ES' } as Record<string, string>)[locale] ?? 'en_CA',
       type: 'website',
     },
   };

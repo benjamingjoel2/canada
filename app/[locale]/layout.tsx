@@ -58,7 +58,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   const clientMessages = Object.fromEntries(clientNamespaces.map((n) => [n, all[n]]));
 
   return (
-    <html lang={locale === 'fr' ? 'fr' : 'en'} className={`${fraunces.variable} ${inter.variable} ${mono.variable}`} suppressHydrationWarning>
+    <html lang={locale} className={`${fraunces.variable} ${inter.variable} ${mono.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: bootScript }} />
       </head>

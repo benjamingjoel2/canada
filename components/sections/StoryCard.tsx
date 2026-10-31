@@ -4,10 +4,11 @@ import type { Locale } from '@/data/types';
 import type { StoryMeta } from '@/lib/stories';
 import { Italic } from '@/components/ui/Italic';
 import { Picture } from '@/components/ui/Picture';
+import { intlLocale } from '@/lib/l10n';
 
 export function StoryCard({ story, locale }: { story: StoryMeta; locale: Locale }) {
   const t = useTranslations('common');
-  const date = new Intl.DateTimeFormat(locale === 'fr' ? 'fr-CA' : 'en-CA', { dateStyle: 'long' }).format(new Date(story.date));
+  const date = new Intl.DateTimeFormat(intlLocale(locale), { dateStyle: 'long' }).format(new Date(story.date));
   return (
     <article className="group relative">
       <div className="overflow-hidden">

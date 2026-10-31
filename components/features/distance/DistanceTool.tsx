@@ -7,7 +7,7 @@ import { useId, useMemo, useState } from 'react';
 import { places } from '@/data/places';
 import type { Locale } from '@/data/types';
 import { compareDistance, formatDuration, travelBetween } from '@/lib/travel';
-import { tr } from '@/lib/l10n';
+import { tr, intlLocale } from '@/lib/l10n';
 import { Italic } from '@/components/ui/Italic';
 import { CountUp } from '@/components/ui/CountUp';
 import { useEnquire } from '@/components/features/enquire/EnquireContext';
@@ -49,7 +49,7 @@ export function DistanceTool({
 
   const result = from === to ? null : travelBetween(from, to);
   const comparison = result ? compareDistance(result.km, locale) : null;
-  const nf = new Intl.NumberFormat(locale === 'fr' ? 'fr-CA' : 'en-CA');
+  const nf = new Intl.NumberFormat(intlLocale(locale));
 
   let comparisonText = '';
   if (comparison) {

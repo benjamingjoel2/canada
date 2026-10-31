@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { useRef } from 'react';
 import type { Locale, Place } from '@/data/types';
-import { tr } from '@/lib/l10n';
+import { tr, intlLocale } from '@/lib/l10n';
 import { haversineKm } from '@/lib/geo';
 import { useReducedMotionSafe } from '@/lib/useReducedMotionSafe';
 
@@ -63,7 +63,7 @@ export function RouteMap({ places, locale, label }: { places: Place[]; locale: L
     return { id: places[i].id, text, ...pick };
   });
   const km = Math.round(places.slice(1).reduce((sum, p, i) => sum + haversineKm([places[i].lat, places[i].lng], [p.lat, p.lng]), 0));
-  const nf = new Intl.NumberFormat(locale === 'fr' ? 'fr-CA' : 'en-CA');
+  const nf = new Intl.NumberFormat(intlLocale(locale));
 
   return (
     <div ref={ref} className="grid gap-4 lg:grid-cols-12">

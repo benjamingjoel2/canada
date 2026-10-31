@@ -17,7 +17,7 @@ export const enquirySchema = z.object({
   journeyId: z.string().max(80).optional(),
   specialistId: z.string().max(80).optional(),
   season: z.enum(['summer', 'winter']).optional(),
-  locale: z.enum(['en', 'fr']),
+  locale: z.enum(['en', 'fr', 'de', 'es']),
   company: z.string().max(0).optional(), // honeypot: must stay empty
 });
 export type Enquiry = z.infer<typeof enquirySchema>;
@@ -27,12 +27,12 @@ export const itinerarySchema = z.object({
   name: z.string().trim().min(1).max(120),
   email: z.string().trim().email().max(200),
   country: z.string().trim().length(2),
-  locale: z.enum(['en', 'fr']),
+  locale: z.enum(['en', 'fr', 'de', 'es']),
   company: z.string().max(0).optional(),
 });
 
 export const newsletterSchema = z.object({
   email: z.string().trim().email().max(200),
-  locale: z.enum(['en', 'fr']).optional(),
+  locale: z.enum(['en', 'fr', 'de', 'es']).optional(),
   company: z.string().max(0).optional(),
 });

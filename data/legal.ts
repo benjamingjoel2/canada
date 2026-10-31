@@ -181,7 +181,7 @@ export const legal: Record<string, LegalSet> = {
           "h": "What the site stores in your browser",
           "p": [
             "Your season choice (summer or winter) is saved in local storage and in a first-party cookie, both named ctc-season, for one year, so pages open in the season you picked. If you change the display currency, your choice is saved the same way under ctc-currency.",
-            "Fonts are served from this website. Photos load from the Unsplash image service (images.unsplash.com), which receives your browser's IP address in order to deliver them."
+            "Fonts are served from this website. Photos load from our image delivery provider, which receives your browser's IP address in order to deliver them."
           ]
         },
         {
@@ -378,7 +378,7 @@ export const legal: Record<string, LegalSet> = {
           "h": "Ce que le site enregistre dans votre navigateur",
           "p": [
             "Votre choix de saison (été ou hiver) est enregistré dans le stockage local et dans un cookie propre au site, tous deux nommés ctc-season, pendant un an, pour que les pages s’ouvrent dans la saison choisie. Si vous changez la devise d’affichage, votre choix est enregistré de la même façon sous ctc-currency.",
-            "Les polices sont servies par ce site. Les photos sont chargées depuis le service d’images Unsplash (images.unsplash.com), qui reçoit l’adresse IP de votre navigateur pour pouvoir les afficher."
+            "Les polices sont servies par ce site. Les photos sont chargées depuis notre prestataire de diffusion d’images, qui reçoit l’adresse IP de votre navigateur pour pouvoir les afficher."
           ]
         },
         {
@@ -575,7 +575,7 @@ export const legal: Record<string, LegalSet> = {
           "h": "Was die Website in Ihrem Browser speichert",
           "p": [
             "Ihre Wahl der Jahreszeit (Sommer oder Winter) wird ein Jahr lang im lokalen Speicher und in einem eigenen Cookie gespeichert, beide mit dem Namen ctc-season, damit sich die Seiten in der gewählten Jahreszeit öffnen. Wenn Sie die angezeigte Währung ändern, wird Ihre Wahl auf dieselbe Weise unter ctc-currency gespeichert.",
-            "Schriften werden von dieser Website ausgeliefert. Fotos werden vom Bilddienst Unsplash (images.unsplash.com) geladen, der dafür die IP-Adresse Ihres Browsers erhält."
+            "Schriften werden von dieser Website ausgeliefert. Fotos werden von unserem Bildbereitstellungsdienst geladen, der dafür die IP-Adresse Ihres Browsers erhält."
           ]
         },
         {
@@ -772,7 +772,7 @@ export const legal: Record<string, LegalSet> = {
           "h": "Qué guarda el sitio en su navegador",
           "p": [
             "Su elección de temporada (verano o invierno) se guarda durante un año en el almacenamiento local y en una cookie propia, ambas llamadas ctc-season, para que las páginas se abran en la temporada elegida. Si cambia la moneda en que se muestran los precios, su elección se guarda del mismo modo como ctc-currency.",
-            "Las fuentes se sirven desde este sitio. Las fotos se cargan desde el servicio de imágenes de Unsplash (images.unsplash.com), que recibe la dirección IP de su navegador para poder mostrarlas."
+            "Las fuentes se sirven desde este sitio. Las fotos se cargan desde nuestro proveedor de distribución de imágenes, que recibe la dirección IP de su navegador para poder mostrarlas."
           ]
         },
         {

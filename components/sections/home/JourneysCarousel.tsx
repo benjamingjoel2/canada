@@ -26,8 +26,8 @@ export async function JourneysCarousel({ locale }: { locale: Locale }) {
           </Link>
         </div>
         <p className="mt-10 mb-2 text-sm text-birch/60">
-          <span className="summer-only">{t('journeysSeasonNote', { season: tp('summer').toLowerCase() })}</span>
-          <span className="winter-only">{t('journeysSeasonNote', { season: tp('winter').toLowerCase() })}</span>
+          <span className="summer-only">{t('journeysSeasonNote', { season: locale === 'de' ? tp('summer') : tp('summer').toLowerCase() })}</span>
+          <span className="winter-only">{t('journeysSeasonNote', { season: locale === 'de' ? tp('winter') : tp('winter').toLowerCase() })}</span>
         </p>
         <Carousel
           label={t('journeysTitle').replace(/\*/g, '')}

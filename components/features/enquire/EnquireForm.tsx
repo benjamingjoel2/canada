@@ -32,7 +32,7 @@ export function EnquireForm({
 }) {
   const t = useTranslations('enquire');
   const tm = useTranslations('match'); // interest labels
-  const locale = useLocale() as 'en' | 'fr';
+  const locale = useLocale() as 'en' | 'fr' | 'de' | 'es';
   const currency = useCurrency();
   const season = useSeason();
   const [step, setStep] = useState<1 | 2 | 'done'>(1);

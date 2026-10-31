@@ -63,7 +63,7 @@ export type Comparison = { pair: WorldPair; pairKm: number; ratio: number };
 /** The world city pair whose distance is closest to `km`, favouring the reader's part of the world. */
 export function compareDistance(km: number, locale: Locale): Comparison | null {
   if (km < 50) return null;
-  const preferred = locale === 'fr' ? ['europe'] : ['europe', 'global', 'americas', 'oceania'];
+  const preferred = locale !== 'en' ? ['europe'] : ['europe', 'global', 'americas', 'oceania'];
   let best: Comparison | null = null;
   let bestScore = Infinity;
   for (const pair of worldPairs) {
@@ -82,6 +82,6 @@ export function compareDistance(km: number, locale: Locale): Comparison | null {
 export function formatDuration(mins: number, locale: Locale): string {
   const h = Math.floor(mins / 60);
   const m = mins % 60;
-  if (locale === 'fr') return h ? `${h} h${m ? ` ${String(m).padStart(2, '0')}` : ''}` : `${m} min`;
+  if (locale !== 'en') return h ? `${h} h${m ? ` ${String(m).padStart(2, '0')}` : ''}` : `${m} min`;
   return h ? `${h} hr${h > 1 ? 's' : ''}${m ? ` ${m} min` : ''}` : `${m} min`;
 }

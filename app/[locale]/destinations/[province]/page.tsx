@@ -81,7 +81,7 @@ export default async function ProvincePage({ params }: Params) {
       <section className="bg-birch py-16 md:py-28">
         <div className="container-x">
           <h2 className="text-3xl text-forest md:text-5xl">
-            <Italic text={`${t('highlights')}: *${tp('summer').toLowerCase()}* & *${tp('winter').toLowerCase()}*`} />
+            <Italic text={`${t('highlights')}: *${locale === 'de' ? tp('summer') : tp('summer').toLowerCase()}* & *${locale === 'de' ? tp('winter') : tp('winter').toLowerCase()}*`} />
           </h2>
           <div className="mt-10 grid gap-10 md:grid-cols-2">
             {(['summer', 'winter'] as const).map((s) => (

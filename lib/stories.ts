@@ -28,7 +28,7 @@ async function load(locale: Locale, slug: string) {
     ...mod.meta,
     slug,
     frReview: mod.meta.frReview ?? 'approved',
-    image: { subject: mod.meta.image.subject, tone: mod.meta.image.tone, alt: { en: mod.meta.image.alt, fr: mod.meta.image.alt } },
+    image: { subject: mod.meta.image.subject, tone: mod.meta.image.tone, alt: { en: mod.meta.image.alt, fr: mod.meta.image.alt, de: mod.meta.image.alt, es: mod.meta.image.alt } },
   };
   return { Content: mod.default, meta };
 }

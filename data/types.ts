@@ -1,7 +1,7 @@
 /**
  * Content types for Canada Travel Co.
  *
- * Every translatable string is an `L` ({ en, fr }). English is the source.
+ * Every translatable string is an `L` ({ en, fr, de, es }). English is the source.
  * French is a machine-assisted draft until a native speaker approves it:
  * every record that carries French text has `frReview`, which stays
  * "needs-human-review" until someone signs it off. Run `npm run i18n:report`
@@ -10,9 +10,9 @@
  * Italic emphasis in headings and titles is written inline as *word*.
  */
 
-export type Locale = 'en' | 'fr';
+export type Locale = 'en' | 'fr' | 'de' | 'es';
 export type ReviewStatus = 'needs-human-review' | 'approved';
-export type L = { en: string; fr: string };
+export type L = { en: string; fr: string; de: string; es: string };
 export type Reviewed = { frReview: ReviewStatus };
 export type Season = 'summer' | 'winter';
 
