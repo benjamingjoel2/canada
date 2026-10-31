@@ -19,8 +19,6 @@
     "browseAllJourneys": "Browse all journeys",
     "summerJourneys": "Summer journeys",
     "winterJourneys": "Winter journeys",
-    "findSpecialist": "Find your specialist",
-    "findSpecialistBlurb": "Three questions. One person who knows the answer.",
     "allDestinations": "All destinations",
     "wildCalendar": "The Wild Calendar",
     "wildCalendarBlurb": "What's happening in nature, month by month.",
@@ -28,11 +26,8 @@
     "explore": "Explore {name}",
     "allExperiences": "All experiences",
     "howWeWork": "How we work",
-    "team": "Our team",
-    "testimonials": "Testimonials",
     "faq": "Questions travellers ask",
     "contact": "Contact",
-    "freeCall": "Free planning call",
     "regionsIn": "Regions in {name}",
     "featured": "Featured",
     "mainNav": "Main navigation",
@@ -112,7 +107,7 @@
     "value1Body": "If a lodge is overrated, or a drive is longer than it looks on a map, we say so. Most of our best advice is about what to leave out.",
     "value2Title": "*Local* knowledge",
     "value2Body": "We know which week the larches turn, which floatplane pilot to ask for, and which road closes in October. Then we plan around it.",
-    "matchCta": "Find your specialist",
+    "matchCta": "Talk to a specialist",
     "journeysTitle": "Our *journeys*",
     "journeysIntro": "Starting points, not packages. Every one is private and gets rebuilt around you.",
     "journeysSeasonNote": "Showing {season} journeys first.",
@@ -123,15 +118,10 @@
     "calendarTitle": "What's happening *now*",
     "calendarIntro": "Canada runs to a natural schedule. Here's this month and next.",
     "calendarCta": "See the full Wild Calendar",
-    "testimonialsTitle": "What our *travellers* say",
-    "teamTitle": "*Meet* the team",
-    "teamCta": "More about our team",
     "contactTitle": "Talk to *a specialist*",
     "contactIntro": "Tell us roughly what you have in mind. We'll reply within one working day, with honest advice and no obligation.",
     "storiesTitle": "Recent *stories*",
     "storiesCta": "All stories",
-    "pressTitle": "Don't take *our* word for it",
-    "pressIntro": "A few kind words from the press. Placeholders for now, while we earn the real ones.",
     "faqTitle": "Questions *travellers* ask",
     "faqCta": "All questions",
     "statement": "Vancouver to Halifax is further than London to *Cairo*. Plan accordingly.",
@@ -196,45 +186,10 @@
     "legend": "Legend",
     "eventCount": "{count, plural, one {# event} other {# events}}"
   },
-  "match": {
-    "eyebrow": "Specialist match",
-    "title": "Find your *specialist*",
-    "intro": "Three quick questions instead of a long form. We'll match you with the person who knows your Canada best.",
-    "step": "Question {current} of {total}",
-    "q1": "Where are you drawn to?",
-    "q2": "When?",
-    "q3": "What matters most?",
-    "q3Hint": "Pick up to two.",
-    "west": "The West",
-    "westHint": "Rockies, coast, rainforest",
-    "north": "The North",
-    "northHint": "Yukon, aurora, polar bears",
-    "east": "The East",
-    "eastHint": "Québec, Ontario, Atlantic",
-    "all": "All of it",
-    "allHint": "Coast to coast (we'll talk)",
-    "summer": "Summer",
-    "summerHint": "May to October",
-    "winter": "Winter",
-    "winterHint": "November to April",
-    "wildlife": "Wildlife",
-    "landscapes": "Landscapes",
-    "food-cities": "Food and cities",
-    "comfort": "Comfort",
-    "adventure": "Adventure",
-    "back": "Back",
-    "next": "Next",
-    "seeMatch": "See my match",
-    "resultTitle": "Meet *{name}*",
-    "resultIntro": "Based on your answers, {name} is the best person to plan this.",
-    "startOver": "Start over",
-    "talkTo": "Talk to {name}",
-    "suggested": "Journeys {name} would start with"
-  },
   "enquire": {
     "title": "Canada, *made for you*",
     "subtitle": "A private journey, planned by a specialist",
-    "point1": "Journeys generally start around {price} per person per day, excluding {excludes}.",
+    "point1": "From {price} per person per day, excluding {excludes}.",
     "point2": "One specialist plans everything, start to finish.",
     "point3": "Someone on the ground in Canada while you travel.",
     "fitLabel": "This fits what I have in mind.",
@@ -251,7 +206,6 @@
     "interests": "What interests you?",
     "contactPref": "How should we get in touch?",
     "contactEmail": "Email",
-    "contactWhatsapp": "WhatsApp",
     "contactPhone": "Phone",
     "notes": "Anything else?",
     "notesPlaceholder": "Places you've heard of, things you'd rather avoid, who's coming…",
@@ -291,13 +245,12 @@
     "learn": "Learn",
     "resources": "Resources",
     "contact": "Contact",
-    "registration": "Registration",
     "privacy": "Privacy policy",
-    "terms": "Terms and conditions",
+    "terms": "Booking terms",
     "accessibility": "Accessibility",
     "rights": "© {year} Canada Travel Co. All rights reserved.",
     "landAck": "We work across the traditional territories of many First Nations, Inuit and Métis peoples.",
-    "follow": "Follow us"
+    "cookies": "Cookie policy"
   },
   "journey": {
     "overview": "Overview",
@@ -307,7 +260,6 @@
     "route": "The route",
     "events": "Natural events on this route",
     "stays": "Where you might stay",
-    "specialist": "Your specialist",
     "related": "You might also like",
     "guidePrice": "Guide price, per person, excluding international flights. Every journey is private and priced to your dates.",
     "allTitle": "All *journeys*",
@@ -327,8 +279,7 @@
     "navOverview": "Overview",
     "navRoute": "Route",
     "navDays": "Days",
-    "navStays": "Stays",
-    "navSpecialist": "Specialist"
+    "navStays": "Stays"
   },
   "province": {
     "bestAt": "What it's best at",
@@ -364,10 +315,6 @@
   },
   "about": {
     "title": "About *us*",
-    "teamTitle": "Our *team*",
-    "teamIntro": "Four specialists, each with a part of Canada they know too well. Placeholder profiles for now.",
-    "testimonialsTitle": "What travellers *say*",
-    "testimonialsNote": "Placeholder testimonials, to be replaced with real, consented reviews.",
     "howTitle": "How we *work*",
     "languages": "Languages"
   },
@@ -387,28 +334,32 @@
   },
   "contact": {
     "title": "Contact *us*",
-    "intro": "Call, email or send an enquiry. A specialist will get back to you within one working day.",
-    "phone": "Phone",
+    "intro": "Email us or send an enquiry. A specialist will get back to you within one working day.",
     "email": "Email",
     "hours": "Hours",
-    "address": "Address",
-    "whatsapp": "WhatsApp"
+    "address": "Address"
   },
   "indigenous": {
     "title": "Indigenous *Canada*"
   },
   "legal": {
     "privacyTitle": "Privacy *policy*",
-    "termsTitle": "Terms and *conditions*",
-    "placeholder": "Placeholder. This page needs to be written by a lawyer before launch.",
+    "termsTitle": "Booking *terms*",
     "accessibilityTitle": "*Accessibility*",
-    "accessibilityBody": "We want this site to work for everyone. It's built to WCAG 2.2 AA: it works with a keyboard and screen readers, respects reduced-motion settings, and keeps text readable. If something gets in your way, tell us at {email} and we'll fix it, or help you plan by phone instead.",
-    "privacyBody": "We collect only what you send us: your name, contact details and what you tell us about your trip. We use it to plan your journey and, if you ask, to send our newsletter. We don't sell it. Full policy to follow.",
-    "termsBody": "Deposits, payments, changes and cancellations will be set out here, along with our provincial travel seller registration and what it protects. Full terms to follow."
+    "accessibilityBody": "We want this site to work for everyone. It's built to WCAG 2.2 AA: it works with a keyboard and screen readers, respects reduced-motion settings, and keeps text readable. If something gets in your way, tell us at {email} and we'll fix it, or help you plan by email instead.",
+    "cookiesTitle": "Cookie *policy*",
+    "updated": "Last updated"
   },
   "notFound": {
     "title": "Wrong *turn*",
     "body": "That page doesn't exist. Easily done in a country this size.",
     "home": "Back to the homepage"
+  },
+  "match": {
+    "wildlife": "Wildlife",
+    "landscapes": "Landscapes",
+    "food-cities": "Food and cities",
+    "comfort": "Comfort",
+    "adventure": "Adventure"
   }
 }

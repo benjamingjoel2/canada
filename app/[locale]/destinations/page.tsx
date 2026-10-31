@@ -26,11 +26,11 @@ export default async function Destinations({ params }: LocaleParams) {
       <ProvinceIndex
         exploreLabel={n.raw('explore')}
         regionsLabel={n('destinations')}
-        panels={provinces.map((p) => ({
+        panels={provinces.map((p, i) => ({
           slug: p.slug,
           name: tr(p.name, locale),
           tagline: tr(p.tagline, locale),
-          picture: <SeasonalPicture img={p.hero} locale={locale} className="aspect-[16/10] w-full" sizes="(min-width:1024px) 60vw, 100vw" />,
+          picture: <SeasonalPicture img={p.hero} locale={locale} className="aspect-[16/10] w-full" sizes="(min-width:1024px) 60vw, 100vw" priority={i === 0} lowPriority={i > 0} />,
           regions: regionsOf(p.id).map((r) => ({ slug: r.slug, name: tr(r.name, locale) })),
         }))}
       />

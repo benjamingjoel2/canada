@@ -2,9 +2,9 @@ import { Document, Page, StyleSheet, Text, View, Svg, Circle, Path } from '@reac
 import type { Journey, Locale } from '@/data/types';
 import { site } from '@/config/site';
 import { pricing } from '@/config/pricing';
-import { getEvent, getSpecialist, getStay } from '@/lib/content';
+import { getEvent, getStay } from '@/lib/content';
 import { getPlace } from '@/lib/travel';
-import { dayLabel, plain, tr } from '@/lib/l10n';
+import { dayLabel, plain, tr, intlLocale } from '@/lib/l10n';
 
 const c = { forest: '#1f3a2e', lake: '#1f6f6c', granite: '#5e6468', birch: '#f4efe4', maple: '#b8322a', ink: '#18201c' };
 
@@ -27,8 +27,10 @@ const s = StyleSheet.create({
 });
 
 const L = {
-  en: { journey: 'A private journey', days: 'days', overview: 'Overview', honest: 'An honest note', route: 'The route', itinerary: 'Day by day', includes: "What's included", stays: 'Where you might stay', events: 'Natural events on this route (verify yearly)', price: 'Guide price', perPerson: 'per person, in Canadian dollars', priceNote: `Every journey is private and priced to your dates. Journeys generally start around CA$${pricing.fromPerPersonPerDayCAD.toLocaleString('en-CA')} per person per day, excluding international flights.`, specialist: 'Your specialist', prepared: 'Prepared for', contact: 'Talk to us', page: 'Page', placeholder: '(placeholder)' },
-  fr: { journey: 'Un voyage privé', days: 'jours', overview: 'Aperçu', honest: 'En toute honnêteté', route: 'L’itinéraire', itinerary: 'Jour par jour', includes: 'Ce qui est inclus', stays: 'Où vous pourriez séjourner', events: 'Événements naturels sur le parcours (à vérifier chaque année)', price: 'Prix indicatif', perPerson: 'par personne, en dollars canadiens', priceNote: `Chaque voyage est privé et chiffré selon vos dates. Nos voyages commencent généralement autour de ${pricing.fromPerPersonPerDayCAD.toLocaleString('fr-CA')} $ CA par personne et par jour, hors vols internationaux.`, specialist: 'Votre spécialiste', prepared: 'Préparé pour', contact: 'Nous contacter', page: 'Page', placeholder: '(exemple)' },
+  en: { journey: 'A private journey', days: 'days', overview: 'Overview', honest: 'An honest note', route: 'The route', itinerary: 'Day by day', includes: "What's included", stays: 'Where you might stay', events: 'Natural events on this route (verify yearly)', price: 'From', perPerson: 'per person, in Canadian dollars', priceNote: `Every journey is private and priced to your dates. Journeys generally start around CA$${pricing.fromPerPersonPerDayCAD.toLocaleString('en-CA')} per person per day, excluding international flights.`, prepared: 'Prepared for', contact: 'Talk to us', page: 'Page', placeholder: '(placeholder)' },
+  fr: { journey: 'Un voyage privé', days: 'jours', overview: 'Aperçu', honest: 'En toute honnêteté', route: 'L’itinéraire', itinerary: 'Jour par jour', includes: 'Ce qui est inclus', stays: 'Où vous pourriez séjourner', events: 'Événements naturels sur le parcours (à vérifier chaque année)', price: 'À partir de', perPerson: 'par personne, en dollars canadiens', priceNote: `Chaque voyage est privé et chiffré selon vos dates. Nos voyages commencent généralement autour de ${pricing.fromPerPersonPerDayCAD.toLocaleString('fr-CA')} $ CA par personne et par jour, hors vols internationaux.`, prepared: 'Préparé pour', contact: 'Nous contacter', page: 'Page', placeholder: '(exemple)' },
+  de: { journey: 'Eine private Reise', days: 'Tage', overview: 'Überblick', honest: 'Ein ehrlicher Hinweis', route: 'Die Route', itinerary: 'Tag für Tag', includes: 'Inklusive', stays: 'Wo Sie übernachten könnten', events: 'Naturereignisse auf dieser Route (jährlich prüfen)', price: 'Ab', perPerson: 'pro Person, in kanadischen Dollar', priceNote: `Jede Reise ist privat und wird für Ihre Termine kalkuliert. Unsere Reisen beginnen in der Regel bei etwa ${pricing.fromPerPersonPerDayCAD.toLocaleString('de-DE')} CA$ pro Person und Tag, ohne internationale Flüge.`, prepared: 'Erstellt für', contact: 'Sprechen Sie mit uns', page: 'Seite', placeholder: '(Platzhalter)' },
+  es: { journey: 'Un viaje privado', days: 'días', overview: 'Resumen', honest: 'Una nota sincera', route: 'La ruta', itinerary: 'Día a día', includes: 'Qué incluye', stays: 'Dónde podría alojarse', events: 'Fenómenos naturales en esta ruta (verificar cada año)', price: 'Desde', perPerson: 'por persona, en dólares canadienses', priceNote: `Cada viaje es privado y se presupuesta según sus fechas. Nuestros viajes suelen empezar en torno a ${pricing.fromPerPersonPerDayCAD.toLocaleString('es-ES')} CA$ por persona y día, sin vuelos internacionales.`, prepared: 'Preparado para', contact: 'Hable con nosotros', page: 'Página', placeholder: '(provisional)' },
 };
 
 function Mark({ color }: { color: string }) {
@@ -46,11 +48,10 @@ export function ItineraryDocument({ journey, locale, preparedFor }: { journey: J
   const route = journey.route.map((id) => getPlace(id)).filter((p) => p !== undefined).map((p) => tr(p.name, locale));
   const stays = journey.stayIds.map(getStay).filter((x) => x !== undefined);
   const events = journey.eventIds.map(getEvent).filter((x) => x !== undefined);
-  const specialist = getSpecialist(journey.specialistId);
-  const price = journey.fromPerPersonCAD.toLocaleString(locale === 'fr' ? 'fr-CA' : 'en-CA');
+  const price = journey.fromPerPersonCAD.toLocaleString(intlLocale(locale));
   const footer = (
     <View style={s.footer} fixed>
-      <Text>{site.name} · {site.contact.email} · {site.contact.phone}</Text>
+      <Text>{site.name} · {site.contact.email}</Text>
       <Text render={({ pageNumber, totalPages }) => `${t.page} ${pageNumber} / ${totalPages}`} />
     </View>
   );
@@ -126,24 +127,16 @@ export function ItineraryDocument({ journey, locale, preparedFor }: { journey: J
         )}
 
         <View wrap={false} style={[s.note, { marginTop: 24 }]}>
-          <Text style={s.h3}>{t.price}: {locale === 'fr' ? `${price} $ CA` : `CA$${price}`} {t.perPerson}</Text>
+          <Text style={s.h3}>{t.price} {locale === 'en' ? `CA$${price}` : `${price} CA$`} {t.perPerson}</Text>
           <Text style={[s.muted, { marginTop: 4 }]}>{t.priceNote}</Text>
         </View>
 
-        {specialist && (
-          <View wrap={false}>
-            <Text style={s.h2}>{t.specialist}</Text>
-            <Text style={s.h3}>{specialist.name} {t.placeholder}</Text>
-            <Text style={s.muted}>{tr(specialist.role, locale)}</Text>
-            <Text style={{ fontFamily: 'Times-Italic', marginTop: 4 }}>“{tr(specialist.quote, locale)}”</Text>
-          </View>
-        )}
 
         <View wrap={false} style={{ marginTop: 20 }}>
           <Text style={s.h2}>{t.contact}</Text>
-          <Text>{site.contact.phone} · {site.contact.email}</Text>
+          <Text>{site.contact.email}</Text>
           <Text style={s.muted}>{site.url}</Text>
-          <Text style={[s.muted, { marginTop: 8, fontSize: 8 }]}>{site.registration.map((r) => r[locale]).join(' · ')}</Text>
+          <Text style={[s.muted, { marginTop: 8, fontSize: 8 }]}>{site.address.lines.join(', ')}</Text>
         </View>
         {footer}
       </Page>

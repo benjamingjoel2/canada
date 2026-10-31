@@ -6,7 +6,7 @@ import { SeasonalPicture } from '@/components/ui/Picture';
 import { ButtonLink } from '@/components/ui/Button';
 import { Reveal } from '@/components/ui/Reveal';
 
-/** Reference: "dedicated designer" band — image + two value blocks. Ours leads into Specialist match. */
+/** Reference: "dedicated designer" band — image + two value blocks. Ours leads to the contact page. */
 export async function SpecialistBand({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale, namespace: 'home' });
   return (
@@ -29,7 +29,7 @@ export async function SpecialistBand({ locale }: { locale: Locale }) {
             </div>
           ))}
         </div>
-        <ButtonLink arrow href="/find-your-specialist" className="mt-12">
+        <ButtonLink arrow href="/contact" className="mt-12">
           {t('matchCta')}
         </ButtonLink>
       </div>

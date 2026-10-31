@@ -10,6 +10,14 @@ const nextConfig: NextConfig = {
     loader: 'custom',
     loaderFile: './lib/image-loader.ts',
   },
+  // Retired pages (owner's fix list, October 2026): no team, testimonials or specialist profiles.
+  async redirects() {
+    return [
+      { source: '/:locale(en|fr|de|es)/about/team', destination: '/:locale/about', permanent: true },
+      { source: '/:locale(en|fr|de|es)/about/testimonials', destination: '/:locale/about', permanent: true },
+      { source: '/:locale(en|fr|de|es)/find-your-specialist', destination: '/:locale/contact', permanent: true },
+    ];
+  },
   turbopack: {
     rules: {
       '*.css': {

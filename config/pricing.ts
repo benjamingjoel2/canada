@@ -4,5 +4,5 @@
  */
 export const pricing = {
   fromPerPersonPerDayCAD: 1200,
-  excludes: { en: 'international flights', fr: 'les vols internationaux' },
+  excludes: { en: 'international flights', fr: 'les vols internationaux', de: "internationale Flüge", es: "vuelos internacionales" },
 } as const;

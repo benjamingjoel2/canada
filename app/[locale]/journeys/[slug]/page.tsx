@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
-import { getEvent, getExperience, getProvince, getSpecialist, getStay, journeys, getJourney } from '@/lib/content';
+import { getEvent, getExperience, getProvince, getStay, journeys, getJourney } from '@/lib/content';
 import { getPlace } from '@/lib/travel';
 import { asLocale, dayLabel, plain, tr } from '@/lib/l10n';
 import { pageMetadata } from '@/lib/seo';
@@ -16,7 +16,6 @@ import { Price } from '@/components/ui/Price';
 import { RouteMap } from '@/components/sections/RouteMap';
 import { StayCard } from '@/components/sections/StayCard';
 import { JourneyCard, SeasonBadges } from '@/components/sections/JourneyCard';
-import { SpecialistCard } from '@/components/sections/SpecialistCard';
 import { EnquireBand } from '@/components/sections/EnquireBand';
 import { EnquireButton, ItineraryButton } from '@/components/features/enquire/EnquireButton';
 import { Link } from '@/i18n/navigation';
@@ -51,7 +50,6 @@ export default async function JourneyPage({ params }: Params) {
   const stays = j.stayIds.map(getStay).filter((s) => s !== undefined);
   const events = j.eventIds.map(getEvent).filter((e) => e !== undefined);
   const experiences = j.experienceIds.map(getExperience).filter((e) => e !== undefined);
-  const specialist = getSpecialist(j.specialistId);
   const related = journeys.filter((x) => x.id !== j.id && x.seasons.some((s) => j.seasons.includes(s))).slice(0, 4);
 
   const jsonLd = {
@@ -59,7 +57,7 @@ export default async function JourneyPage({ params }: Params) {
     '@type': 'TouristTrip',
     name: plain(title),
     description: tr(j.summary, locale),
-    provider: { '@type': 'TravelAgency', name: site.name, url: site.url },
+    provider: { '@type': 'TravelAgency', name: site.name, url: site.url, email: site.contact.email },
     itinerary: { '@type': 'ItemList', itemListElement: places.map((p, i) => ({ '@type': 'ListItem', position: i + 1, name: tr(p.name, locale) })) },
     offers: { '@type': 'Offer', price: j.fromPerPersonCAD, priceCurrency: 'CAD' },
   };
@@ -209,14 +207,6 @@ export default async function JourneyPage({ params }: Params) {
         </section>
       )}
 
-      {specialist && (
-        <section id="specialist" className="container-x scroll-mt-28 pb-16 md:pb-24">
-          <SectionHeading title={t('specialist')} />
-          <div className="mt-8">
-            <SpecialistCard specialist={specialist} locale={locale} topic={plain(title)} />
-          </div>
-        </section>
-      )}
 
       {related.length > 0 && (
         <section className="bg-forest py-16 text-birch md:py-24">
@@ -239,7 +229,6 @@ export default async function JourneyPage({ params }: Params) {
           { id: 'route', label: t('navRoute') },
           { id: 'days', label: t('navDays') },
           ...(stays.length ? [{ id: 'stays', label: t('navStays') }] : []),
-          ...(specialist ? [{ id: 'specialist', label: t('navSpecialist') }] : []),
         ]}
       />
     </>

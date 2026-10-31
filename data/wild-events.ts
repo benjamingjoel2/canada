@@ -13,7 +13,7 @@ export const wildEvents: WildEvent[] = [
     id: 'grizzlies-salmon',
     title: {
       en: 'Grizzlies fishing for salmon',
-      fr: 'Grizzlis à la pêche au saumon',
+      fr: 'Grizzlis à la pêche au saumon', de: "Grizzlys beim Lachsfang", es: "Grizzlis pescando salmón",
     },
     type: 'wildlife',
     provinceIds: ['british-columbia'],
@@ -22,7 +22,7 @@ export const wildEvents: WildEvent[] = [
     peak: [9],
     summary: {
       en: "When the salmon run up the rivers of the Great Bear Rainforest, the grizzlies come down to meet them. September is the surest month, but the run sets the date, not us.",
-      fr: "Quand les saumons remontent les rivières de la forêt pluviale du Grand Ours, les grizzlis descendent les attendre. Septembre est le mois le plus sûr, mais c'est la remontée qui fixe la date, pas nous.",
+      fr: "Quand les saumons remontent les rivières de la forêt pluviale du Grand Ours, les grizzlis descendent les attendre. Septembre est le mois le plus sûr, mais c'est la remontée qui fixe la date, pas nous.", de: "Wenn die Lachse die Flüsse des Great Bear Rainforest hinaufziehen, kommen die Grizzlys ihnen entgegen. September ist der sicherste Monat, doch den Termin bestimmt der Lachszug, nicht wir.", es: "Cuando el salmón remonta los ríos del Great Bear Rainforest, los grizzlis bajan a su encuentro. Septiembre es el mes más seguro, pero la fecha la pone el salmón, no nosotros.",
     },
     verifyYearly: true,
     journeyIds: ['bears-whales-rainforest'],
@@ -32,7 +32,7 @@ export const wildEvents: WildEvent[] = [
     id: 'polar-bears-churchill',
     title: {
       en: 'Polar bears in Churchill',
-      fr: 'Ours polaires à Churchill',
+      fr: 'Ours polaires à Churchill', de: "Eisbären in Churchill", es: "Osos polares en Churchill",
     },
     type: 'wildlife',
     provinceIds: ['manitoba'],
@@ -41,7 +41,7 @@ export const wildEvents: WildEvent[] = [
     peak: [10, 11],
     summary: {
       en: "Polar bear season is about six weeks long, while the bears wait on the shore of Hudson Bay for the sea to freeze. We'll tell you which six.",
-      fr: "La saison des ours polaires dure environ six semaines, le temps que la baie d'Hudson gèle et que les ours attendent sur la rive. Nous vous dirons lesquelles.",
+      fr: "La saison des ours polaires dure environ six semaines, le temps que la baie d'Hudson gèle et que les ours attendent sur la rive. Nous vous dirons lesquelles.", de: "Die Eisbärsaison dauert etwa sechs Wochen, während die Bären am Ufer der Hudson Bay warten, bis das Meer zufriert. Wir sagen Ihnen, welche sechs.", es: "La temporada de osos polares dura unas seis semanas, mientras los osos esperan en la orilla de la bahía de Hudson a que el mar se congele. Le diremos cuáles.",
     },
     verifyYearly: true,
     journeyIds: ['polar-bear-season'],
@@ -51,7 +51,7 @@ export const wildEvents: WildEvent[] = [
     id: 'belugas-churchill',
     title: {
       en: 'Beluga whales in Churchill',
-      fr: 'Bélugas à Churchill',
+      fr: 'Bélugas à Churchill', de: "Belugawale in Churchill", es: "Belugas en Churchill",
     },
     type: 'wildlife',
     provinceIds: ['manitoba'],
@@ -60,7 +60,7 @@ export const wildEvents: WildEvent[] = [
     peak: [7],
     summary: {
       en: "Each summer thousands of belugas gather in the Churchill River estuary, close enough to hear from a kayak. Same town as the polar bears, opposite end of the year.",
-      fr: "Chaque été, des milliers de bélugas se rassemblent dans l'estuaire de la rivière Churchill, assez près pour les entendre depuis un kayak. Même village que les ours polaires, à l'autre bout de l'année.",
+      fr: "Chaque été, des milliers de bélugas se rassemblent dans l'estuaire de la rivière Churchill, assez près pour les entendre depuis un kayak. Même village que les ours polaires, à l'autre bout de l'année.", de: "Jeden Sommer sammeln sich Tausende Belugas in der Mündung des Churchill River, so nah, dass man sie vom Kajak aus hört. Derselbe Ort wie die Eisbären, am anderen Ende des Jahres.", es: "Cada verano, miles de belugas se reúnen en el estuario del río Churchill, tan cerca que se las oye desde un kayak. El mismo pueblo que los osos polares, en la otra punta del año.",
     },
     verifyYearly: true,
     journeyIds: [],
@@ -70,7 +70,7 @@ export const wildEvents: WildEvent[] = [
     id: 'aurora-yukon',
     title: {
       en: 'Northern lights in the Yukon',
-      fr: 'Aurores boréales au Yukon',
+      fr: 'Aurores boréales au Yukon', de: "Polarlichter im Yukon", es: "Auroras boreales en el Yukón",
     },
     type: 'light',
     provinceIds: ['yukon'],
@@ -79,7 +79,7 @@ export const wildEvents: WildEvent[] = [
     peak: [9, 1, 2, 3],
     summary: {
       en: "From late August to April the nights are dark enough for the aurora, and a cabin outside Whitehorse puts you under it. We plan for three or four nights, because clouds don't take requests.",
-      fr: "De fin août à avril, les nuits sont assez sombres pour les aurores, et un chalet près de Whitehorse vous place juste en dessous. Nous prévoyons trois ou quatre nuits, car les nuages ne prennent pas de commandes.",
+      fr: "De fin août à avril, les nuits sont assez sombres pour les aurores, et un chalet près de Whitehorse vous place juste en dessous. Nous prévoyons trois ou quatre nuits, car les nuages ne prennent pas de commandes.", de: "Von Ende August bis April sind die Nächte dunkel genug für das Polarlicht, und eine Hütte außerhalb von Whitehorse bringt Sie direkt darunter. Wir planen drei oder vier Nächte ein, denn Wolken nehmen keine Wünsche entgegen.", es: "De finales de agosto a abril, las noches son lo bastante oscuras para la aurora, y una cabaña a las afueras de Whitehorse le pone justo debajo. Planificamos tres o cuatro noches, porque las nubes no aceptan encargos.",
     },
     verifyYearly: true,
     journeyIds: ['yukon-under-the-aurora'],
@@ -89,7 +89,7 @@ export const wildEvents: WildEvent[] = [
     id: 'aurora-yellowknife',
     title: {
       en: 'Northern lights in Yellowknife',
-      fr: 'Aurores boréales à Yellowknife',
+      fr: 'Aurores boréales à Yellowknife', de: "Polarlichter in Yellowknife", es: "Auroras boreales en Yellowknife",
     },
     type: 'light',
     provinceIds: ['northwest-territories'],
@@ -98,7 +98,7 @@ export const wildEvents: WildEvent[] = [
     peak: [9, 1, 2, 3],
     summary: {
       en: "Yellowknife sits almost directly under the auroral oval, with flat land and a lot of clear winter nights. Yes, you can see the northern lights. No, not from Toronto.",
-      fr: "Yellowknife se trouve presque à l'aplomb de l'ovale auroral, sur un terrain plat aux nombreuses nuits d'hiver dégagées. Oui, on peut voir les aurores boréales. Non, pas depuis Toronto.",
+      fr: "Yellowknife se trouve presque à l'aplomb de l'ovale auroral, sur un terrain plat aux nombreuses nuits d'hiver dégagées. Oui, on peut voir les aurores boréales. Non, pas depuis Toronto.", de: "Yellowknife liegt fast direkt unter dem Polarlichtoval, mit flachem Land und vielen klaren Winternächten. Ja, Sie können Polarlichter sehen. Nein, nicht von Toronto aus.", es: "Yellowknife está casi justo bajo el óvalo auroral, con terreno llano y muchas noches de invierno despejadas. Sí, puede ver la aurora boreal. No, desde Toronto no.",
     },
     verifyYearly: true,
     journeyIds: [],
@@ -108,7 +108,7 @@ export const wildEvents: WildEvent[] = [
     id: 'icebergs-newfoundland',
     title: {
       en: 'Icebergs off Newfoundland',
-      fr: 'Icebergs au large de Terre-Neuve',
+      fr: 'Icebergs au large de Terre-Neuve', de: "Eisberge vor Neufundland", es: "Icebergs frente a Terranova",
     },
     type: 'landscape',
     provinceIds: ['atlantic-canada'],
@@ -117,7 +117,7 @@ export const wildEvents: WildEvent[] = [
     peak: [5, 6],
     summary: {
       en: "Icebergs that broke off Greenland's glaciers drift down 'Iceberg Alley' each spring and early summer. Some years bring hundreds, some years a handful.",
-      fr: "Détachés des glaciers du Groenland, les icebergs descendent « l'allée des icebergs » au printemps et au début de l'été. Certaines années en apportent des centaines, d'autres une poignée.",
+      fr: "Détachés des glaciers du Groenland, les icebergs descendent « l'allée des icebergs » au printemps et au début de l'été. Certaines années en apportent des centaines, d'autres une poignée.", de: "Eisberge, die von Grönlands Gletschern abgebrochen sind, treiben jedes Frühjahr und jeden Frühsommer die „Iceberg Alley“ hinunter. Manche Jahre bringen Hunderte, manche nur eine Handvoll.", es: "Icebergs desprendidos de los glaciares de Groenlandia bajan a la deriva por el «callejón de los icebergs» cada primavera y principio de verano. Algunos años llegan cientos; otros, un puñado.",
     },
     verifyYearly: true,
     journeyIds: ['the-atlantic-edge'],
@@ -127,7 +127,7 @@ export const wildEvents: WildEvent[] = [
     id: 'fall-colours',
     title: {
       en: 'Fall colours in Québec and Ontario',
-      fr: "Couleurs d'automne au Québec et en Ontario",
+      fr: "Couleurs d'automne au Québec et en Ontario", de: "Herbstfarben in Québec und Ontario", es: "Colores de otoño en Quebec y Ontario",
     },
     type: 'landscape',
     provinceIds: ['quebec', 'ontario'],
@@ -136,7 +136,7 @@ export const wildEvents: WildEvent[] = [
     peak: [9, 10],
     summary: {
       en: "The maples turn from late September, starting in the north and on high ground, then moving south. The best of it lasts about two weeks in any one place.",
-      fr: "Les érables changent de couleur dès la fin septembre, d'abord au nord et en altitude, puis plus au sud. Le plus beau dure environ deux semaines au même endroit.",
+      fr: "Les érables changent de couleur dès la fin septembre, d'abord au nord et en altitude, puis plus au sud. Le plus beau dure environ deux semaines au même endroit.", de: "Die Ahornbäume färben sich ab Ende September, zuerst im Norden und in höheren Lagen, dann weiter südlich. Der schönste Moment dauert an jedem Ort etwa zwei Wochen.", es: "Los arces cambian de color desde finales de septiembre, empezando por el norte y las zonas altas y bajando después hacia el sur. Lo mejor dura unas dos semanas en cada lugar.",
     },
     verifyYearly: true,
     journeyIds: ['quebec-slowly'],
@@ -146,7 +146,7 @@ export const wildEvents: WildEvent[] = [
     id: 'golden-larches',
     title: {
       en: 'Golden larches in the Rockies',
-      fr: 'Mélèzes dorés des Rocheuses',
+      fr: 'Mélèzes dorés des Rocheuses', de: "Goldene Lärchen in den Rockies", es: "Alerces dorados en las Rocosas",
     },
     type: 'landscape',
     provinceIds: ['alberta', 'british-columbia'],
@@ -155,7 +155,7 @@ export const wildEvents: WildEvent[] = [
     peak: [9],
     summary: {
       en: "For two or three weeks in September, the alpine larches above Lake Louise turn gold before dropping their needles. The trails are busy, so we start early.",
-      fr: "Pendant deux ou trois semaines en septembre, les mélèzes alpins au-dessus du lac Louise deviennent dorés avant de perdre leurs aiguilles. Les sentiers sont fréquentés, alors nous partons tôt.",
+      fr: "Pendant deux ou trois semaines en septembre, les mélèzes alpins au-dessus du lac Louise deviennent dorés avant de perdre leurs aiguilles. Les sentiers sont fréquentés, alors nous partons tôt.", de: "Zwei oder drei Wochen im September färben sich die Alpenlärchen über Lake Louise golden, bevor sie ihre Nadeln abwerfen. Die Wege sind voll, deshalb starten wir früh.", es: "Durante dos o tres semanas de septiembre, los alerces alpinos sobre Lake Louise se vuelven dorados antes de perder sus agujas. Los senderos están concurridos, así que salimos temprano.",
     },
     verifyYearly: true,
     journeyIds: ['rockies-to-the-pacific'],
@@ -165,7 +165,7 @@ export const wildEvents: WildEvent[] = [
     id: 'whales-tadoussac',
     title: {
       en: 'Whale season in Tadoussac',
-      fr: 'Saison des baleines à Tadoussac',
+      fr: 'Saison des baleines à Tadoussac', de: "Walsaison in Tadoussac", es: "Temporada de ballenas en Tadoussac",
     },
     type: 'wildlife',
     provinceIds: ['quebec'],
@@ -174,7 +174,7 @@ export const wildEvents: WildEvent[] = [
     peak: [7, 8, 9],
     summary: {
       en: "Where the Saguenay fjord meets the St. Lawrence, cold water brings up krill, and minke, fin and humpback whales follow. The St. Lawrence belugas live here all year.",
-      fr: "Là où le fjord du Saguenay rejoint le Saint-Laurent, l'eau froide fait remonter le krill, et les petits rorquals, rorquals communs et baleines à bosse suivent. Les bélugas du Saint-Laurent y vivent toute l'année.",
+      fr: "Là où le fjord du Saguenay rejoint le Saint-Laurent, l'eau froide fait remonter le krill, et les petits rorquals, rorquals communs et baleines à bosse suivent. Les bélugas du Saint-Laurent y vivent toute l'année.", de: "Wo der Saguenay-Fjord auf den Sankt-Lorenz-Strom trifft, bringt kaltes Wasser Krill nach oben, und Zwerg-, Finn- und Buckelwale folgen. Die Belugas des Sankt-Lorenz-Stroms leben hier das ganze Jahr.", es: "Donde el fiordo del Saguenay se encuentra con el San Lorenzo, el agua fría hace subir el kril, y detrás llegan rorcuales aliblancos, rorcuales comunes y jorobadas. Las belugas del San Lorenzo viven aquí todo el año.",
     },
     verifyYearly: true,
     journeyIds: ['quebec-slowly'],
@@ -184,7 +184,7 @@ export const wildEvents: WildEvent[] = [
     id: 'humpbacks-newfoundland',
     title: {
       en: 'Humpback whales in Newfoundland',
-      fr: 'Baleines à bosse à Terre-Neuve',
+      fr: 'Baleines à bosse à Terre-Neuve', de: "Buckelwale in Neufundland", es: "Ballenas jorobadas en Terranova",
     },
     type: 'wildlife',
     provinceIds: ['atlantic-canada'],
@@ -193,7 +193,7 @@ export const wildEvents: WildEvent[] = [
     peak: [7],
     summary: {
       en: "Humpbacks arrive to feed on capelin, small fish that roll onto the beaches in early summer. In July you can sometimes watch them from the cliffs.",
-      fr: "Les baleines à bosse arrivent pour se nourrir de capelans, de petits poissons qui viennent frayer sur les plages au début de l'été. En juillet, on peut parfois les observer depuis les falaises.",
+      fr: "Les baleines à bosse arrivent pour se nourrir de capelans, de petits poissons qui viennent frayer sur les plages au début de l'été. En juillet, on peut parfois les observer depuis les falaises.", de: "Buckelwale kommen, um Lodde zu fressen, kleine Fische, die im Frühsommer an die Strände rollen. Im Juli kann man sie manchmal von den Klippen aus beobachten.", es: "Las jorobadas llegan para alimentarse de capelán, pequeños peces que a principios de verano se acercan a desovar en las playas. En julio, a veces se las ve desde los acantilados.",
     },
     verifyYearly: true,
     journeyIds: ['the-atlantic-edge'],
@@ -203,7 +203,7 @@ export const wildEvents: WildEvent[] = [
     id: 'puffins-newfoundland',
     title: {
       en: 'Atlantic puffins in Newfoundland',
-      fr: 'Macareux moines à Terre-Neuve',
+      fr: 'Macareux moines à Terre-Neuve', de: "Papageitaucher in Neufundland", es: "Frailecillos atlánticos en Terranova",
     },
     type: 'wildlife',
     provinceIds: ['atlantic-canada'],
@@ -212,7 +212,7 @@ export const wildEvents: WildEvent[] = [
     peak: [6, 7],
     summary: {
       en: "The colonies south of St. John's hold some of the largest numbers of Atlantic puffins in North America. They nest from late spring and are gone to sea by early September.",
-      fr: "Les colonies au sud de St. John's comptent parmi les plus importantes d'Amérique du Nord pour le macareux moine. Ils nichent dès la fin du printemps et repartent en mer début septembre.",
+      fr: "Les colonies au sud de St. John's comptent parmi les plus importantes d'Amérique du Nord pour le macareux moine. Ils nichent dès la fin du printemps et repartent en mer début septembre.", de: "Die Kolonien südlich von St. John’s beherbergen einige der größten Bestände an Papageitauchern in Nordamerika. Sie brüten ab dem späten Frühjahr und sind Anfang September wieder auf See.", es: "Las colonias al sur de St. John’s albergan algunas de las mayores poblaciones de frailecillo atlántico de Norteamérica. Anidan desde finales de primavera y a principios de septiembre ya se han ido al mar.",
     },
     verifyYearly: true,
     journeyIds: ['the-atlantic-edge'],
@@ -222,7 +222,7 @@ export const wildEvents: WildEvent[] = [
     id: 'orcas-vancouver-island',
     title: {
       en: 'Orcas off Vancouver Island',
-      fr: "Orques au large de l'île de Vancouver",
+      fr: "Orques au large de l'île de Vancouver", de: "Orcas vor Vancouver Island", es: "Orcas frente a la isla de Vancouver",
     },
     type: 'wildlife',
     provinceIds: ['british-columbia'],
@@ -231,7 +231,7 @@ export const wildEvents: WildEvent[] = [
     peak: [7, 8, 9],
     summary: {
       en: "Orcas move through the waters around Vancouver Island most of the year, but summer brings the most reliable sightings. They're wild animals on their own schedule, so a good skipper matters more than a good date.",
-      fr: "Les orques fréquentent les eaux autour de l'île de Vancouver presque toute l'année, mais c'est l'été qui offre les observations les plus régulières. Ce sont des animaux sauvages avec leur propre agenda : un bon capitaine compte plus qu'une bonne date.",
+      fr: "Les orques fréquentent les eaux autour de l'île de Vancouver presque toute l'année, mais c'est l'été qui offre les observations les plus régulières. Ce sont des animaux sauvages avec leur propre agenda : un bon capitaine compte plus qu'une bonne date.", de: "Orcas ziehen fast das ganze Jahr durch die Gewässer um Vancouver Island, die verlässlichsten Sichtungen gibt es aber im Sommer. Es sind Wildtiere mit eigenem Zeitplan, ein guter Skipper zählt also mehr als ein gutes Datum.", es: "Las orcas recorren las aguas de la isla de Vancouver casi todo el año, pero el verano trae los avistamientos más fiables. Son animales salvajes con su propio horario, así que un buen patrón importa más que una buena fecha.",
     },
     verifyYearly: true,
     journeyIds: ['bears-whales-rainforest', 'family-summer-west'],
@@ -241,7 +241,7 @@ export const wildEvents: WildEvent[] = [
     id: 'wildflowers-rockies',
     title: {
       en: 'Alpine wildflowers in the Rockies',
-      fr: 'Fleurs alpines des Rocheuses',
+      fr: 'Fleurs alpines des Rocheuses', de: "Alpenblumen in den Rockies", es: "Flores alpinas en las Rocosas",
     },
     type: 'landscape',
     provinceIds: ['alberta'],
@@ -250,7 +250,7 @@ export const wildEvents: WildEvent[] = [
     peak: [7],
     summary: {
       en: "Once the snow leaves the high meadows, usually by mid-July, they fill with paintbrush, lupins and glacier lilies. It's short, because summer up there is short.",
-      fr: "Quand la neige quitte les prairies d'altitude, en général vers la mi-juillet, elles se couvrent de castillèjes, de lupins et d'érythrones. C'est bref, car l'été là-haut est bref.",
+      fr: "Quand la neige quitte les prairies d'altitude, en général vers la mi-juillet, elles se couvrent de castillèjes, de lupins et d'érythrones. C'est bref, car l'été là-haut est bref.", de: "Sobald der Schnee die hohen Wiesen verlässt, meist bis Mitte Juli, füllen sie sich mit Indian Paintbrush, Lupinen und Gletscherlilien. Die Zeit ist kurz, weil der Sommer dort oben kurz ist.", es: "En cuanto la nieve deja los prados altos, normalmente a mediados de julio, se llenan de pinceles indios, altramuces y lirios de glaciar. Dura poco, porque allí arriba el verano es corto.",
     },
     verifyYearly: true,
     journeyIds: ['rockies-to-the-pacific', 'family-summer-west'],
@@ -260,7 +260,7 @@ export const wildEvents: WildEvent[] = [
     id: 'midnight-sun-yukon',
     title: {
       en: 'Midnight sun in the Yukon',
-      fr: 'Soleil de minuit au Yukon',
+      fr: 'Soleil de minuit au Yukon', de: "Mitternachtssonne im Yukon", es: "Sol de medianoche en el Yukón",
     },
     type: 'light',
     provinceIds: ['yukon'],
@@ -269,7 +269,7 @@ export const wildEvents: WildEvent[] = [
     peak: [6],
     summary: {
       en: "Around the June solstice, Dawson City gets close to 21 hours of daylight and it never really gets dark. For the sun that truly doesn't set, you drive north on the Dempster Highway past the Arctic Circle.",
-      fr: "Autour du solstice de juin, Dawson City a près de 21 heures de jour et la nuit ne tombe jamais vraiment. Pour un soleil qui ne se couche pas du tout, il faut remonter la route Dempster au-delà du cercle polaire.",
+      fr: "Autour du solstice de juin, Dawson City a près de 21 heures de jour et la nuit ne tombe jamais vraiment. Pour un soleil qui ne se couche pas du tout, il faut remonter la route Dempster au-delà du cercle polaire.", de: "Rund um die Junisonnenwende hat Dawson City fast 21 Stunden Tageslicht, und richtig dunkel wird es nie. Für die Sonne, die wirklich nicht untergeht, fahren Sie auf dem Dempster Highway nach Norden über den Polarkreis.", es: "En torno al solsticio de junio, Dawson City tiene casi 21 horas de luz y nunca llega a oscurecer del todo. Para ver el sol que de verdad no se pone, hay que subir por la Dempster Highway más allá del círculo polar ártico.",
     },
     verifyYearly: true,
     journeyIds: [],
@@ -279,7 +279,7 @@ export const wildEvents: WildEvent[] = [
     id: 'powder-season-rockies',
     title: {
       en: 'Powder season in the mountains',
-      fr: 'Saison de poudreuse en montagne',
+      fr: 'Saison de poudreuse en montagne', de: "Pulverschneesaison in den Bergen", es: "Temporada de nieve polvo en la montaña",
     },
     type: 'landscape',
     provinceIds: ['alberta', 'british-columbia'],
@@ -288,7 +288,7 @@ export const wildEvents: WildEvent[] = [
     peak: [1, 2, 3],
     summary: {
       en: "The resorts open in late November or December, but the snowpack is deepest from January to March. Heli-skiing in the BC interior runs on the same calendar, weather permitting.",
-      fr: "Les stations ouvrent fin novembre ou en décembre, mais l'enneigement est le plus profond de janvier à mars. L'héliski dans l'intérieur de la Colombie-Britannique suit le même calendrier, si la météo le permet.",
+      fr: "Les stations ouvrent fin novembre ou en décembre, mais l'enneigement est le plus profond de janvier à mars. L'héliski dans l'intérieur de la Colombie-Britannique suit le même calendrier, si la météo le permet.", de: "Die Skigebiete öffnen Ende November oder im Dezember, doch die Schneedecke ist von Januar bis März am höchsten. Heli-Skiing im Inneren von BC folgt demselben Kalender, wenn das Wetter mitspielt.", es: "Las estaciones abren a finales de noviembre o en diciembre, pero el manto de nieve es más profundo de enero a marzo. El heli-esquí en el interior de Columbia Británica sigue el mismo calendario, si el tiempo lo permite.",
     },
     verifyYearly: true,
     journeyIds: [],

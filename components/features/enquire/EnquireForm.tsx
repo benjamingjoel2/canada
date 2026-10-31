@@ -31,8 +31,8 @@ export function EnquireForm({
   titleId?: string;
 }) {
   const t = useTranslations('enquire');
-  const tm = useTranslations('match');
-  const locale = useLocale() as 'en' | 'fr';
+  const tm = useTranslations('match'); // interest labels
+  const locale = useLocale() as 'en' | 'fr' | 'de' | 'es';
   const currency = useCurrency();
   const season = useSeason();
   const [step, setStep] = useState<1 | 2 | 'done'>(1);
@@ -237,7 +237,7 @@ export function EnquireForm({
                 {t('contactPref')} <span className="text-maple" aria-hidden>*</span>
               </legend>
               <div className="mt-2 flex flex-wrap gap-5">
-                {(['email', 'whatsapp', 'phone'] as const).map((c) => (
+                {(['email', 'phone'] as const).map((c) => (
                   <label key={c} className="flex cursor-pointer items-center gap-2 text-forest">
                     <input type="radio" name="contactPref" value={c} defaultChecked={c === 'email'} className="h-4 w-4 accent-forest" />
                     {t(`contact${c[0].toUpperCase()}${c.slice(1)}` as 'contactEmail')}

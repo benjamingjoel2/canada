@@ -57,6 +57,8 @@ export function SeasonSwitch({ light = false, compact = false, className }: { li
   );
 }
 
+const names = { en: 'English', fr: 'Français', de: 'Deutsch', es: 'Español' } as const;
+
 export function LocaleSwitch({ light = false, className }: { light?: boolean; className?: string }) {
   const t = useTranslations('prefs');
   const locale = useLocale();
@@ -64,7 +66,7 @@ export function LocaleSwitch({ light = false, className }: { light?: boolean; cl
   const pathname = usePathname();
   const params = useParams();
   const [pending, start] = useTransition();
-  const go = (next: 'en' | 'fr') => {
+  const go = (next: 'en' | 'fr' | 'de' | 'es') => {
     if (next === locale) return;
     start(() => {
       // @ts-expect-error -- params are always valid for the current route
@@ -73,12 +75,13 @@ export function LocaleSwitch({ light = false, className }: { light?: boolean; cl
   };
   return (
     <div role="group" aria-label={t('language')} className={clsx('flex items-center gap-1 text-xs font-medium', pending && 'opacity-60', className)}>
-      {(['en', 'fr'] as const).map((l, i) => (
+      {(['en', 'fr', 'de', 'es'] as const).map((l, i) => (
         <span key={l} className="flex items-center gap-1">
-          {i > 0 && <span aria-hidden className={light ? 'text-birch/40' : 'text-forest/30'}>/</span>}
+          {i > 0 && <span aria-hidden className={light ? 'text-birch/40' : 'text-forest/30'}>·</span>}
           <button
             type="button"
             lang={l}
+            title={names[l]}
             aria-current={l === locale ? 'true' : undefined}
             onClick={() => go(l)}
             className={clsx(
@@ -86,7 +89,7 @@ export function LocaleSwitch({ light = false, className }: { light?: boolean; cl
               l === locale ? (light ? 'text-birch underline underline-offset-4' : 'text-forest underline underline-offset-4') : light ? 'text-birch/70 hover:text-birch' : 'text-forest/60 hover:text-forest',
             )}
           >
-            {l === 'en' ? 'English' : 'Français'}
+            {l.toUpperCase()}
           </button>
         </span>
       ))}

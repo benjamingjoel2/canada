@@ -14,7 +14,7 @@ import { useEnquire } from '@/components/features/enquire/EnquireContext';
 export function ItineraryModal() {
   const t = useTranslations('itinerary');
   const te = useTranslations('enquire');
-  const locale = useLocale() as 'en' | 'fr';
+  const locale = useLocale() as 'en' | 'fr' | 'de' | 'es';
   const { itineraryJourneyId, itineraryTitle: title, closeItinerary } = useEnquire();
   const [state, setState] = useState<'idle' | 'sending' | 'done' | 'error'>('idle');
   const [errors, setErrors] = useState<Record<string, string>>({});

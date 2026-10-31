@@ -4,7 +4,7 @@ import { heroFilms } from '@/data/media';
 import { journeysBySeason } from '@/lib/content';
 import { tr } from '@/lib/l10n';
 import { Link } from '@/i18n/navigation';
-import { Picture, SeasonalPicture } from '@/components/ui/Picture';
+import { Picture, SeasonalPicture, SeasonPreload } from '@/components/ui/Picture';
 import { Italic } from '@/components/ui/Italic';
 import { SeasonVideo } from './SeasonVideo';
 
@@ -17,9 +17,10 @@ export async function HeroFilm({ locale }: { locale: Locale }) {
   const tc = await getTranslations({ locale, namespace: 'common' });
   return (
     <section aria-label={t('heroFilm')} className="relative flex h-[78vh] min-h-[520px] flex-col justify-end overflow-hidden bg-forest-900 md:h-[92vh]">
+      <SeasonPreload summer={heroFilms.summer.poster} winter={heroFilms.winter.poster} sizes="100vw" />
       {(['summer', 'winter'] as const).map((s) => (
         <div key={s} className={`${s}-only absolute inset-0`}>
-          <Picture img={heroFilms[s].poster} locale={locale} className="h-full w-full" showCaption={false} priority={s === 'summer'} />
+          <Picture img={heroFilms[s].poster} locale={locale} className="h-full w-full" showCaption={false} seasonalHigh />
           {heroFilms[s].video && <SeasonVideo season={s} src={heroFilms[s].video!} pauseLabel={t('pause')} playLabel={t('play')} />}
         </div>
       ))}

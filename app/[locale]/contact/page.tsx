@@ -16,9 +16,7 @@ export default async function Contact({ params }: LocaleParams) {
   const locale = await pageLocale(params);
   const t = await getTranslations({ locale, namespace: 'contact' });
   const rows: [string, React.ReactNode][] = [
-    [t('phone'), <a key="p" href={site.contact.phoneHref}>{site.contact.phone}</a>],
     [t('email'), <a key="e" href={`mailto:${site.contact.email}`}>{site.contact.email}</a>],
-    [t('whatsapp'), site.contact.whatsapp],
     [t('hours'), site.contact.hours[locale]],
     [t('address'), <address key="a" className="not-italic">{site.address.lines.map((l) => <span key={l} className="block">{l}</span>)}</address>],
   ];

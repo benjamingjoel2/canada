@@ -16,8 +16,6 @@ import { journeys } from '../data/journeys';
 import { experiences, experienceGroups } from '../data/experiences';
 import { stays } from '../data/stays';
 import { wildEvents } from '../data/wild-events';
-import { specialists } from '../data/specialists';
-import { testimonials } from '../data/testimonials';
 import { faqs } from '../data/faq';
 import { indigenousPage, aboutPage, howWeWorkSteps } from '../data/pages';
 import { places } from '../data/places';
@@ -67,8 +65,6 @@ function report() {
     ['data/experiences.ts', experiences],
     ['data/stays.ts', stays],
     ['data/wild-events.ts', wildEvents],
-    ['data/specialists.ts', specialists],
-    ['data/testimonials.ts', testimonials],
     ['data/faq.ts', faqs],
     ['data/media.ts + config/site.ts', [mediaFrReview, siteFrReview]],
     ['data/pages.ts', [{ id: 'indigenousPage', ...indigenousPage }, { id: 'aboutPage', ...aboutPage }, ...howWeWorkSteps]],

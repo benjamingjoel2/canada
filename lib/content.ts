@@ -4,7 +4,6 @@ import { journeys } from '@/data/journeys';
 import { experiences, experienceGroups } from '@/data/experiences';
 import { stays } from '@/data/stays';
 import { wildEvents } from '@/data/wild-events';
-import { specialists } from '@/data/specialists';
 import type { ExperienceGroup, ProvinceId, Season } from '@/data/types';
 
 export const getProvince = (slug: string) => provinces.find((p) => p.slug === slug || p.id === slug);
@@ -16,7 +15,6 @@ export const getExperience = (id: string) => experiences.find((e) => e.id === id
 export const getExperienceGroup = (id: ExperienceGroup | string) => experienceGroups.find((g) => g.id === id || g.slug === id);
 export const experiencesIn = (group: ExperienceGroup) => experiences.filter((e) => e.group === group);
 export const getStay = (id: string) => stays.find((s) => s.id === id || s.slug === id);
-export const getSpecialist = (id: string) => specialists.find((s) => s.id === id);
 export const getEvent = (id: string) => wildEvents.find((e) => e.id === id);
 
 export const journeysInProvince = (provinceId: ProvinceId) => journeys.filter((j) => j.provinceIds.includes(provinceId));
@@ -42,4 +40,4 @@ export const journeysBySeason = (season: Season) => [
   ...journeys.filter((j) => !j.seasons.includes(season)),
 ];
 
-export { provinces, regions, journeys, experiences, experienceGroups, stays, wildEvents, specialists };
+export { provinces, regions, journeys, experiences, experienceGroups, stays, wildEvents };

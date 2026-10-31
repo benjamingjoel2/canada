@@ -88,7 +88,6 @@ export function MobileDrawer({ open, onClose, nav }: { open: boolean; onClose: (
           <Item onClose={onClose} href="/journeys" label={t('browseAllJourneys')} />
           <Item onClose={onClose} href="/journeys?season=summer" label={`☀ ${t('summerJourneys')}`} />
           <Item onClose={onClose} href="/journeys?season=winter" label={`❄ ${t('winterJourneys')}`} />
-          <Item onClose={onClose} href="/find-your-specialist" label={t('findSpecialist')} />
           <Item onClose={onClose} href="/wild-calendar" label={t('wildCalendar')} />
         </>
       );
@@ -148,8 +147,6 @@ export function MobileDrawer({ open, onClose, nav }: { open: boolean; onClose: (
       list = (
         <>
           <Item onClose={onClose} href="/about" label={t('howWeWork')} />
-          <Item onClose={onClose} href="/about/team" label={t('team')} />
-          <Item onClose={onClose} href="/about/testimonials" label={t('testimonials')} />
           <Item onClose={onClose} href="/indigenous-canada" label={t('indigenousCanada')} />
           <Item onClose={onClose} href="/faq" label={t('faq')} />
           <Item onClose={onClose} href="/contact" label={t('contact')} />
@@ -208,8 +205,8 @@ export function MobileDrawer({ open, onClose, nav }: { open: boolean; onClose: (
           >
             {t('enquire')}
           </button>
-          <a href={site.contact.phoneHref} className="block text-center text-sm text-granite">
-            {site.contact.phone}
+          <a href={`mailto:${site.contact.email}`} className="block text-center text-sm text-granite">
+            {site.contact.email}
           </a>
         </div>
       </div>

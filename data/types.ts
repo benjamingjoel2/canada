@@ -1,7 +1,7 @@
 /**
  * Content types for Canada Travel Co.
  *
- * Every translatable string is an `L` ({ en, fr }). English is the source.
+ * Every translatable string is an `L` ({ en, fr, de, es }). English is the source.
  * French is a machine-assisted draft until a native speaker approves it:
  * every record that carries French text has `frReview`, which stays
  * "needs-human-review" until someone signs it off. Run `npm run i18n:report`
@@ -10,9 +10,9 @@
  * Italic emphasis in headings and titles is written inline as *word*.
  */
 
-export type Locale = 'en' | 'fr';
+export type Locale = 'en' | 'fr' | 'de' | 'es';
 export type ReviewStatus = 'needs-human-review' | 'approved';
-export type L = { en: string; fr: string };
+export type L = { en: string; fr: string; de: string; es: string };
 export type Reviewed = { frReview: ReviewStatus };
 export type Season = 'summer' | 'winter';
 
@@ -131,7 +131,6 @@ export type Journey = Reviewed & {
   eventIds: string[];
   regionIds: string[];
   provinceIds: ProvinceId[];
-  specialistId: string;
   images: SeasonalImg;
 };
 
@@ -182,22 +181,6 @@ export type WildEvent = Reviewed & {
 
 export type Interest = 'wildlife' | 'landscapes' | 'food-cities' | 'comfort' | 'adventure';
 
-export type Specialist = Reviewed & {
-  id: string;
-  name: string;
-  role: L;
-  focus: L;
-  areas: (Area | 'all')[];
-  /** 0–3, how strongly this person fits each interest */
-  interests: Record<Interest, number>;
-  seasons: Season[];
-  quote: L;
-  bio: L;
-  photo: Img;
-  languages: string[];
-  placeholder: true;
-};
-
 export type Stay = Reviewed & {
   id: string;
   slug: string;
@@ -209,16 +192,6 @@ export type Stay = Reviewed & {
   body: L;
   seasons: Season[];
   images: Img[];
-  placeholder: true;
-};
-
-export type Testimonial = Reviewed & {
-  id: string;
-  quote: L;
-  who: L;
-  /** ISO 3166-1 alpha-2, for the flag */
-  country: string;
-  journeyId?: string;
   placeholder: true;
 };
 
@@ -234,15 +207,3 @@ export type Faq = Reviewed & {
   onHome?: boolean;
 };
 
-export type PressItem = { id: string; name: string; quote: L; placeholder: true };
-
-export type Story = {
-  slug: string;
-  title: L;
-  excerpt: L;
-  date: string;
-  readMins: number;
-  image: Img;
-  tags: string[];
-  frReview: ReviewStatus;
-};

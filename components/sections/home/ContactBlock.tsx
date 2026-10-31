@@ -15,10 +15,6 @@ export async function ContactBlock({ locale }: { locale: Locale }) {
           <SectionHeading title={t('contactTitle')} intro={t('contactIntro')} />
           <dl className="mt-10 space-y-5 text-sm">
             <div>
-              <dt className="eyebrow text-granite">{tc('phone')}</dt>
-              <dd className="mt-1 text-lg text-forest"><a href={site.contact.phoneHref}>{site.contact.phone}</a></dd>
-            </div>
-            <div>
               <dt className="eyebrow text-granite">{tc('email')}</dt>
               <dd className="mt-1 text-lg text-forest"><a href={`mailto:${site.contact.email}`}>{site.contact.email}</a></dd>
             </div>

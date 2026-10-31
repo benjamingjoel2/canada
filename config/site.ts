@@ -1,33 +1,23 @@
-/** Brand settings. Everything marked PLACEHOLDER must be replaced before launch. */
+/** Brand settings. */
 export const site = {
   name: 'Canada Travel Co.',
-  tagline: { en: 'Canada, made for you.', fr: 'Le Canada, fait pour vous.' },
+  tagline: { en: 'Canada, made for you.', fr: 'Le Canada, fait pour vous.', de: "Kanada, für Sie gemacht.", es: "Canadá, hecho para usted." },
   /** Set NEXT_PUBLIC_SITE_URL in Vercel once the domain is live. */
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://canadatravel.example',
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://canadatravelco.tourground.com',
+  /** One address for the brand. No phone, WhatsApp, social links or licence numbers (owner's decision). */
   contact: {
-    phone: '+1 (604) 555-0142', // PLACEHOLDER
-    phoneHref: 'tel:+16045550142',
-    email: 'hello@canadatravel.example', // PLACEHOLDER
-    whatsapp: '+1 604 555 0142', // PLACEHOLDER
-    hours: { en: 'Mon–Fri, 8am–5pm Pacific', fr: 'Lun–ven, 8 h – 17 h (heure du Pacifique)' },
+    email: 'canadatravelco@tourground.com',
+    hours: { en: 'Mon–Fri, 8am–5pm Pacific', fr: 'Lun–ven, 8 h – 17 h (heure du Pacifique)', de: "Mo–Fr, 8–17 Uhr pazifische Zeit", es: "Lun–vie, 8:00–17:00, hora del Pacífico" },
   },
+  /** Business address: Workhaus coworking, Financial District, Toronto (workhaus.ca/toronto). */
   address: {
-    // PLACEHOLDER
-    lines: ['Canada Travel Co. Ltd.', '000 Placeholder Street, Suite 100', 'Vancouver, BC V6B 0A0', 'Canada'],
+    lines: ['Canada Travel Co.', '181 University Avenue', 'Toronto, ON', 'Canada'],
+    street: '181 University Avenue',
+    locality: 'Toronto',
+    region: 'ON',
+    country: 'CA',
   },
-  /** PLACEHOLDER — provincial travel seller registration. Use the one(s) that apply. */
-  registration: [
-    { en: 'Consumer Protection BC travel agent licence #00000 (placeholder)', fr: 'Licence d’agent de voyages Consumer Protection BC no 00000 (exemple)' },
-    { en: 'TICO registration #00000000 (placeholder)', fr: 'Inscription TICO no 00000000 (exemple)' },
-    { en: 'Office de la protection du consommateur (OPC) permit #000000 (placeholder)', fr: 'Permis de l’Office de la protection du consommateur (OPC) no 000000 (exemple)' },
-  ],
-  social: [
-    { name: 'Instagram', href: 'https://instagram.com/' },
-    { name: 'YouTube', href: 'https://youtube.com/' },
-    { name: 'LinkedIn', href: 'https://linkedin.com/' },
-    { name: 'Facebook', href: 'https://facebook.com/' },
-  ],
 } as const;
 
-/** French strings in this file (tagline, hours, registration lines) are drafts. */
+/** French strings in this file (tagline, hours) are drafts. */
 export const siteFrReview = { id: 'config-site', frReview: 'needs-human-review' as const };

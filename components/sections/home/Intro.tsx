@@ -1,12 +1,11 @@
 import { getTranslations } from 'next-intl/server';
 import type { Locale } from '@/data/types';
 import { homeImages } from '@/data/media';
-import { press } from '@/data/press';
 import { Italic } from '@/components/ui/Italic';
 import { Picture } from '@/components/ui/Picture';
 import { Reveal } from '@/components/ui/Reveal';
 
-/** Reference: intro with italic-emphasis h1, two paragraphs, award logos, image collage. */
+/** Reference: intro with italic-emphasis h1, two paragraphs, image collage. */
 export async function Intro({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale, namespace: 'home' });
   return (
@@ -21,13 +20,6 @@ export async function Intro({ locale }: { locale: Locale }) {
             <p>{t('intro1')}</p>
             <p>{t('intro2')}</p>
           </div>
-          <ul className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3" aria-label={t('pressTitle').replace(/\*/g, '')}>
-            {press.slice(0, 3).map((p) => (
-              <li key={p.id} className="font-serif text-sm text-granite italic">
-                {p.name}
-              </li>
-            ))}
-          </ul>
         </div>
         <div className="grid grid-cols-6 grid-rows-6 gap-3 lg:col-span-6 lg:gap-4">
           <Reveal className="col-span-4 row-span-6">
