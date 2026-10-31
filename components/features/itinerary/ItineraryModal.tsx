@@ -58,8 +58,9 @@ export function ItineraryModal() {
         body: JSON.stringify(parsed.data),
       });
       if (!res.ok) throw new Error(String(res.status));
-      const blob = await res.blob();
-      const name = /filename="([^"]+)"/.exec(res.headers.get('content-disposition') ?? '')?.[1] ?? 'itinerary.pdf';
+      const { fileName: name = 'itinerary.pdf' } = (await res.json()) as { fileName?: string };
+      const { renderItinerary } = await import('@/lib/pdf/render-client');
+      const blob = await renderItinerary(parsed.data.journeyId, parsed.data.locale, parsed.data.name);
       const href = URL.createObjectURL(blob);
       setUrl(href);
       setFileName(name);

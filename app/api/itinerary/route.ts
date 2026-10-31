@@ -1,10 +1,8 @@
-import { renderToBuffer } from '@react-pdf/renderer';
 import { NextResponse } from 'next/server';
 import { itinerarySchema } from '@/lib/schemas';
 import { getJourney } from '@/lib/content';
 import { logLead } from '@/lib/leads';
 import { plain } from '@/lib/l10n';
-import { ItineraryDocument } from '@/lib/pdf/ItineraryDocument';
 
 export async function POST(req: Request) {
   const parsed = itinerarySchema.safeParse(await req.json().catch(() => null));
@@ -23,12 +21,10 @@ export async function POST(req: Request) {
     locale,
   });
 
-  const pdf = await renderToBuffer(<ItineraryDocument journey={journey} locale={locale} preparedFor={name} />);
-  return new Response(new Uint8Array(pdf), {
-    headers: {
-      'content-type': 'application/pdf',
-      'content-disposition': `attachment; filename="canada-travel-co-${journey.slug}-${locale}.pdf"`,
-      'cache-control': 'no-store',
-    },
-  });
+  // The PDF itself is rendered in the browser (lib/pdf/render-client.tsx); this route validates
+  // the request, records the lead and names the file.
+  return NextResponse.json(
+    { ok: true, fileName: `canada-travel-co-${journey.slug}-${locale}.pdf` },
+    { headers: { 'cache-control': 'no-store' } },
+  );
 }
