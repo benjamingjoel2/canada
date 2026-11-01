@@ -40,6 +40,38 @@ export async function LegalPage({ locale, title, doc }: { locale: Locale; title:
               {s.p.map((p, i) => (
                 <p key={i}>{linkify(p)}</p>
               ))}
+              {s.table && (
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse text-left text-[0.9375rem] leading-normal">
+                    <thead>
+                      <tr className="border-b border-granite-300">
+                        {s.table.head.map((h) => (
+                          <th key={h} scope="col" className="py-2 pr-4 align-bottom font-semibold">
+                            {h}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {s.table.rows.map((row, r) => (
+                        <tr key={r} className="border-b border-granite-100 align-top">
+                          {row.map((cell, c) =>
+                            c === 0 ? (
+                              <th key={c} scope="row" className="py-2 pr-4 font-mono text-sm font-normal">
+                                {cell}
+                              </th>
+                            ) : (
+                              <td key={c} className="py-2 pr-4">
+                                {cell}
+                              </td>
+                            ),
+                          )}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
             </div>
           ))}
         </div>
