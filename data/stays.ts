@@ -1,18 +1,18 @@
 import type { Stay } from './types';
 
 /**
- * PLACEHOLDER stays. Names are invented and do not refer to real properties.
- * Replace with real partner properties (and their permission) before launch.
+ * Sample stays. Until partner agreements are signed, each stay is named by what
+ * and where it is (no business names). Replace with real partner properties, with
+ * their permission, before naming them. Slugs are kept stable.
  */
 export const stays: Stay[] = [
   {
     id: 'stay-rainforest-lodge',
     slug: 'moss-and-tide-lodge',
-    name: 'Moss & Tide Lodge',
+    name: { en: "A floating lodge in the Great Bear Rainforest", fr: "Un lodge flottant dans la forêt pluviale du Grand Ours", de: "Eine schwimmende Lodge im Great Bear Rainforest", es: "Un lodge flotante en el Great Bear Rainforest" },
     regionId: 'great-bear-rainforest',
     provinceId: 'british-columbia',
     frReview: 'needs-human-review',
-    placeholder: true,
     style: { en: 'Floating lodge, 9 rooms', fr: 'Lodge flottant, 9 chambres', de: "Schwimmende Lodge, 9 Zimmer", es: "Lodge flotante, 9 habitaciones" },
     summary: {
       en: 'A floating lodge moored in a sheltered inlet, reached only by floatplane. Bears on the shore, whales in the channel.',
@@ -45,11 +45,10 @@ export const stays: Stay[] = [
   {
     id: 'stay-tofino-inn',
     slug: 'driftline-inn',
-    name: 'Driftline Inn',
+    name: { en: "A cedar inn on the beach near Tofino", fr: "Une auberge en cèdre sur la plage, près de Tofino", de: "Ein Gasthaus aus Zedernholz am Strand bei Tofino", es: "Una posada de cedro en la playa, cerca de Tofino" },
     regionId: 'tofino-vancouver-island',
     provinceId: 'british-columbia',
     frReview: 'needs-human-review',
-    placeholder: true,
     style: { en: 'Beachfront inn, 16 rooms', fr: 'Auberge en bord de plage, 16 chambres', de: "Gasthaus am Strand, 16 Zimmer", es: "Posada frente a la playa, 16 habitaciones" },
     summary: {
       en: 'A cedar inn on a long Pacific beach near Tofino. Whales in summer, storms in winter, both best seen from the window seat.',
@@ -82,11 +81,10 @@ export const stays: Stay[] = [
   {
     id: 'stay-lake-chalet',
     slug: 'larchmere-chalet',
-    name: 'Larchmere Chalet',
+    name: { en: "A timber chalet near Lake Louise", fr: "Un chalet en bois près du lac Louise", de: "Ein Holzchalet in der Nähe des Lake Louise", es: "Un chalet de madera cerca del lago Louise" },
     regionId: 'banff-lake-louise',
     provinceId: 'alberta',
     frReview: 'needs-human-review',
-    placeholder: true,
     style: { en: 'Mountain chalet, 12 rooms', fr: 'Chalet de montagne, 12 chambres', de: "Berg-Chalet, 12 Zimmer", es: "Chalet de montaña, 12 habitaciones" },
     summary: {
       en: 'A timber chalet near Lake Louise, close enough to walk to the trails and far enough from the car parks.',
@@ -119,11 +117,10 @@ export const stays: Stay[] = [
   {
     id: 'stay-jasper-cabins',
     slug: 'whitebark-cabins',
-    name: 'Whitebark Cabins',
+    name: { en: "Log cabins on the river outside Jasper", fr: "Des chalets en rondins au bord de la rivière, près de Jasper", de: "Blockhütten am Fluss vor den Toren von Jasper", es: "Cabañas de troncos junto al río, a las afueras de Jasper" },
     regionId: 'jasper',
     provinceId: 'alberta',
     frReview: 'needs-human-review',
-    placeholder: true,
     style: { en: 'Log cabins by a river, 14 cabins', fr: 'Chalets en rondins au bord d’une rivière, 14 chalets', de: "Blockhütten am Fluss, 14 Hütten", es: "Cabañas de troncos junto al río, 14 cabañas" },
     summary: {
       en: 'Log cabins on a bend of the river outside Jasper. Elk on the lawn are not an extra charge.',
@@ -156,11 +153,10 @@ export const stays: Stay[] = [
   {
     id: 'stay-vancouver-hotel',
     slug: 'the-lantern-house',
-    name: 'The Lantern House',
+    name: { en: "A small hotel on the Vancouver harbour", fr: "Un petit hôtel sur le port de Vancouver", de: "Ein kleines Hotel am Hafen von Vancouver", es: "Un pequeño hotel en el puerto de Vancouver" },
     regionId: 'vancouver',
     provinceId: 'british-columbia',
     frReview: 'needs-human-review',
-    placeholder: true,
     style: { en: 'Harbourside boutique hotel, 40 rooms', fr: 'Hôtel de charme sur le port, 40 chambres', de: "Boutiquehotel am Hafen, 40 Zimmer", es: "Hotel boutique junto al puerto, 40 habitaciones" },
     summary: {
       en: 'A small hotel on the harbour, a short walk from the seawall and the floatplane terminal.',
@@ -193,11 +189,10 @@ export const stays: Stay[] = [
   {
     id: 'stay-churchill-tundra-lodge',
     slug: 'tundra-line-lodge',
-    name: 'Tundra Line Lodge',
+    name: { en: "A fly-in lodge on the Hudson Bay coast", fr: "Un lodge accessible en avion sur la côte de la baie d’Hudson", de: "Eine Lodge an der Küste der Hudson Bay, nur per Flugzeug erreichbar", es: "Un lodge con acceso en avioneta en la costa de la bahía de Hudson" },
     regionId: 'churchill',
     provinceId: 'manitoba',
     frReview: 'needs-human-review',
-    placeholder: true,
     style: { en: 'Fly-in tundra lodge, 10 rooms', fr: 'Lodge de toundra accessible en avion, 10 chambres', de: "Tundra-Lodge mit Anreise per Flugzeug, 10 Zimmer", es: "Lodge en la tundra con acceso en avioneta, 10 habitaciones" },
     summary: {
       en: 'A fenced lodge on the Hudson Bay coast, where the polar bears come to you. Arrival is by small plane.',
@@ -230,11 +225,10 @@ export const stays: Stay[] = [
   {
     id: 'stay-aurora-cabins',
     slug: 'kettle-lake-cabins',
-    name: 'Kettle Lake Cabins',
+    name: { en: "Lakeside cabins outside Whitehorse", fr: "Des chalets au bord d’un lac, près de Whitehorse", de: "Hütten an einem See vor den Toren von Whitehorse", es: "Cabañas junto a un lago a las afueras de Whitehorse" },
     regionId: 'whitehorse',
     provinceId: 'yukon',
     frReview: 'needs-human-review',
-    placeholder: true,
     style: { en: 'Wilderness cabins, 6 cabins', fr: 'Chalets en pleine nature, 6 chalets', de: "Wildnishütten, 6 Hütten", es: "Cabañas en plena naturaleza, 6 cabañas" },
     summary: {
       en: 'Six cabins on a quiet lake outside Whitehorse, chosen for dark skies and a short walk to the shore.',
@@ -267,11 +261,10 @@ export const stays: Stay[] = [
   {
     id: 'stay-yellowknife-lodge',
     slug: 'quartz-bay-lodge',
-    name: 'Quartz Bay Lodge',
+    name: { en: "A small lodge on Great Slave Lake", fr: "Un petit lodge sur le Grand lac des Esclaves", de: "Eine kleine Lodge am Großen Sklavensee", es: "Un pequeño lodge en el Gran Lago del Esclavo" },
     regionId: 'yellowknife',
     provinceId: 'northwest-territories',
     frReview: 'needs-human-review',
-    placeholder: true,
     style: { en: 'Lakeside lodge, 8 rooms', fr: 'Lodge au bord du lac, 8 chambres', de: "Lodge am See, 8 Zimmer", es: "Lodge junto al lago, 8 habitaciones" },
     summary: {
       en: 'A small lodge on the granite shore of Great Slave Lake, reached by ski-plane in winter and floatplane in summer.',
@@ -304,11 +297,10 @@ export const stays: Stay[] = [
   {
     id: 'stay-quebec-auberge',
     slug: 'auberge-de-la-cote-grise',
-    name: 'Auberge de la Côte-Grise',
+    name: { en: "A stone-house inn in Old Québec", fr: "Une auberge dans une maison de pierre du Vieux-Québec", de: "Ein Gasthaus in einem Steinhaus in der Altstadt von Québec", es: "Una posada en una casa de piedra del Viejo Quebec" },
     regionId: 'quebec-city',
     provinceId: 'quebec',
     frReview: 'needs-human-review',
-    placeholder: true,
     style: { en: 'Inn in a stone house, 18 rooms', fr: 'Auberge dans une maison de pierre, 18 chambres', de: "Gasthaus in einem Steinhaus, 18 Zimmer", es: "Posada en una casa de piedra, 18 habitaciones" },
     summary: {
       en: 'A stone house inside the walls of Old Québec, with thick walls, low beams and a very good breakfast.',
@@ -341,11 +333,10 @@ export const stays: Stay[] = [
   {
     id: 'stay-charlevoix-manor',
     slug: 'manoir-des-deux-battures',
-    name: 'Manoir des Deux-Battures',
+    name: { en: "An old manor above the St. Lawrence in Charlevoix", fr: "Un vieux manoir au-dessus du Saint-Laurent, dans Charlevoix", de: "Ein alter Landsitz über dem Sankt-Lorenz-Strom in Charlevoix", es: "Una antigua casa señorial sobre el San Lorenzo, en Charlevoix" },
     regionId: 'charlevoix',
     provinceId: 'quebec',
     frReview: 'needs-human-review',
-    placeholder: true,
     style: { en: 'Country manor on the river, 22 rooms', fr: 'Manoir de campagne au bord du fleuve, 22 chambres', de: "Landsitz am Fluss, 22 Zimmer", es: "Casa señorial junto al río, 22 habitaciones" },
     summary: {
       en: 'An old manor high above the St. Lawrence in Charlevoix, with a long table and a longer view.',
@@ -378,11 +369,10 @@ export const stays: Stay[] = [
   {
     id: 'stay-montreal-hotel',
     slug: 'hotel-des-pignons',
-    name: 'Hôtel des Pignons',
+    name: { en: "A townhouse hotel near Old Montréal", fr: "Un hôtel dans des maisons de ville, près du Vieux-Montréal", de: "Ein Stadthaus-Hotel nahe der Altstadt von Montréal", es: "Un hotel en casas adosadas cerca del Viejo Montreal" },
     regionId: 'montreal',
     provinceId: 'quebec',
     frReview: 'needs-human-review',
-    placeholder: true,
     style: { en: 'Townhouse hotel, 30 rooms', fr: 'Hôtel dans des maisons de ville, 30 chambres', de: "Stadthaus-Hotel, 30 Zimmer", es: "Hotel en casas adosadas, 30 habitaciones" },
     summary: {
       en: 'A row of greystone townhouses turned into a small hotel, close to Old Montréal and the good bakeries.',
@@ -415,11 +405,10 @@ export const stays: Stay[] = [
   {
     id: 'stay-newfoundland-inn',
     slug: 'tickle-head-inn',
-    name: 'Tickle Head Inn',
+    name: { en: "A clapboard inn above a Newfoundland harbour", fr: "Une auberge en bardeaux au-dessus d’un port de Terre-Neuve", de: "Ein holzverschaltes Gasthaus über einem Hafen auf Neufundland", es: "Una posada de tablas sobre un puerto de Terranova" },
     regionId: 'newfoundland',
     provinceId: 'atlantic-canada',
     frReview: 'needs-human-review',
-    placeholder: true,
     style: { en: 'Clifftop inn, 11 rooms', fr: 'Auberge en haut de falaise, 11 chambres', de: "Gasthaus auf der Klippe, 11 Zimmer", es: "Posada en el acantilado, 11 habitaciones" },
     summary: {
       en: 'A clapboard inn above a Newfoundland harbour. In June, you might see icebergs from bed.',
@@ -452,11 +441,10 @@ export const stays: Stay[] = [
   {
     id: 'stay-cabot-cottages',
     slug: 'northfield-bluff-cottages',
-    name: 'Northfield Bluff Cottages',
+    name: { en: "Seaside cottages on the Cabot Trail", fr: "Des cottages en bord de mer sur la piste Cabot", de: "Cottages am Meer am Cabot Trail", es: "Casitas junto al mar en el Cabot Trail" },
     regionId: 'cabot-trail',
     provinceId: 'atlantic-canada',
     frReview: 'needs-human-review',
-    placeholder: true,
     style: { en: 'Seaside cottages, 8 cottages', fr: 'Cottages en bord de mer, 8 cottages', de: "Cottages am Meer, 8 Cottages", es: "Casitas junto al mar, 8 casitas" },
     summary: {
       en: 'Cottages on a bluff on the Cabot Trail, with the Gulf of St. Lawrence below and a fiddle somewhere nearby.',
@@ -489,11 +477,10 @@ export const stays: Stay[] = [
   {
     id: 'stay-pei-farmhouse',
     slug: 'red-lane-farmhouse',
-    name: 'Red Lane Farmhouse',
+    name: { en: "A restored farmhouse on Prince Edward Island", fr: "Une ferme restaurée à l’Île-du-Prince-Édouard", de: "Ein restauriertes Farmhaus auf Prince Edward Island", es: "Una granja restaurada en la Isla del Príncipe Eduardo" },
     regionId: 'prince-edward-island',
     provinceId: 'atlantic-canada',
     frReview: 'needs-human-review',
-    placeholder: true,
     style: { en: 'Restored farmhouse, 6 rooms', fr: 'Ferme restaurée, 6 chambres', de: "Restauriertes Farmhaus, 6 Zimmer", es: "Granja restaurada, 6 habitaciones" },
     summary: {
       en: 'A restored farmhouse at the end of a red dirt lane, a short cycle from the beach.',
@@ -526,11 +513,10 @@ export const stays: Stay[] = [
   {
     id: 'stay-muskoka-lodge',
     slug: 'granite-narrows-lodge',
-    name: 'Granite Narrows Lodge',
+    name: { en: "A lakeside lodge in Muskoka", fr: "Un lodge au bord d’un lac, en Muskoka", de: "Eine Lodge am See in Muskoka", es: "Un lodge junto a un lago en Muskoka" },
     regionId: 'muskoka',
     provinceId: 'ontario',
     frReview: 'needs-human-review',
-    placeholder: true,
     style: { en: 'Lakeside lodge, 24 rooms', fr: 'Lodge au bord du lac, 24 chambres', de: "Lodge am See, 24 Zimmer", es: "Lodge junto al lago, 24 habitaciones" },
     summary: {
       en: 'A lakeside lodge on the granite and pine of Muskoka, about two and a half hours north of Toronto.',
@@ -563,11 +549,10 @@ export const stays: Stay[] = [
   {
     id: 'stay-okanagan-winery',
     slug: 'benchland-vineyard-suites',
-    name: 'Benchland Vineyard Suites',
+    name: { en: "Vineyard suites above Okanagan Lake", fr: "Des suites dans un vignoble au-dessus du lac Okanagan", de: "Suiten auf einem Weingut über dem Okanagan Lake", es: "Suites en un viñedo sobre el lago Okanagan" },
     regionId: 'okanagan',
     provinceId: 'british-columbia',
     frReview: 'needs-human-review',
-    placeholder: true,
     style: { en: 'Suites on a working vineyard, 10 suites', fr: 'Suites dans un vignoble en activité, 10 suites', de: "Suiten auf einem Weingut, 10 Suiten", es: "Suites en un viñedo en activo, 10 suites" },
     summary: {
       en: 'Ten suites among the vines above Okanagan Lake, with a pool for the children and a tasting room for everyone else.',
@@ -600,11 +585,10 @@ export const stays: Stay[] = [
   {
     id: 'stay-whistler-chalet',
     slug: 'alder-ridge-chalet',
-    name: 'Alder Ridge Chalet',
+    name: { en: "A family chalet near the Whistler lifts", fr: "Un chalet familial près des remontées de Whistler", de: "Ein Familienchalet nahe den Liften von Whistler", es: "Un chalet familiar cerca de los remontes de Whistler" },
     regionId: 'whistler',
     provinceId: 'british-columbia',
     frReview: 'needs-human-review',
-    placeholder: true,
     style: { en: 'Private chalet, 5 bedrooms', fr: 'Chalet privé, 5 chambres', de: "Privates Chalet, 5 Schlafzimmer", es: "Chalet privado, 5 dormitorios" },
     summary: {
       en: 'A five-bedroom chalet a short walk from the Whistler lifts, with a hot tub and room for a family.',
@@ -637,11 +621,10 @@ export const stays: Stay[] = [
   {
     id: 'stay-haida-gwaii-lodge',
     slug: 'spruce-shore-lodge',
-    name: 'Spruce Shore Lodge',
+    name: { en: "A small lodge at the forest edge on Haida Gwaii", fr: "Un petit lodge en lisière de forêt, à Haida Gwaii", de: "Eine kleine Lodge am Waldrand auf Haida Gwaii", es: "Un pequeño lodge al borde del bosque en Haida Gwaii" },
     regionId: 'haida-gwaii',
     provinceId: 'british-columbia',
     frReview: 'needs-human-review',
-    placeholder: true,
     style: { en: 'Coastal guest lodge, 7 rooms', fr: 'Lodge côtier, 7 chambres', de: "Gäste-Lodge an der Küste, 7 Zimmer", es: "Lodge costero, 7 habitaciones" },
     summary: {
       en: 'A small lodge on the edge of the forest on Haida Gwaii, a long way out in the Pacific and worth every kilometre.',

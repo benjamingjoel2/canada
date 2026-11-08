@@ -57,7 +57,6 @@
     "enquire": "Anfragen",
     "previous": "Zurück",
     "next": "Weiter",
-    "placeholder": "Platzhalter",
     "photoPlaceholder": "Foto folgt",
     "verifyYearly": "Jährlich prüfen",
     "readMore": "Weiterlesen",
@@ -275,7 +274,7 @@
   },
   "stays": {
     "allTitle": "*Unterkünfte*",
-    "allIntro": "Lodges, Gasthäuser, Hütten und hin und wieder ein sehr gutes Hotel. Wir wählen sie nach ihrer Lage und danach, wer sie führt. Die Namen sind Platzhalter, bis unsere Partnerschaften feststehen.",
+    "allIntro": "Lodges, Gasthäuser, Hütten und hin und wieder ein sehr gutes Hotel. Wir wählen sie nach ihrer Lage und danach, wer sie führt.",
     "filterAll": "Alle Provinzen",
     "region": "Region",
     "style": "Art"

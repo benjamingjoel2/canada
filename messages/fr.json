@@ -57,7 +57,6 @@
     "enquire": "Nous écrire",
     "previous": "Précédent",
     "next": "Suivant",
-    "placeholder": "Contenu provisoire",
     "photoPlaceholder": "Photo à venir",
     "verifyYearly": "À vérifier chaque année",
     "readMore": "Lire la suite",
@@ -308,7 +307,7 @@
   },
   "stays": {
     "allTitle": "Où *séjourner*",
-    "allIntro": "Des lodges, des auberges, des chalets et, de temps en temps, un très bon hôtel. Nous les choisissons pour leur emplacement et pour les gens qui les tiennent. Les noms sont provisoires, le temps de finaliser nos partenariats.",
+    "allIntro": "Des lodges, des auberges, des chalets et, de temps en temps, un très bon hôtel. Nous les choisissons pour leur emplacement et pour les gens qui les tiennent.",
     "filterAll": "Toutes les provinces",
     "region": "Région",
     "style": "Style"

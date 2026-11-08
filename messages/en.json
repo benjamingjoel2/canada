@@ -57,7 +57,6 @@
     "enquire": "Enquire",
     "previous": "Previous",
     "next": "Next",
-    "placeholder": "Placeholder",
     "photoPlaceholder": "Photo to come",
     "verifyYearly": "Verify yearly",
     "readMore": "Read more",
@@ -308,7 +307,7 @@
   },
   "stays": {
     "allTitle": "Places to *stay*",
-    "allIntro": "Lodges, inns, cabins and the occasional very good hotel. We choose them for where they are and who runs them. Names are placeholders while we finalise partnerships.",
+    "allIntro": "Lodges, inns, cabins and the occasional very good hotel. We choose them for where they are and who runs them.",
     "filterAll": "All provinces",
     "region": "Region",
     "style": "Style"

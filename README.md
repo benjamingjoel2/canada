@@ -81,7 +81,7 @@ add Cloudflare Turnstile before launch.
 
 - `config/site.ts`: set up the `canadatravelco@tourground.com` inbox and point `canadatravelco.tourground.com` at Vercel (`NEXT_PUBLIC_SITE_URL`). The business address is Workhaus coworking, 181 University Avenue, Toronto. By the owner's decision (October 2026) the site shows no phone, WhatsApp, social links, licence/registration numbers, team or specialist profiles, testimonials or press quotes; `/about/team`, `/about/testimonials` and `/find-your-specialist` redirect.
 - `config/pricing.ts`: the real per-day figure. `config/currency.ts`: rates.
-- Stays are invented placeholders (`placeholder: true`); replace with real partner properties.
+- Stays are sample properties named by type and place (no business names). Replace with real partner properties, named only with their permission. The same applies to the partner types on `/indigenous-canada`.
 - Facts marked `verify` (entry requirements: canada.ca) and every Wild Calendar event (`verifyYearly`).
 - The privacy policy, booking terms and cookie policy (`data/legal.ts`) are complete but need a lawyer's review; so does the accessibility statement.
 - French review (above).

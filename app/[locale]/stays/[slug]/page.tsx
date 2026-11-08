@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { locale, slug } = await params;
   const s = getStay(slug);
   if (!s) return {};
-  return pageMetadata({ locale, path: `/stays/${s.slug}`, title: s.name, description: tr(s.summary, locale) });
+  return pageMetadata({ locale, path: `/stays/${s.slug}`, title: tr(s.name, locale), description: tr(s.summary, locale) });
 }
 
 export default async function StayPage({ params }: Params) {
@@ -46,13 +46,11 @@ export default async function StayPage({ params }: Params) {
       <PageHero
         image={s.images[0]}
         eyebrow={tr(s.style, locale)}
-        title={s.name}
+        title={tr(s.name, locale)}
         intro={tr(s.summary, locale)}
         locale={locale}
         crumbs={[{ href: '/stays', label: tn('stays') }]}
-      >
-        {s.placeholder && <p className="mt-6 text-xs tracking-wider text-birch/70 uppercase">{tc('placeholder')}</p>}
-      </PageHero>
+      />
       <section className="container-x grid gap-12 py-16 md:py-28 lg:grid-cols-12">
         <p className="font-serif text-2xl leading-snug text-forest lg:col-span-7">{tr(s.body, locale)}</p>
         <dl className="space-y-5 text-sm lg:col-span-5">
@@ -83,7 +81,7 @@ export default async function StayPage({ params }: Params) {
       </section>
       {inJourneys.length > 0 && (
         <section className="container-x pb-16 md:pb-24">
-          <SectionHeading title={tp('journeys', { name: s.name })} />
+          <SectionHeading title={tp('journeys', { name: tr(s.name, locale) })} />
           <div className="mt-10 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
             {inJourneys.map((j) => (
               <JourneyCard key={j.id} journey={j} locale={locale} />
@@ -103,7 +101,7 @@ export default async function StayPage({ params }: Params) {
           </div>
         </section>
       )}
-      <EnquireBand locale={locale} prefill={{ topic: s.name }} />
+      <EnquireBand locale={locale} prefill={{ topic: tr(s.name, locale) }} />
     </>
   );
 }

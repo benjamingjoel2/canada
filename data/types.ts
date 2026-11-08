@@ -184,7 +184,8 @@ export type Interest = 'wildlife' | 'landscapes' | 'food-cities' | 'comfort' | '
 export type Stay = Reviewed & {
   id: string;
   slug: string;
-  name: string;
+  /** Described by type and place, not a business name, until partners are confirmed. */
+  name: L;
   regionId: string;
   provinceId: ProvinceId;
   style: L;
@@ -192,7 +193,6 @@ export type Stay = Reviewed & {
   body: L;
   seasons: Season[];
   images: Img[];
-  placeholder: true;
 };
 
 export type FaqCategory = 'how-we-work' | 'planning' | 'practical';

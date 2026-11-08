@@ -1,8 +1,8 @@
 /**
  * Long-form copy for static pages: Indigenous Canada, About, How we work.
  *
- * Indigenous page: partners listed here are PLACEHOLDERS. Replace them only
- * with real partners who have agreed to be named, in words they have approved.
+ * Indigenous page: partners are described by type and place only. Name them only
+ * when a real partner has agreed to be named, in words they have approved.
  * Do not add nation-specific claims without checking them with the community.
  */
 import type { Img, L, Reviewed } from './types';
@@ -14,11 +14,10 @@ export type PageSection = Reviewed & {
   points?: L[];
 };
 
-export type PlaceholderPartner = Reviewed & {
+/** A kind of partner we look for, described by type and place. No business names until a partner agrees to be named. */
+export type PartnerType = Reviewed & {
   id: string;
   name: L;
-  description: L;
-  placeholder: true;
 };
 
 export type IndigenousPage = Reviewed & {
@@ -27,7 +26,9 @@ export type IndigenousPage = Reviewed & {
   image: Img;
   sections: PageSection[];
   principles: (Reviewed & { id: string; title: L; body: L })[];
-  partners: PlaceholderPartner[];
+  partnersHeading: L;
+  partnersNote: L;
+  partners: PartnerType[];
   furtherReading: Reviewed & { heading: L; items: L[] };
 };
 
@@ -59,8 +60,8 @@ export const indigenousPage: IndigenousPage = {
   },
   image: {
     alt: {
-      en: 'Placeholder image: a coastal forest shoreline at low tide',
-      fr: 'Image provisoire : un rivage de forêt côtière à marée basse', de: "Platzhalterbild: eine Küstenwaldlinie bei Ebbe", es: "Imagen provisional: la orilla de un bosque costero con marea baja",
+      en: 'A coastal forest shoreline at low tide',
+      fr: 'Un rivage de forêt côtière à marée basse', de: "Eine Küstenwaldlinie bei Ebbe", es: "La orilla de un bosque costero con marea baja",
     },
     subject: 'Cedar forest meeting the sea at low tide',
     tone: 'forest',
@@ -153,57 +154,42 @@ export const indigenousPage: IndigenousPage = {
       frReview: 'needs-human-review',
     },
   ],
+  partnersHeading: { en: 'Partners we look for', fr: 'Les partenaires que nous recherchons', de: "Partner, die wir suchen", es: "Los socios que buscamos" },
+  partnersNote: {
+    en: 'Indigenous-owned and Indigenous-led businesses. We name them here only with their permission, described in their own words.',
+    fr: "Des entreprises détenues et dirigées par des Autochtones. Nous ne les nommons ici qu'avec leur accord, présentées avec leurs propres mots.", de: "Unternehmen in indigenem Besitz und unter indigener Leitung. Wir nennen sie hier nur mit ihrer Zustimmung und beschreiben sie in ihren eigenen Worten.", es: "Empresas de propiedad y gestión indígena. Solo las nombramos aquí con su permiso, descritas con sus propias palabras.",
+  },
   partners: [
     {
-      id: 'partner-placeholder-haida-gwaii',
+      id: 'partner-haida-gwaii',
       name: {
-        en: 'Placeholder: a Haida-owned guiding company, Haida Gwaii',
-        fr: 'Provisoire : une entreprise de guides haïda, Haida Gwaii', de: "Platzhalter: ein Guide-Unternehmen in Haida-Besitz, Haida Gwaii", es: "Provisional: una empresa de guías de propiedad haida, Haida Gwaii",
+        en: 'A Haida-owned guiding company, Haida Gwaii',
+        fr: 'Une entreprise de guides haïda, Haida Gwaii', de: "Ein Guide-Unternehmen in Haida-Besitz, Haida Gwaii", es: "Una empresa de guías de propiedad haida, Haida Gwaii",
       },
-      description: {
-        en: 'PLACEHOLDER — replace with a real partner, described in their own words, with their permission.',
-        fr: 'PROVISOIRE — à remplacer par un vrai partenaire, présenté avec ses propres mots et avec son accord.', de: "PLATZHALTER: durch einen echten Partner ersetzen, in dessen eigenen Worten beschrieben und mit dessen Zustimmung.", es: "PROVISIONAL: sustituir por un socio real, descrito con sus propias palabras y con su permiso.",
-      },
-      placeholder: true,
       frReview: 'needs-human-review',
     },
     {
-      id: 'partner-placeholder-coast-lodge',
+      id: 'partner-coast-lodge',
       name: {
-        en: 'Placeholder: a First Nation-owned wilderness lodge, Great Bear Rainforest',
-        fr: 'Provisoire : un lodge appartenant à une Première Nation, forêt pluviale du Grand Ours', de: "Platzhalter: eine Wildnis-Lodge im Besitz einer First Nation, Great Bear Rainforest", es: "Provisional: un lodge en plena naturaleza propiedad de una Primera Nación, Great Bear Rainforest",
+        en: 'A First Nation-owned wilderness lodge, Great Bear Rainforest',
+        fr: 'Un lodge appartenant à une Première Nation, forêt pluviale du Grand Ours', de: "Eine Wildnis-Lodge im Besitz einer First Nation, Great Bear Rainforest", es: "Un lodge en plena naturaleza propiedad de una Primera Nación, Great Bear Rainforest",
       },
-      description: {
-        en: 'PLACEHOLDER — replace with a real partner, described in their own words, with their permission.',
-        fr: 'PROVISOIRE — à remplacer par un vrai partenaire, présenté avec ses propres mots et avec son accord.', de: "PLATZHALTER: durch einen echten Partner ersetzen, in dessen eigenen Worten beschrieben und mit dessen Zustimmung.", es: "PROVISIONAL: sustituir por un socio real, descrito con sus propias palabras y con su permiso.",
-      },
-      placeholder: true,
       frReview: 'needs-human-review',
     },
     {
-      id: 'partner-placeholder-yukon',
+      id: 'partner-yukon',
       name: {
-        en: 'Placeholder: an Indigenous-led cultural centre and guiding service, Yukon',
-        fr: 'Provisoire : un centre culturel et service de guides dirigé par des Autochtones, Yukon', de: "Platzhalter: ein indigen geführtes Kulturzentrum mit Guide-Service, Yukon", es: "Provisional: un centro cultural y servicio de guías dirigido por indígenas, Yukón",
+        en: 'An Indigenous-led cultural centre and guiding service, Yukon',
+        fr: 'Un centre culturel et service de guides dirigé par des Autochtones, Yukon', de: "Ein indigen geführtes Kulturzentrum mit Guide-Service, Yukon", es: "Un centro cultural y servicio de guías dirigido por indígenas, Yukón",
       },
-      description: {
-        en: 'PLACEHOLDER — replace with a real partner, described in their own words, with their permission.',
-        fr: 'PROVISOIRE — à remplacer par un vrai partenaire, présenté avec ses propres mots et avec son accord.', de: "PLATZHALTER: durch einen echten Partner ersetzen, in dessen eigenen Worten beschrieben und mit dessen Zustimmung.", es: "PROVISIONAL: sustituir por un socio real, descrito con sus propias palabras y con su permiso.",
-      },
-      placeholder: true,
       frReview: 'needs-human-review',
     },
     {
-      id: 'partner-placeholder-nunavut',
+      id: 'partner-nunavut',
       name: {
-        en: 'Placeholder: an Inuit-owned outfitter, Nunavut',
-        fr: 'Provisoire : un pourvoyeur inuit, Nunavut', de: "Platzhalter: ein Ausrüster in Inuit-Besitz, Nunavut", es: "Provisional: un proveedor de expediciones de propiedad inuit, Nunavut",
+        en: 'An Inuit-owned outfitter, Nunavut',
+        fr: 'Un pourvoyeur inuit, Nunavut', de: "Ein Ausrüster in Inuit-Besitz, Nunavut", es: "Un proveedor de expediciones de propiedad inuit, Nunavut",
       },
-      description: {
-        en: 'PLACEHOLDER — replace with a real partner, described in their own words, with their permission.',
-        fr: 'PROVISOIRE — à remplacer par un vrai partenaire, présenté avec ses propres mots et avec son accord.', de: "PLATZHALTER: durch einen echten Partner ersetzen, in dessen eigenen Worten beschrieben und mit dessen Zustimmung.", es: "PROVISIONAL: sustituir por un socio real, descrito con sus propias palabras y con su permiso.",
-      },
-      placeholder: true,
       frReview: 'needs-human-review',
     },
   ],
@@ -237,8 +223,8 @@ export const aboutPage: AboutPage = {
   },
   image: {
     alt: {
-      en: 'Placeholder image: a lake at first light with a canoe pulled up on the shore',
-      fr: 'Image provisoire : un lac au petit matin, un canot tiré sur la rive', de: "Platzhalterbild: ein See im ersten Licht mit einem ans Ufer gezogenen Kanu", es: "Imagen provisional: un lago con la primera luz y una canoa varada en la orilla",
+      en: 'A lake at first light with a canoe pulled up on the shore',
+      fr: 'Un lac au petit matin, un canot tiré sur la rive', de: "Ein See im ersten Licht mit einem ans Ufer gezogenen Kanu", es: "Un lago con la primera luz y una canoa varada en la orilla",
     },
     subject: 'Canoe on a quiet lakeshore at first light',
     tone: 'lake',
