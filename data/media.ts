@@ -1,8 +1,8 @@
 import type { Img, Season } from './types';
 
 /**
- * Hero films and homepage imagery. No footage yet: add `video` (an MP4/WebM in /public/media
- * or a CDN URL) and the poster image when it exists. Until then the poster placeholder shows.
+ * Hero films and homepage imagery. No footage yet, so the hero shows the poster photograph
+ * (matched in data/photos.ts). Add `video` (an MP4/WebM in /public/media or a CDN URL) when it exists.
  */
 export const heroFilms: Record<Season, { video?: string; poster: Img }> = {
   summer: {
