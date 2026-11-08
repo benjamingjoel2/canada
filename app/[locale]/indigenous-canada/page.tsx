@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
 import { indigenousPage as page } from '@/data/pages';
 import { tr } from '@/lib/l10n';
 import { pageLocale, type LocaleParams } from '@/lib/params';
@@ -16,7 +15,6 @@ export async function generateMetadata({ params }: LocaleParams): Promise<Metada
 
 export default async function IndigenousCanada({ params }: LocaleParams) {
   const locale = await pageLocale(params);
-  const tc = await getTranslations({ locale, namespace: 'common' });
   return (
     <>
       <PageHero image={page.image} title={tr(page.title, locale)} intro={tr(page.intro, locale)} locale={locale} />
@@ -40,12 +38,14 @@ export default async function IndigenousCanada({ params }: LocaleParams) {
       </section>
       <section className="container-x grid gap-12 py-16 md:py-28 lg:grid-cols-2">
         <div>
-          <ul className="space-y-6">
+          <h2 className="text-3xl text-forest">
+            <Italic text={tr(page.partnersHeading, locale)} />
+          </h2>
+          <p className="mt-4 text-granite">{tr(page.partnersNote, locale)}</p>
+          <ul className="mt-6 space-y-6">
             {page.partners.map((p) => (
               <li key={p.id} className="border-l-2 border-lake pl-5">
                 <p className="text-lg text-forest">{tr(p.name, locale)}</p>
-                <p className="mt-1 text-sm text-granite">{tr(p.description, locale)}</p>
-                <p className="mt-1 text-[10px] tracking-wider text-granite uppercase">{tc('placeholder')}</p>
               </li>
             ))}
           </ul>

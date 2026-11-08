@@ -57,7 +57,6 @@
     "enquire": "Consultar",
     "previous": "Anterior",
     "next": "Siguiente",
-    "placeholder": "Provisional",
     "photoPlaceholder": "Foto próximamente",
     "verifyYearly": "Verificar cada año",
     "readMore": "Leer más",
@@ -275,7 +274,7 @@
   },
   "stays": {
     "allTitle": "Dónde *alojarse*",
-    "allIntro": "Lodges, posadas, cabañas y algún que otro hotel excelente. Los elegimos por dónde están y por quién los dirige. Los nombres son provisionales mientras cerramos las colaboraciones.",
+    "allIntro": "Lodges, posadas, cabañas y algún que otro hotel excelente. Los elegimos por dónde están y por quién los dirige.",
     "filterAll": "Todas las provincias",
     "region": "Región",
     "style": "Estilo"
